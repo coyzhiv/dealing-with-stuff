@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://dfukpmbhdyeh0"]
+
+[ext_resource type="PackedScene" uid="uid://bf8lip7yqhxow" path="res://scenes/levels/parent_level.tscn" id="1_2o1gc"]
+[ext_resource type="Script" uid="uid://dcmtev8r8ekha" path="res://scenes/levels/apartament/apartament_room.gd" id="2_xl33j"]
+[ext_resource type="PackedScene" uid="uid://bvwmp1hp4wpws" path="res://resourses/models/tutorial/ApartamentRoom.gltf" id="3_5pjk6"]
+[ext_resource type="PackedScene" uid="uid://kplaxinx0cvp" path="res://scenes/levels/apartament/interaction_area.tscn" id="3_w6gkq"]
+[ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="4_2o1gc"]
+[ext_resource type="PackedScene" uid="uid://ctvbdq5ye7u4" path="res://scenes/characters/alisa_npc.tscn" id="5_3e5wv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w6gkq"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_3e5wv"]
+sky_material = SubResource("ProceduralSkyMaterial_w6gkq")
+
+[sub_resource type="Environment" id="Environment_uich4"]
+background_mode = 1
+sky = SubResource("Sky_3e5wv")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e5wv"]
+size = Vector3(0.151031, 0.142944, 0.0898743)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ol2cc"]
+size = Vector3(0.374878, 0.241699, 0.181396)
+
+[node name="ApartamentRoom" instance=ExtResource("1_2o1gc")]
+script = ExtResource("2_xl33j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.100676, 1.47473, 0.135909)
+light_color = Color(0.196078, 1, 1, 1)
+light_energy = 0.03
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Light" index="1"]
+environment = SubResource("Environment_uich4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Light" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13534, 0.14435, 0.578483)
+light_color = Color(3.94672e-06, 0.785262, 0.786266, 1)
+light_energy = 0.515
+light_size = 0.131
+spot_range = 1.408
+spot_angle = 57.0
+
+[node name="InteractionArea" parent="InteractionAreas" index="0" instance=ExtResource("3_w6gkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109281, 0.00420293, 0.644168)
+prompt = "tv_interact"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/InteractionArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0216217, 0.12262, -0.106583)
+shape = SubResource("BoxShape3D_3e5wv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16217, 0.107178, 0.697943)
+shape = SubResource("BoxShape3D_ol2cc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.399808, 0.107178, 0.697943)
+shape = SubResource("BoxShape3D_ol2cc")
+
+[node name="blockbench_export" parent="." index="4" instance=ExtResource("3_5pjk6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.119307, 0, 0.113723)
+
+[node name="AlisaNPC" parent="." index="5" instance=ExtResource("5_3e5wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217759, 0.127951, -0.247036)
+
+[node name="Player" parent="." index="6" instance=ExtResource("4_2o1gc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0894226, 0.139159, 0.152255)
+
+[node name="Camera3D" type="Camera3D" parent="Player" index="5"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.834835, 0.704218)

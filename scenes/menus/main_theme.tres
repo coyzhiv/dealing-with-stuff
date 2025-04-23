@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://7l6k4yhkihp4"]
+
+[ext_resource type="Texture2D" uid="uid://dax3bjfnumwts" path="res://resourses/sprites/interface/box_texture.png" id="1_3cxxj"]
+[ext_resource type="Texture2D" uid="uid://c8qtu87affos4" path="res://resourses/sprites/interface/ui_slider.png" id="1_f6v7v"]
+[ext_resource type="FontFile" uid="uid://d13bi6hpu1ajl" path="res://resourses/fonts/ByteBounce.ttf" id="3_f6v7v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s4yt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w22bb"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6s4yt"]
+texture = ExtResource("1_3cxxj")
+
+[resource]
+default_font = ExtResource("3_f6v7v")
+default_font_size = 48
+HSlider/icons/grabber = ExtResource("1_f6v7v")
+HSlider/icons/grabber_disabled = ExtResource("1_f6v7v")
+HSlider/icons/grabber_highlight = ExtResource("1_f6v7v")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_6s4yt")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_w22bb")
+ItemList/colors/font_color = Color(1, 1, 1, 1)
+ItemList/constants/h_separation = 10
+ItemList/constants/v_separation = 14
+ItemList/styles/panel = SubResource("StyleBoxTexture_6s4yt")

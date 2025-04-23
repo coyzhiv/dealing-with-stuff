@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctvbdq5ye7u4"]
+
+[ext_resource type="PackedScene" uid="uid://bytuc1huhkkhc" path="res://scenes/characters/npc_template.tscn" id="1_s7wd8"]
+[ext_resource type="Texture2D" uid="uid://4rdm5o1n7loe" path="res://resourses/sprites/characters/alisa.png" id="2_rp5i6"]
+
+[node name="AlisaNPC" instance=ExtResource("1_s7wd8")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0143011, 0.0343644, -0.0141742)
+
+[node name="Sprite3D" parent="." index="1"]
+texture = ExtResource("2_rp5i6")
+
+[node name="InteractionArea" parent="." index="3"]
+prompt = "alisa_apartament_interact"

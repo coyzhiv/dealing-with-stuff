@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhu3a01eh4dlb"]
+
+[ext_resource type="PackedScene" uid="uid://bf8lip7yqhxow" path="res://levels/parent_level.tscn" id="1_2o1gc"]
+[ext_resource type="Script" uid="uid://bq8ogbfat2sdp" path="res://levels/apartament/apartament_room.gd" id="2_xl33j"]
+[ext_resource type="PackedScene" uid="uid://b605wcsvex6jm" path="res://characters/lina_player.tscn" id="3_t4qwf"]
+[ext_resource type="PackedScene" uid="uid://bvwmp1hp4wpws" path="res://levels/models/tutorial/ApartamentRoom.gltf" id="4_nqag2"]
+
+[sub_resource type="Environment" id="Environment_2o1gc"]
+background_mode = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2o1gc"]
+size = Vector3(0.407227, 1, 0.170822)
+
+[node name="ApartamentRoom" instance=ExtResource("1_2o1gc")]
+script = ExtResource("2_xl33j")
+
+[node name="LinaPlayer" parent="." index="0" instance=ExtResource("3_t4qwf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.147921, 0)
+
+[node name="Camera3D" type="Camera3D" parent="LinaPlayer" index="3"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.0262921, 0.817435, 0.78732)
+
+[node name="blockbench_export" parent="." index="1" instance=ExtResource("4_nqag2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.247165, 0.14008, 0.468935)
+light_color = Color(0.32549, 1, 1, 1)
+light_size = 0.505
+spot_range = 1.304
+spot_angle = 60.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="4"]
+environment = SubResource("Environment_2o1gc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.5, 0)
+light_color = Color(0, 1, 1, 1)
+light_energy = 0.1
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.296387, 0, 0.586275)
+shape = SubResource("BoxShape3D_2o1gc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299451, 0, 0.587529)
+shape = SubResource("BoxShape3D_2o1gc")

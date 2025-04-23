@@ -1,0 +1,291 @@
+[gd_scene load_steps=14 format=3 uid="uid://cbykelotlwqua"]
+
+[ext_resource type="Texture2D" uid="uid://diu77an7bow6y" path="res://resourses/sprites/interface/dialogue_box1.png" id="1_r7jm6"]
+[ext_resource type="Script" uid="uid://bw5uba6kepmg7" path="res://scenes/globals/dialogue.gd" id="1_upakc"]
+[ext_resource type="Texture2D" uid="uid://cyvgmeiwuof5h" path="res://resourses/sprites/portraits/test.png" id="2_4i1nw"]
+[ext_resource type="Texture2D" uid="uid://dsn2rsi73ejgu" path="res://resourses/sprites/interface/dialogue_box2.png" id="2_eoxbp"]
+[ext_resource type="FontFile" uid="uid://d13bi6hpu1ajl" path="res://resourses/fonts/ByteBounce.ttf" id="3_eoxbp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_upakc"]
+font = ExtResource("3_eoxbp")
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_dwuim"]
+font = ExtResource("3_eoxbp")
+font_size = 80
+
+[sub_resource type="Animation" id="Animation_4i1nw"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portraits/RightPortrait:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(960, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Portraits/RightPortrait:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(540, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Portraits/LeftPortarit:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(960, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Portraits/LeftPortarit:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(540, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Portraits/LeftPortarit:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Portraits/RightPortrait:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nwrvn"]
+resource_name = "bounce_left_portrait"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portraits/LeftPortarit:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(960, -0.1, 0, 0.1, 0, 960, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Portraits/LeftPortarit:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(540, -0.1, 0, 0.0666667, -60.0545, 540, -0.0666667, -57.4332, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Portraits/LeftPortarit:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Portraits/RightPortrait:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.776471, 0.776471, 0.776471, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_chant"]
+resource_name = "bounce_right_portrait"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portraits/RightPortrait:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(960, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Portraits/RightPortrait:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(540, -0.25, 0, 0.0333333, -67.4423, 540, -0.0333333, -77.0699, 0.166667, -77.8904),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Portraits/RightPortrait:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Portraits/LeftPortarit:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.776471, 0.776471, 0.776471, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7ibq6"]
+resource_name = "fade_dark_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portraits/LeftPortarit:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.753984, 0.753984, 0.753984, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hvu34"]
+resource_name = "fade_dark_right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portraits/RightPortrait:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.752941, 0.752941, 0.752941, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ganp7"]
+_data = {
+&"RESET": SubResource("Animation_4i1nw"),
+&"bounce_left_portrait": SubResource("Animation_nwrvn"),
+&"bounce_right_portrait": SubResource("Animation_chant"),
+&"fade_dark_left": SubResource("Animation_7ibq6"),
+&"fade_dark_right": SubResource("Animation_hvu34")
+}
+
+[node name="Dialogue" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_upakc")
+
+[node name="Portraits" type="Node2D" parent="."]
+
+[node name="LeftPortarit" type="Sprite2D" parent="Portraits"]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("2_4i1nw")
+flip_h = true
+
+[node name="RightPortrait" type="Sprite2D" parent="Portraits"]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("2_4i1nw")
+
+[node name="Alisa" type="Node2D" parent="Portraits"]
+
+[node name="AlisaTest" type="Sprite2D" parent="Portraits/Alisa"]
+visible = false
+texture = ExtResource("2_4i1nw")
+offset = Vector2(960, 540)
+
+[node name="Lina" type="Node2D" parent="Portraits"]
+
+[node name="LinaTest" type="Sprite2D" parent="Portraits/Lina"]
+visible = false
+texture = ExtResource("2_4i1nw")
+offset = Vector2(960, 540)
+
+[node name="DialogueBoxBig" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(8, 8)
+texture = ExtResource("1_r7jm6")
+
+[node name="DialogueBoxSmall" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(8, 8)
+texture = ExtResource("2_eoxbp")
+
+[node name="TextLabel" type="Label" parent="."]
+offset_left = 61.0
+offset_top = 786.0
+offset_right = 1858.0
+offset_bottom = 1015.0
+label_settings = SubResource("LabelSettings_upakc")
+autowrap_mode = 3
+clip_text = true
+
+[node name="NameLabel" type="Label" parent="."]
+offset_left = 679.0
+offset_top = 684.0
+offset_right = 1241.0
+offset_bottom = 756.0
+label_settings = SubResource("LabelSettings_dwuim")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ganp7")
+}

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf8lip7yqhxow"]
+
+[ext_resource type="Script" uid="uid://cjhrqsauumy4e" path="res://scenes/levels/parent_level.gd" id="1_npjkf"]
+
+[node name="ParentLevel" type="Node3D"]
+script = ExtResource("1_npjkf")
+
+[node name="Light" type="Node3D" parent="."]
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="InteractionAreas" type="Node3D" parent="."]
+
+[node name="InvisibleWalls" type="StaticBody3D" parent="."]
