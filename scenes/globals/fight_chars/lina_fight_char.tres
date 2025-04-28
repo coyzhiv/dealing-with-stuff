@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FightChar" load_steps=2 format=3 uid="uid://052ib32bvpow"]
+
+[ext_resource type="Script" uid="uid://c2wuvx4hcwafo" path="res://scenes/globals/fight_chars/fight_char.gd" id="1_fv83e"]
+
+[resource]
+script = ExtResource("1_fv83e")
+id = 1
+hp = 0
+atk = 0
+def = 0
+spd = 0
+metadata/_custom_type_script = "uid://c2wuvx4hcwafo"

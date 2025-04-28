@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfukpmbhdyeh0"]
+[gd_scene load_steps=13 format=3 uid="uid://dfukpmbhdyeh0"]
 
 [ext_resource type="PackedScene" uid="uid://bf8lip7yqhxow" path="res://scenes/levels/parent_level.tscn" id="1_2o1gc"]
 [ext_resource type="Script" uid="uid://dcmtev8r8ekha" path="res://scenes/levels/apartament/apartament_room.gd" id="2_xl33j"]
@@ -25,10 +25,14 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_3e5wv"]
 size = Vector3(0.151031, 0.142944, 0.0898743)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_uich4"]
+size = Vector3(0.303906, 0.181714, 0.257031)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ol2cc"]
 size = Vector3(0.374878, 0.241699, 0.181396)
 
 [node name="ApartamentRoom" instance=ExtResource("1_2o1gc")]
+process_mode = 1
 script = ExtResource("2_xl33j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light" index="0"]
@@ -47,13 +51,21 @@ light_size = 0.131
 spot_range = 1.408
 spot_angle = 57.0
 
-[node name="InteractionArea" parent="InteractionAreas" index="0" instance=ExtResource("3_w6gkq")]
+[node name="TV" parent="InteractionAreas" index="0" instance=ExtResource("3_w6gkq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109281, 0.00420293, 0.644168)
 prompt = "tv_interact"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/InteractionArea" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/TV" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0216217, 0.12262, -0.106583)
 shape = SubResource("BoxShape3D_3e5wv")
+
+[node name="TestFight" parent="InteractionAreas" index="1" instance=ExtResource("3_w6gkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504271, 0.00420293, 0.671308)
+prompt = "test_fight"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/TestFight" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154263, 0.163477, -0.195994)
+shape = SubResource("BoxShape3D_uich4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16217, 0.107178, 0.697943)

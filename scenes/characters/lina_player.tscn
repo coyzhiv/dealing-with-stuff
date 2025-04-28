@@ -8,6 +8,7 @@
 radius = 0.001
 
 [node name="LinaPlayer" instance=ExtResource("1_axwp8")]
+process_mode = 1
 script = ExtResource("1_eme7l")
 
 [node name="CollisionShape3D" parent="." index="0"]
@@ -19,13 +20,13 @@ texture = ExtResource("2_eme7l")
 [node name="InteractAreaPoints" type="Node3D" parent="." index="3"]
 
 [node name="Down" type="Marker3D" parent="InteractAreaPoints" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.105448)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0428928, 0.105448)
 
 [node name="Right" type="Marker3D" parent="InteractAreaPoints" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113, 0.043, -0.015)
 
 [node name="Left" type="Marker3D" parent="InteractAreaPoints" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.113271, 0.0426544, -0.0145255)
 
 [node name="Up" type="Marker3D" parent="InteractAreaPoints" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000879757, 0.0452921, -0.120383)

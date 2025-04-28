@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://btptyyruogres"]
+
+[ext_resource type="PackedScene" uid="uid://fljjk6mrlsfl" path="res://resourses/models/menu/Pause menu.gltf" id="1_h6fyu"]
+[ext_resource type="Script" uid="uid://d2sese3vkecfb" path="res://scenes/globals/new_pause_menu.gd" id="1_txeoe"]
+[ext_resource type="Texture2D" uid="uid://b70lqps4afyyl" path="res://resourses/sprites/testing things/menu_test.png" id="2_dntbv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dntbv"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_txeoe"]
+sky_material = SubResource("ProceduralSkyMaterial_dntbv")
+
+[sub_resource type="Environment" id="Environment_7ondg"]
+background_mode = 1
+background_color = Color(0.667846, 0.846221, 0.994885, 1)
+background_energy_multiplier = 0.54
+sky = SubResource("Sky_txeoe")
+ambient_light_source = 1
+reflected_light_source = 1
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_density = 0.0292
+
+[node name="NewPauseMenu" type="CanvasLayer"]
+script = ExtResource("1_txeoe")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7ondg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.593071, 6.49718, 4.02447)
+light_color = Color(0.928962, 1, 0.997982, 1)
+omni_range = 19.0404
+
+[node name="blockbench_export" parent="." instance=ExtResource("1_h6fyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.469887, 0, -1.11776)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422208, 1.23562, 3.11289)
+
+[node name="Lina" type="Sprite3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 1.655, 0.451, 0.854278)
+texture = ExtResource("2_dntbv")
+
+[node name="Alisa" type="Sprite3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -2.597, 0.466, 0.854)
+flip_h = true
+texture = ExtResource("2_dntbv")

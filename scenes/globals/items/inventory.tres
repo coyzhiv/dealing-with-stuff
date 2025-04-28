@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemInv" load_steps=6 format=3 uid="uid://bvg4taoqhuxae"]
+
+[ext_resource type="Script" uid="uid://cfhu3p2bw4vtk" path="res://scenes/globals/items.gd" id="1_y5vlr"]
+[ext_resource type="Resource" uid="uid://drbq3te078ckf" path="res://scenes/globals/items/hair_band.tres" id="2_t8g3f"]
+[ext_resource type="Script" uid="uid://csnmj1jas2dn6" path="res://scenes/globals/item_inventory.gd" id="3_at0pv"]
+[ext_resource type="Resource" uid="uid://b27nnjmo1f5j6" path="res://scenes/globals/items/badass_choker.tres" id="3_t8g3f"]
+[ext_resource type="Resource" uid="uid://kgy0eke6htgt" path="res://scenes/globals/items/last_beer.tres" id="4_at0pv"]
+
+[resource]
+script = ExtResource("3_at0pv")
+items = Array[ExtResource("1_y5vlr")]([ExtResource("2_t8g3f"), ExtResource("3_t8g3f"), ExtResource("4_at0pv")])
+metadata/_custom_type_script = "uid://csnmj1jas2dn6"

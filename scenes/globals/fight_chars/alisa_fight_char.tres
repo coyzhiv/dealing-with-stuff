@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FightChar" load_steps=2 format=3 uid="uid://c5i5sqy8tvioj"]
+
+[ext_resource type="Script" uid="uid://c2wuvx4hcwafo" path="res://scenes/globals/fight_chars/fight_char.gd" id="1_joyx5"]
+
+[resource]
+script = ExtResource("1_joyx5")
+hp = 0
+atk = 0
+def = 0
+spd = 0
+metadata/_custom_type_script = "uid://c2wuvx4hcwafo"

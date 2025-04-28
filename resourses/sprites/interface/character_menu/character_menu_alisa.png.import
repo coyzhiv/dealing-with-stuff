@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b637jwp3gwis2"
-path="res://.godot/imported/character_menu_alisa.png-51a89cefbf5bb53c8d9309733b999217.ctex"
+path="res://.godot/imported/character_menu_alisa.png-bdf0d283cef2853ec34cbd3ee00d6ee7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resourses/sprites/interface/character_menu_alisa.png"
-dest_files=["res://.godot/imported/character_menu_alisa.png-51a89cefbf5bb53c8d9309733b999217.ctex"]
+source_file="res://resourses/sprites/interface/character_menu/character_menu_alisa.png"
+dest_files=["res://.godot/imported/character_menu_alisa.png-bdf0d283cef2853ec34cbd3ee00d6ee7.ctex"]
 
 [params]
 

@@ -7,14 +7,13 @@ var interactable_area:Area3D
 
 @onready var interact_area = $InteractArea
 
-func _physics_process(delta):
+func _process(delta):
 	if not Dialogue.is_dialogue_active:
 		move()
 		animate()
 		applies(delta)
 		interact()
 		move_and_slide()
-
 #move inputs
 func move():
 	inputDirection = Input.get_vector("left", "right", "up", "down")
@@ -31,7 +30,6 @@ func move():
 	velocity.x = inputDirection.x * speed
 	velocity.z = inputDirection.y * speed
 	
-
 #animations
 func animate():
 	
@@ -79,7 +77,6 @@ func interact():
 	if can_interact:
 		if Input.is_action_just_pressed("confirm"):
 			interactable_area.recieve_interaction()
-
 
 func _on_interact_area_area_entered(area: Area3D) -> void:
 	if area.has_method('recieve_interaction') and not Dialogue.is_dialogue_active:

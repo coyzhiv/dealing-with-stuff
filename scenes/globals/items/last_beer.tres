@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://kgy0eke6htgt"]
+
+[ext_resource type="Texture2D" uid="uid://b75axy1k1dtgw" path="res://resourses/sprites/interface/arrow.png" id="1_6rx0u"]
+[ext_resource type="Script" uid="uid://cfhu3p2bw4vtk" path="res://scenes/globals/items.gd" id="2_r3n0v"]
+
+[resource]
+script = ExtResource("2_r3n0v")
+title = "Last Beer"
+description = "Reminds you of times when this was not the last one. You just cant put yourself to drink it."
+icon = ExtResource("1_6rx0u")
+effect = "empty"
+hp_value = 10
+atk_value = 10
+def_value = 10
+spd_value = 10
+effect_value = 10
+metadata/_custom_type_script = "uid://cfhu3p2bw4vtk"

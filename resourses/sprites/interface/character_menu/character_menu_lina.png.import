@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8qtu87affos4"
-path="res://.godot/imported/ui_slider.png-84029e592f2af16e74b0c3739882c250.ctex"
+uid="uid://cberdcwjgoupy"
+path="res://.godot/imported/character_menu_lina.png-c1d82101d4d161417a417af91b4f4d99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resourses/sprites/interface/ui_slider.png"
-dest_files=["res://.godot/imported/ui_slider.png-84029e592f2af16e74b0c3739882c250.ctex"]
+source_file="res://resourses/sprites/interface/character_menu/character_menu_lina.png"
+dest_files=["res://.godot/imported/character_menu_lina.png-c1d82101d4d161417a417af91b4f4d99.ctex"]
 
 [params]
 

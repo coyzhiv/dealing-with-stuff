@@ -12,6 +12,10 @@ var text_speed = 0.03
 @onready var text_box = $DialogueBoxBig
 @onready var anim = $AnimationPlayer
 
+@onready var test_enemy = preload("res://scenes/globals/fight_chars/test_fight_char.tres")
+
+
+
 enum p
 {
 	left, right
@@ -20,6 +24,10 @@ signal confirm_pressed
 signal skip_pressed
 signal dialogue_started
 signal text_finished
+signal battle_over
+
+func _ready():
+	BattleScene.battle_over.connect(_on_battle_over_export)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("confirm") and is_dialogue_active:
@@ -72,7 +80,6 @@ func write_text(text:String):
 	text_label.text = text
 	text_label.visible_characters = 0
 	for i in text_label.get_total_character_count():
-		print(i,text_label.get_total_character_count())
 		text_label.visible_characters += 1
 		await get_tree().create_timer(text_speed).timeout
 	text_speed = base_text_speed
@@ -125,3 +132,17 @@ func alisa_apartament_interact():
 	await text_finished
 	await confirm_pressed
 	finish()
+
+func test_fight():
+	start_fight(test_enemy)
+	await battle_over
+	finish()
+
+func start_fight(enemy):
+	visible = false
+	is_dialogue_active = true
+	BattleScene.start(enemy)
+	
+	
+func _on_battle_over_export():
+	battle_over.emit()

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://drbq3te078ckf"]
+
+[ext_resource type="Texture2D" uid="uid://b75axy1k1dtgw" path="res://resourses/sprites/interface/arrow.png" id="1_51ctq"]
+[ext_resource type="Script" uid="uid://cfhu3p2bw4vtk" path="res://scenes/globals/items.gd" id="2_jfngd"]
+
+[resource]
+script = ExtResource("2_jfngd")
+title = "Hair Band"
+description = "Does nothing except holding your hair. WOW!!"
+icon = ExtResource("1_51ctq")
+effect = "empty"
+hp_value = 1
+atk_value = 1
+def_value = 1
+spd_value = 1
+effect_value = 0
+metadata/_custom_type_script = "uid://cfhu3p2bw4vtk"

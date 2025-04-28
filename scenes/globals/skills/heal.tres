@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Skills" load_steps=3 format=3 uid="uid://76ivfmormvq0"]
+
+[ext_resource type="Texture2D" uid="uid://b75axy1k1dtgw" path="res://resourses/sprites/interface/arrow.png" id="1_lr30a"]
+[ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_fw7yu"]
+
+[resource]
+script = ExtResource("2_fw7yu")
+title = "Heal"
+description = "Restores HP by 20"
+icon = ExtResource("1_lr30a")
+effect = "heal"
+effect_info = ""
+value = 20.0
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"

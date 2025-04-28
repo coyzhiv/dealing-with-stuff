@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SkillInv" load_steps=6 format=3 uid="uid://do3vuq4qyw1sa"]
+
+[ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="1_r6vk8"]
+[ext_resource type="Resource" uid="uid://76ivfmormvq0" path="res://scenes/globals/skills/heal.tres" id="2_5lneo"]
+[ext_resource type="Resource" uid="uid://bwkvc3oc8cxmi" path="res://scenes/globals/skills/atk_buff.tres" id="3_ijxpb"]
+[ext_resource type="Script" uid="uid://dclj03trtr3ny" path="res://scenes/globals/skill_inventory.gd" id="3_tskfm"]
+[ext_resource type="Resource" uid="uid://cp6pot8c5iv5x" path="res://scenes/globals/skills/hit.tres" id="4_x0flb"]
+
+[resource]
+script = ExtResource("3_tskfm")
+items = Array[ExtResource("1_r6vk8")]([ExtResource("2_5lneo"), ExtResource("3_ijxpb"), ExtResource("4_x0flb")])
+metadata/_custom_type_script = "uid://dclj03trtr3ny"
