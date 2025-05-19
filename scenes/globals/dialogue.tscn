@@ -1,20 +1,43 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbykelotlwqua"]
+[gd_scene load_steps=39 format=3 uid="uid://cbykelotlwqua"]
 
 [ext_resource type="Texture2D" uid="uid://diu77an7bow6y" path="res://resourses/sprites/interface/dialogue_box1.png" id="1_r7jm6"]
-[ext_resource type="Script" uid="uid://bw5uba6kepmg7" path="res://scenes/globals/dialogue.gd" id="1_upakc"]
+[ext_resource type="Script" uid="uid://bw5uba6kepmg7" path="res://scenes/globals/skills/dialogue.gd" id="1_upakc"]
 [ext_resource type="Texture2D" uid="uid://cyvgmeiwuof5h" path="res://resourses/sprites/portraits/test.png" id="2_4i1nw"]
 [ext_resource type="Texture2D" uid="uid://dsn2rsi73ejgu" path="res://resourses/sprites/interface/dialogue_box2.png" id="2_eoxbp"]
 [ext_resource type="FontFile" uid="uid://d13bi6hpu1ajl" path="res://resourses/fonts/ByteBounce.ttf" id="3_eoxbp"]
+[ext_resource type="Texture2D" uid="uid://dk74iac1rf0yh" path="res://resourses/sprites/portraits/alisa_test.png" id="3_hvu34"]
+[ext_resource type="Texture2D" uid="uid://bi8jeib4f6h1w" path="res://resourses/sprites/portraits/alisa_default.png" id="4_6jsxk"]
+[ext_resource type="Texture2D" uid="uid://drmbbc7guuvn3" path="res://resourses/sprites/portraits/lina_test.png" id="4_ganp7"]
+[ext_resource type="Texture2D" uid="uid://qkft3hy4nnl8" path="res://resourses/sprites/portraits/alisa_smile.png" id="5_ta2xt"]
+[ext_resource type="Texture2D" uid="uid://bl6fum3462f8k" path="res://resourses/sprites/portraits/alisa_happy.png" id="6_bsvus"]
+[ext_resource type="Texture2D" uid="uid://b75axy1k1dtgw" path="res://resourses/sprites/interface/arrow.png" id="6_chant"]
+[ext_resource type="Texture2D" uid="uid://djt2eta66gphm" path="res://resourses/sprites/portraits/alisa_angry.png" id="7_3ggmh"]
+[ext_resource type="AudioStream" uid="uid://bnrv6kb2ywmkx" path="res://resourses/audio/effects/БЛАБЛАБЛАБЛЕБЛЕБЕБЛУБЛУБЛУУУУ (1).ogg" id="7_nwrvn"]
+[ext_resource type="Texture2D" uid="uid://c1ch475rtapgj" path="res://resourses/sprites/portraits/alisa_wow.png" id="7_q52qt"]
+[ext_resource type="Texture2D" uid="uid://c1bwephfk866x" path="res://resourses/sprites/portraits/alisa_que.png" id="8_ko2dr"]
+[ext_resource type="Texture2D" uid="uid://ccf2487ky7c4c" path="res://resourses/sprites/portraits/alisa_laugh.png" id="8_q52qt"]
+[ext_resource type="Texture2D" uid="uid://cidk06b1crdor" path="res://resourses/sprites/portraits/alisa_sigh.png" id="9_ko2dr"]
+[ext_resource type="Texture2D" uid="uid://jkd51mr8doqj" path="res://resourses/sprites/portraits/lina_default.png" id="10_btfj8"]
+[ext_resource type="Texture2D" uid="uid://1horvi1scu81" path="res://resourses/sprites/portraits/lina_smile.png" id="11_k7kex"]
+[ext_resource type="Texture2D" uid="uid://d4hkf6xmq6gqp" path="res://resourses/sprites/portraits/lina_4.png" id="12_ra1fr"]
+[ext_resource type="Texture2D" uid="uid://bvwj8pp67k5nc" path="res://resourses/sprites/portraits/lina_cocky.png" id="13_mvh6b"]
+[ext_resource type="Texture2D" uid="uid://wqyep7fyron" path="res://resourses/sprites/portraits/lina_angry.png" id="14_w1ko1"]
+[ext_resource type="Texture2D" uid="uid://dygwttdh7dpbt" path="res://resourses/sprites/portraits/lina_laugh.png" id="15_msi87"]
+[ext_resource type="Texture2D" uid="uid://b60sxbmo7xpjm" path="res://resourses/sprites/portraits/lina_sigh.png" id="16_a2jc2"]
+[ext_resource type="Texture2D" uid="uid://chr6q8x845646" path="res://resourses/sprites/portraits/lina_wow.png" id="18_btfj8"]
+
+[sub_resource type="FontVariation" id="FontVariation_q52qt"]
+base_font = ExtResource("3_eoxbp")
+spacing_glyph = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_upakc"]
-font = ExtResource("3_eoxbp")
+line_spacing = 5.0
 font_size = 80
-font_color = Color(0.172549, 0.156863, 0.117647, 1)
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_dwuim"]
 font = ExtResource("3_eoxbp")
 font_size = 80
-font_color = Color(0.174398, 0.157176, 0.116252, 1)
 
 [sub_resource type="Animation" id="Animation_4i1nw"]
 length = 0.001
@@ -187,6 +210,34 @@ tracks/3/keys = {
 "values": [Color(0.776471, 0.776471, 0.776471, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_2s4d0"]
+resource_name = "fade_dark_both"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portraits/LeftPortarit:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.753984, 0.753984, 0.753984, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Portraits/RightPortrait:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.752941, 0.752941, 0.752941, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_7ibq6"]
 resource_name = "fade_dark_left"
 length = 0.1
@@ -224,12 +275,72 @@ _data = {
 &"RESET": SubResource("Animation_4i1nw"),
 &"bounce_left_portrait": SubResource("Animation_nwrvn"),
 &"bounce_right_portrait": SubResource("Animation_chant"),
+&"fade_dark_both": SubResource("Animation_2s4d0"),
 &"fade_dark_left": SubResource("Animation_7ibq6"),
 &"fade_dark_right": SubResource("Animation_hvu34")
 }
 
+[sub_resource type="Animation" id="Animation_0yfty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemIcon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemIcon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ganp7"]
+resource_name = "new item"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemIcon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.366667, 0.766667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(8, 8), Vector2(12, 12), Vector2(12, 12), Vector2(8, 8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemIcon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.366667, 0.766667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.539307, 0.26529, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2s4d0"]
+_data = {
+&"RESET": SubResource("Animation_0yfty"),
+&"new item": SubResource("Animation_ganp7")
+}
+
 [node name="Dialogue" type="CanvasLayer"]
-visible = false
 script = ExtResource("1_upakc")
 
 [node name="Portraits" type="Node2D" parent="."]
@@ -249,14 +360,94 @@ texture = ExtResource("2_4i1nw")
 
 [node name="AlisaTest" type="Sprite2D" parent="Portraits/Alisa"]
 visible = false
-texture = ExtResource("2_4i1nw")
+texture = ExtResource("3_hvu34")
+offset = Vector2(960, 540)
+
+[node name="AlisaDefault" type="Sprite2D" parent="Portraits/Alisa"]
+visible = false
+texture = ExtResource("4_6jsxk")
+offset = Vector2(960, 540)
+
+[node name="AlisaSmile" type="Sprite2D" parent="Portraits/Alisa"]
+visible = false
+texture = ExtResource("5_ta2xt")
+offset = Vector2(960, 540)
+
+[node name="AlisaHappy" type="Sprite2D" parent="Portraits/Alisa"]
+visible = false
+texture = ExtResource("6_bsvus")
+offset = Vector2(960, 540)
+
+[node name="AlisaWow" type="Sprite2D" parent="Portraits/Alisa"]
+visible = false
+texture = ExtResource("7_q52qt")
+offset = Vector2(960, 540)
+
+[node name="AlisaQue" type="Sprite2D" parent="Portraits/Alisa"]
+visible = false
+texture = ExtResource("8_ko2dr")
+offset = Vector2(960, 540)
+
+[node name="AlisaAngry" type="Sprite2D" parent="Portraits/Alisa"]
+visible = false
+texture = ExtResource("7_3ggmh")
+offset = Vector2(960, 540)
+
+[node name="AlisaLaugh" type="Sprite2D" parent="Portraits/Alisa"]
+visible = false
+texture = ExtResource("8_q52qt")
+offset = Vector2(960, 540)
+
+[node name="AlisaSigh" type="Sprite2D" parent="Portraits/Alisa"]
+visible = false
+texture = ExtResource("9_ko2dr")
 offset = Vector2(960, 540)
 
 [node name="Lina" type="Node2D" parent="Portraits"]
 
 [node name="LinaTest" type="Sprite2D" parent="Portraits/Lina"]
 visible = false
-texture = ExtResource("2_4i1nw")
+texture = ExtResource("4_ganp7")
+offset = Vector2(960, 540)
+
+[node name="LinaDefault" type="Sprite2D" parent="Portraits/Lina"]
+visible = false
+texture = ExtResource("10_btfj8")
+offset = Vector2(960, 540)
+
+[node name="LinaSmile" type="Sprite2D" parent="Portraits/Lina"]
+visible = false
+texture = ExtResource("11_k7kex")
+offset = Vector2(960, 540)
+
+[node name="Lina4Wall" type="Sprite2D" parent="Portraits/Lina"]
+visible = false
+texture = ExtResource("12_ra1fr")
+offset = Vector2(960, 540)
+
+[node name="LinaCocky" type="Sprite2D" parent="Portraits/Lina"]
+visible = false
+texture = ExtResource("13_mvh6b")
+offset = Vector2(960, 540)
+
+[node name="LinaAngry" type="Sprite2D" parent="Portraits/Lina"]
+visible = false
+texture = ExtResource("14_w1ko1")
+offset = Vector2(960, 540)
+
+[node name="LinaWow" type="Sprite2D" parent="Portraits/Lina"]
+visible = false
+texture = ExtResource("18_btfj8")
+offset = Vector2(960, 540)
+
+[node name="LinaLaugh" type="Sprite2D" parent="Portraits/Lina"]
+visible = false
+texture = ExtResource("15_msi87")
+offset = Vector2(960, 540)
+
+[node name="LinaSigh" type="Sprite2D" parent="Portraits/Lina"]
+visible = false
+texture = ExtResource("16_a2jc2")
 offset = Vector2(960, 540)
 
 [node name="DialogueBoxSmall" type="Sprite2D" parent="."]
@@ -270,10 +461,11 @@ scale = Vector2(8, 8)
 texture = ExtResource("1_r7jm6")
 
 [node name="TextLabel" type="Label" parent="."]
-offset_left = 61.0
-offset_top = 786.0
-offset_right = 1858.0
-offset_bottom = 1015.0
+offset_left = 86.0
+offset_top = 803.0
+offset_right = 1835.0
+offset_bottom = 1011.0
+theme_override_fonts/font = SubResource("FontVariation_q52qt")
 label_settings = SubResource("LabelSettings_upakc")
 autowrap_mode = 3
 clip_text = true
@@ -291,3 +483,20 @@ vertical_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_ganp7")
 }
+
+[node name="ItemIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 400)
+scale = Vector2(5, 5)
+texture = ExtResource("6_chant")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2s4d0")
+}
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="DialogueSound" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("7_nwrvn")
+bus = &"SFX"

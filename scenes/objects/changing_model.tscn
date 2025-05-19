@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://d5lqh23wc7mm"]
+
+[ext_resource type="Script" uid="uid://c1gpgo0qdrnf4" path="res://scenes/objects/changing_model.gd" id="1_sn1u0"]
+
+[node name="ChangingModel" type="Node3D"]
+script = ExtResource("1_sn1u0")
+
+[node name="State1" type="Node3D" parent="."]
+
+[node name="State2" type="Node3D" parent="."]
+
+[node name="State3" type="Node3D" parent="."]

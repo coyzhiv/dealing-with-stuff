@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpprc6nm87lbh"]
+
+[ext_resource type="Script" uid="uid://d045og1s122c5" path="res://scenes/enemies/fight_enemy_template.gd" id="1_pj58u"]
+[ext_resource type="Texture2D" uid="uid://cg8gvbritvo3f" path="res://resourses/sprites/enemies/enemy_dishes.png" id="2_mdxb3"]
+
+[sub_resource type="Animation" id="Animation_7xevn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lu4jl"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.933333, 1.03333, 1.13333, 1.23333, 1.63333, 1.73333, 1.83333, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_1hgat"]
+resource_name = "punch"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 6, 5, 4]
+}
+
+[sub_resource type="Animation" id="Animation_86y2k"]
+resource_name = "recieve_damage"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 10, 9, 8]
+}
+
+[sub_resource type="Animation" id="Animation_ig7of"]
+resource_name = "recieve_ko"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17, 18]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4uxkl"]
+_data = {
+&"RESET": SubResource("Animation_7xevn"),
+&"idle": SubResource("Animation_lu4jl"),
+&"punch": SubResource("Animation_1hgat"),
+&"recieve_damage": SubResource("Animation_86y2k"),
+&"recieve_ko": SubResource("Animation_ig7of")
+}
+
+[node name="FightEnemyTemplate" type="Node3D"]
+script = ExtResource("1_pj58u")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.547596, 0)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("2_mdxb3")
+hframes = 4
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4uxkl")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

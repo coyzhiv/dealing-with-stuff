@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://kgy0eke6htgt"]
 
-[ext_resource type="Texture2D" uid="uid://b75axy1k1dtgw" path="res://resourses/sprites/interface/arrow.png" id="1_6rx0u"]
+[ext_resource type="Texture2D" uid="uid://helrdeo0ysy1" path="res://resourses/sprites/interface/icons/last_beer.png" id="1_6rx0u"]
 [ext_resource type="Script" uid="uid://cfhu3p2bw4vtk" path="res://scenes/globals/items.gd" id="2_r3n0v"]
 
 [resource]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://drbq3te078ckf"]
 
-[ext_resource type="Texture2D" uid="uid://b75axy1k1dtgw" path="res://resourses/sprites/interface/arrow.png" id="1_51ctq"]
+[ext_resource type="Texture2D" uid="uid://bayt64d36tdmd" path="res://resourses/sprites/interface/icons/hair_band.png" id="1_51ctq"]
 [ext_resource type="Script" uid="uid://cfhu3p2bw4vtk" path="res://scenes/globals/items.gd" id="2_jfngd"]
 
 [resource]

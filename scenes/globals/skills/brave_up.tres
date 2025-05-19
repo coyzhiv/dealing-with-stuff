@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Skills" load_steps=3 format=3 uid="uid://4r8gutokm2gw"]
+
+[ext_resource type="Texture2D" uid="uid://cyqvubawcntae" path="res://resourses/sprites/interface/icons/buff_bulk.png" id="1_eqjwo"]
+[ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_sycrr"]
+
+[resource]
+script = ExtResource("2_sycrr")
+title = "Brave up"
+description = "You know what comes next and you are ready. Increases Max HP and DEF"
+icon = ExtResource("1_eqjwo")
+effect = "buff"
+effect_info = "hp and def"
+value = 1.1
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ciyt03p83hahr"
+path="res://.godot/imported/светлая комната.ogg-e6a16e8ba623ff6cd6518e0f3b76962d.oggvorbisstr"
+
+[deps]
+
+source_file="res://resourses/audio/ost/светлая комната.ogg"
+dest_files=["res://.godot/imported/светлая комната.ogg-e6a16e8ba623ff6cd6518e0f3b76962d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

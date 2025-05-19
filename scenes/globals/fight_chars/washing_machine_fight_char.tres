@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="FightChar" load_steps=9 format=3 uid="uid://kwifascgpn67"]
+
+[ext_resource type="Texture2D" uid="uid://d2fek23qg5eaq" path="res://resourses/sprites/interface/battle_icons/washing_machine_icon.png" id="1_ukhda"]
+[ext_resource type="Script" uid="uid://c2wuvx4hcwafo" path="res://scenes/globals/fight_chars/fight_char.gd" id="2_emker"]
+[ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="3_sxc6e"]
+[ext_resource type="Resource" uid="uid://f60dg4wwi6h4" path="res://scenes/globals/skills/grind.tres" id="4_p6y5i"]
+[ext_resource type="Resource" uid="uid://bwkvc3oc8cxmi" path="res://scenes/globals/skills/concentrate.tres" id="5_e205y"]
+[ext_resource type="Resource" uid="uid://76ivfmormvq0" path="res://scenes/globals/skills/clear_mind.tres" id="6_7d02a"]
+[ext_resource type="Script" uid="uid://dclj03trtr3ny" path="res://scenes/globals/skill_inventory.gd" id="7_qm8ff"]
+
+[sub_resource type="Resource" id="Resource_rigmv"]
+script = ExtResource("7_qm8ff")
+items = Array[ExtResource("3_sxc6e")]([ExtResource("4_p6y5i"), ExtResource("5_e205y"), ExtResource("6_7d02a")])
+metadata/_custom_type_script = "uid://dclj03trtr3ny"
+
+[resource]
+script = ExtResource("2_emker")
+icon = ExtResource("1_ukhda")
+id = 3
+hp = 220
+atk = 100
+def = 100
+spd = 100
+base_hp = 0
+base_spd = 0
+natural_spd = 0
+skills = SubResource("Resource_rigmv")
+metadata/_custom_type_script = "uid://c2wuvx4hcwafo"

@@ -1,0 +1,128 @@
+[gd_scene load_steps=19 format=3 uid="uid://cwxr2frfn7del"]
+
+[ext_resource type="PackedScene" uid="uid://bf8lip7yqhxow" path="res://scenes/levels/parent_level.tscn" id="1_ih4xt"]
+[ext_resource type="PackedScene" uid="uid://dlnbuwark7qbu" path="res://resourses/models/tutorial/kitchen.gltf" id="2_xp6jv"]
+[ext_resource type="PackedScene" uid="uid://kplaxinx0cvp" path="res://scenes/areas/interaction_area.tscn" id="3_fsdw2"]
+[ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="3_uv1er"]
+[ext_resource type="PackedScene" uid="uid://cfr0ev4ygp2cs" path="res://resourses/models/tutorial/just_the_counter.gltf" id="4_r0j4j"]
+[ext_resource type="PackedScene" uid="uid://d5lqh23wc7mm" path="res://scenes/objects/changing_model.tscn" id="4_sgqdo"]
+[ext_resource type="PackedScene" uid="uid://colskfe7l1c2v" path="res://scenes/areas/change_scene_area.tscn" id="4_xp6jv"]
+[ext_resource type="PackedScene" uid="uid://curgtrce5ljrd" path="res://scenes/characters/alisa_follow.tscn" id="5_fsdw2"]
+[ext_resource type="PackedScene" uid="uid://dcgmddga7nvru" path="res://resourses/models/tutorial/dishes_clean.gltf" id="6_r0j4j"]
+[ext_resource type="PackedScene" uid="uid://ctvbdq5ye7u4" path="res://scenes/characters/alisa_npc.tscn" id="7_81mr0"]
+[ext_resource type="PackedScene" uid="uid://b6qdt3qi1fapf" path="res://resourses/models/tutorial/dishes_not_very_clean.gltf" id="7_w1avx"]
+[ext_resource type="PackedScene" uid="uid://bsbawva1nk574" path="res://resourses/models/tutorial/dishes_dirty.gltf" id="8_mrury"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mrury"]
+size = Vector3(0.133694, 0.195801, 0.205132)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uv1er"]
+size = Vector3(0.195282, 0.12146, 0.0815735)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xp6jv"]
+size = Vector3(0.195007, 0.256226, 0.148102)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fsdw2"]
+size = Vector3(0.856812, 0.346497, 0.101196)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_81mr0"]
+size = Vector3(0.0302734, 0.459473, 0.122864)
+
+[sub_resource type="Environment" id="Environment_xp6jv"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.994983, 0.78011, 0.6327, 1)
+ambient_light_energy = 0.1
+
+[node name="Kitchen" instance=ExtResource("1_ih4xt")]
+location = "apartament"
+variant = 1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.512951, 0.197634, 0.195916)
+light_energy = 0.3
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 0.01
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Light" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.207657, 0.295095, 0.556701)
+light_color = Color(0.998614, 0.932636, 0.901518, 1)
+light_energy = 0.2
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 0.01
+
+[node name="DishesDialogue" parent="InteractionAreas" index="0" instance=ExtResource("3_fsdw2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0731404, -0.125838, -0.14359)
+collision_mask = 4
+prompt = "dishes_dialogue"
+used_memory_id = "dishes_dialogue_used"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/DishesDialogue" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0649641, 0.210266, -0.00113904)
+shape = SubResource("BoxShape3D_mrury")
+
+[node name="Corridor" parent="ChangingAreas" index="0" instance=ExtResource("4_xp6jv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.456413, -0.271496, 0.269616)
+file = "res://scenes/levels/apartament/corridor.tscn"
+target_position = Vector3(0.559, 0.335, 0.007)
+direction = "left"
+location = "apartament"
+sound_id = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Corridor" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0201591, 0.403949, 0.128464)
+shape = SubResource("BoxShape3D_uv1er")
+debug_fill = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40448, 0.152161, 0.580673)
+shape = SubResource("BoxShape3D_xp6jv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.136855, 0.229645, 0.711614)
+shape = SubResource("BoxShape3D_fsdw2")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWalls" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0521103, -0.0406189, 0.532018)
+shape = SubResource("BoxShape3D_81mr0")
+
+[node name="blockbench_export2" parent="." index="5" instance=ExtResource("4_r0j4j")]
+transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 0.154686, -0.0273463, 0.333724)
+
+[node name="ChangingDishes" parent="." index="6" instance=ExtResource("4_sgqdo")]
+transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 0.150375, -0.0284221, -0.063661)
+state_promt = "dishes_state"
+
+[node name="blockbench_export" parent="ChangingDishes/State1" index="0" instance=ExtResource("8_mrury")]
+
+[node name="blockbench_export" parent="ChangingDishes/State2" index="0" instance=ExtResource("6_r0j4j")]
+
+[node name="blockbench_export" parent="ChangingDishes/State3" index="0" instance=ExtResource("7_w1avx")]
+
+[node name="blockbench_export" parent="." index="7" instance=ExtResource("2_xp6jv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.13546, 0, 0.221161)
+
+[node name="Follow" parent="." index="8" instance=ExtResource("5_fsdw2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22191, 0.117, 0.0647898)
+
+[node name="CollisionShape3D" parent="Follow" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00356158, 0.0191944, -0.0141742)
+
+[node name="InteractionArea" parent="Follow" index="4"]
+easy_interact = true
+easy_text = "I say penis you say pussy."
+
+[node name="Player" parent="." index="9" instance=ExtResource("3_uv1er")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.218, 0.117, 0.436)
+
+[node name="Camera3D" type="Camera3D" parent="Player" index="6"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.834835, 0.704218)
+environment = SubResource("Environment_xp6jv")
+
+[node name="AlisaNPC" parent="." index="10" instance=ExtResource("7_81mr0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.83973, 0.121381, 0.308639)
+
+[editable path="ChangingDishes"]
+[editable path="Follow"]

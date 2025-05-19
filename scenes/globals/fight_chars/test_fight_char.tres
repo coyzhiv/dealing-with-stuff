@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="FightChar" load_steps=6 format=3 uid="uid://bptksobs3tewr"]
+[gd_resource type="Resource" script_class="FightChar" load_steps=7 format=3 uid="uid://bptksobs3tewr"]
 
+[ext_resource type="Texture2D" uid="uid://dycqd26eqjw5o" path="res://resourses/sprites/interface/battle_icons/dishes_icon.png" id="1_gy2be"]
 [ext_resource type="Script" uid="uid://c2wuvx4hcwafo" path="res://scenes/globals/fight_chars/fight_char.gd" id="1_trolx"]
 [ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_gy2be"]
-[ext_resource type="Resource" uid="uid://cp6pot8c5iv5x" path="res://scenes/globals/skills/hit.tres" id="3_trolx"]
+[ext_resource type="Resource" uid="uid://cp6pot8c5iv5x" path="res://scenes/globals/skills/hurry.tres" id="3_trolx"]
 [ext_resource type="Script" uid="uid://dclj03trtr3ny" path="res://scenes/globals/skill_inventory.gd" id="4_ngylc"]
 
 [sub_resource type="Resource" id="Resource_jsqcl"]
@@ -12,10 +13,14 @@ metadata/_custom_type_script = "uid://dclj03trtr3ny"
 
 [resource]
 script = ExtResource("1_trolx")
+icon = ExtResource("1_gy2be")
 id = 100
-hp = 100
-atk = 100
+hp = 20
+atk = 0
 def = 100
 spd = 100
+base_hp = 0
+base_spd = 0
+natural_spd = 0
 skills = SubResource("Resource_jsqcl")
 metadata/_custom_type_script = "uid://c2wuvx4hcwafo"

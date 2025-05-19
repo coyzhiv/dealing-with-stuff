@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dyukorwaf2pdy" path="res://resourses/sprites/characters/template.png" id="2_blvow"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5ukye"]
-radius = 0.09
+radius = 0.0802973
 
 [sub_resource type="Animation" id="Animation_cku61"]
 length = 0.001
@@ -176,12 +176,13 @@ collision_mask = 3
 script = ExtResource("1_lewiw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00356158, 0.0343644, -0.0141742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00356158, 0.00905537, -0.0141742)
 shape = SubResource("SphereShape3D_5ukye")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 shaded = true
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("2_blvow")
 hframes = 3

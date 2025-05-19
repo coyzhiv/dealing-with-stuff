@@ -11,4 +11,6 @@ script = ExtResource("1_npjkf")
 
 [node name="InteractionAreas" type="Node3D" parent="."]
 
+[node name="ChangingAreas" type="Node3D" parent="."]
+
 [node name="InvisibleWalls" type="StaticBody3D" parent="."]

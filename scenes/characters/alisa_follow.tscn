@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://curgtrce5ljrd"]
+
+[ext_resource type="PackedScene" uid="uid://dkb7kdqsythg6" path="res://scenes/characters/following_npc.tscn" id="1_bm608"]
+[ext_resource type="Texture2D" uid="uid://4rdm5o1n7loe" path="res://resourses/sprites/characters/alisa.png" id="2_plws8"]
+
+[node name="AlisaFollow" instance=ExtResource("1_bm608")]
+
+[node name="Sprite3D" parent="." index="2"]
+texture = ExtResource("2_plws8")

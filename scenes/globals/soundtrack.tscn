@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2v8iq3pod0ig"]
+
+[ext_resource type="Script" uid="uid://bv0ud1np41hni" path="res://soundtrack.gd" id="1_2ggts"]
+[ext_resource type="AudioStream" uid="uid://d3xichcm7cfj5" path="res://resourses/audio/ost/room ambient 1.ogg" id="2_7xed6"]
+[ext_resource type="AudioStream" uid="uid://ciyt03p83hahr" path="res://resourses/audio/ost/светлая комната.ogg" id="3_1bx08"]
+
+[node name="Soundtrack" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_2ggts")
+
+[node name="Apartament" type="Node3D" parent="."]
+
+[node name="DarkRoom" type="AudioStreamPlayer" parent="Apartament"]
+stream = ExtResource("2_7xed6")
+bus = &"Music"
+
+[node name="LightRoom" type="AudioStreamPlayer" parent="Apartament"]
+stream = ExtResource("3_1bx08")
+volume_db = -50.0
+bus = &"Music"

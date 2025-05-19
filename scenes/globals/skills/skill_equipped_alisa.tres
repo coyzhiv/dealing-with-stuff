@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="SkillInv" load_steps=4 format=3 uid="uid://bokyucfpjpoln"]
+[gd_resource type="Resource" script_class="SkillInv" load_steps=5 format=3 uid="uid://bokyucfpjpoln"]
 
 [ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="1_bbmau"]
-[ext_resource type="Resource" uid="uid://bwkvc3oc8cxmi" path="res://scenes/globals/skills/atk_buff.tres" id="3_as7yp"]
+[ext_resource type="Resource" uid="uid://bwkvc3oc8cxmi" path="res://scenes/globals/skills/concentrate.tres" id="3_as7yp"]
+[ext_resource type="Resource" uid="uid://f60dg4wwi6h4" path="res://scenes/globals/skills/grind.tres" id="3_bbmau"]
 [ext_resource type="Script" uid="uid://dclj03trtr3ny" path="res://scenes/globals/skill_inventory.gd" id="4_v5axm"]
 
 [resource]
 script = ExtResource("4_v5axm")
-items = Array[ExtResource("1_bbmau")]([ExtResource("3_as7yp")])
+items = Array[ExtResource("1_bbmau")]([ExtResource("3_as7yp"), ExtResource("3_bbmau")])
 metadata/_custom_type_script = "uid://dclj03trtr3ny"

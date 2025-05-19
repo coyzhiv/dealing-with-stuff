@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Skills" load_steps=3 format=3 uid="uid://76ivfmormvq0"]
+
+[ext_resource type="Texture2D" uid="uid://d4bje4bcghc3a" path="res://resourses/sprites/interface/icons/heal.png" id="1_rmex3"]
+[ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_l6euq"]
+
+[resource]
+script = ExtResource("2_l6euq")
+title = "Clear Mind"
+description = "You can relax a bit. Restores HP by 20."
+icon = ExtResource("1_rmex3")
+effect = "heal"
+effect_info = ""
+value = 20.0
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"

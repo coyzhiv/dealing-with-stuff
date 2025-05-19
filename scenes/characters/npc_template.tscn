@@ -2,12 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bscr266w3g4jn" path="res://scenes/characters/character_template.tscn" id="1_lm4o2"]
 [ext_resource type="Script" uid="uid://pr55vcnxthvw" path="res://scenes/characters/npc_template.gd" id="2_rb6pn"]
-[ext_resource type="PackedScene" uid="uid://kplaxinx0cvp" path="res://scenes/levels/apartament/interaction_area.tscn" id="3_rb6pn"]
+[ext_resource type="PackedScene" uid="uid://kplaxinx0cvp" path="res://scenes/areas/interaction_area.tscn" id="3_rb6pn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5ukye"]
 radius = 0.09
 
 [node name="NpcTemplate" instance=ExtResource("1_lm4o2")]
+collision_layer = 4
 script = ExtResource("2_rb6pn")
 
 [node name="InteractionArea" parent="." index="3" instance=ExtResource("3_rb6pn")]

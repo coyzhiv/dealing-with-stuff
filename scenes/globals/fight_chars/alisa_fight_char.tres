@@ -1,11 +1,17 @@
-[gd_resource type="Resource" script_class="FightChar" load_steps=2 format=3 uid="uid://c5i5sqy8tvioj"]
+[gd_resource type="Resource" script_class="FightChar" load_steps=3 format=3 uid="uid://c5i5sqy8tvioj"]
 
 [ext_resource type="Script" uid="uid://c2wuvx4hcwafo" path="res://scenes/globals/fight_chars/fight_char.gd" id="1_joyx5"]
+[ext_resource type="Texture2D" uid="uid://bo1wq34pnynrt" path="res://resourses/sprites/interface/battle_icons/alisa_icon.png" id="1_vay5q"]
 
 [resource]
 script = ExtResource("1_joyx5")
+icon = ExtResource("1_vay5q")
+id = 0
 hp = 0
 atk = 0
 def = 0
 spd = 0
+base_hp = 0
+base_spd = 0
+natural_spd = 0
 metadata/_custom_type_script = "uid://c2wuvx4hcwafo"

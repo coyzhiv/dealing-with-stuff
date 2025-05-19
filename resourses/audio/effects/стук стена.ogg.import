@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bcgjsqdej6mkn"
+path="res://.godot/imported/стук стена.ogg-0572fd21eb71009db8e579f0a70bc71b.oggvorbisstr"
+
+[deps]
+
+source_file="res://resourses/audio/effects/стук стена.ogg"
+dest_files=["res://.godot/imported/стук стена.ogg-0572fd21eb71009db8e579f0a70bc71b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

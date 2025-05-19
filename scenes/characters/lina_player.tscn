@@ -1,18 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://bphllt3vmprul"]
+[gd_scene load_steps=8 format=3 uid="uid://bphllt3vmprul"]
 
 [ext_resource type="PackedScene" uid="uid://bscr266w3g4jn" path="res://scenes/characters/character_template.tscn" id="1_axwp8"]
 [ext_resource type="Script" uid="uid://d2wah0xttwbl3" path="res://scenes/characters/lina_player.gd" id="1_eme7l"]
 [ext_resource type="Texture2D" uid="uid://c4skk04cxjl20" path="res://resourses/sprites/characters/lina.png" id="2_eme7l"]
+[ext_resource type="FontFile" uid="uid://d13bi6hpu1ajl" path="res://resourses/fonts/ByteBounce.ttf" id="4_6atw6"]
+[ext_resource type="PackedScene" uid="uid://gp071xtynewa" path="res://scenes/inputs/changing_key.tscn" id="5_7jg5q"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_a5781"]
 radius = 0.001
 
+[sub_resource type="LabelSettings" id="LabelSettings_7jtbw"]
+font = ExtResource("4_6atw6")
+font_size = 64
+
 [node name="LinaPlayer" instance=ExtResource("1_axwp8")]
 process_mode = 1
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_eme7l")
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00214707, 0.0343644, -0.0141742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00214707, 0.0270698, -0.01994)
 
 [node name="Sprite3D" parent="." index="1"]
 texture = ExtResource("2_eme7l")
@@ -37,6 +45,31 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" index="0"]
 shape = SubResource("SphereShape3D_a5781")
+
+[node name="InteractLabel" type="Control" parent="." index="5"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1036.0
+offset_top = 811.0
+offset_right = 1076.0
+offset_bottom = 851.0
+
+[node name="ChangingKey" parent="InteractLabel" index="0" instance=ExtResource("5_7jg5q")]
+position = Vector2(0, 9)
+scale = Vector2(2, 2)
+keyboard_input = "z"
+xbox_input = "a"
+ps_input = "x"
+
+[node name="Label" type="Label" parent="InteractLabel" index="1"]
+layout_mode = 0
+offset_left = -230.0
+offset_top = -18.0
+offset_right = -86.0
+offset_bottom = 15.0
+text = "Interact"
+label_settings = SubResource("LabelSettings_7jtbw")
 
 [connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]

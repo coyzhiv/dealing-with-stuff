@@ -1,0 +1,333 @@
+[gd_scene load_steps=14 format=3 uid="uid://euwbl5ngxg1f"]
+
+[ext_resource type="Script" uid="uid://bdne36ge17ny5" path="res://scenes/globals/battle_scene.gd" id="1_tdjq8"]
+[ext_resource type="PackedScene" uid="uid://dpi1idaeb8wri" path="res://resourses/models/battle_scenes/Battle_scene.gltf" id="2_ttil8"]
+[ext_resource type="PackedScene" uid="uid://djnst3v87aosr" path="res://scenes/characters/fight_character_template.tscn" id="3_bgatl"]
+[ext_resource type="PackedScene" uid="uid://bpprc6nm87lbh" path="res://scenes/enemies/fight_enemy_template.tscn" id="4_bgatl"]
+[ext_resource type="Texture2D" uid="uid://c2fse6xnnccey" path="res://resourses/sprites/interface/fight_box.png" id="6_j5fpy"]
+[ext_resource type="Texture2D" uid="uid://drn2r04l8n554" path="res://resourses/sprites/interface/icons/hp_damage.png" id="6_wljnh"]
+[ext_resource type="FontFile" uid="uid://d13bi6hpu1ajl" path="res://resourses/fonts/ByteBounce.ttf" id="7_u1c7q"]
+
+[sub_resource type="Environment" id="Environment_bfo36"]
+background_mode = 1
+background_energy_multiplier = 0.0
+ambient_light_source = 1
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+reflected_light_source = 2
+tonemap_white = 0.1
+
+[sub_resource type="Animation" id="Animation_17sxd"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AllThe3d/Camera3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AllThe3d/Camera3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.68726, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AllThe3d/Camera3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(195.651, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_bgatl"]
+resource_name = "camera_bob"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AllThe3d/Camera3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.133333, -0.0197023, -0.05, -0.166667, 0.000766657, 0.166667, -0.000639584, 0, -0.2, -0.023921, 0.0666667, 0.00842245, 0.05, -0.166667, 0.000609607, 0.166667, 0.000609607, 0, -0.2, 0.0210786, 0.25, 0),
+"times": PackedFloat32Array(0, 1.03333, 2.03333, 3, 4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AllThe3d/Camera3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.68726, -0.25, 0, 0.133333, 0.0177686, 0.73, -0.2, -0.000564575, 0.2, -0.00143623, 0.68726, -0.166667, 0.0168969, 0.166667, -0.0240719, 0.64, -0.166667, 0.000524521, 0.166667, 0.000524521, 0.68726, -0.133333, -0.0162268, 0.166667, 0.0177686, 0.73, -0.166667, -0.000564575, 0.166667, -0.000564575, 0.68726, -0.133333, 0.0212553, 0.2, -0.0266869, 0.64, -0.166667, 0.000524521, 0.166667, 0.000524521, 0.68726, -0.166667, -0.0240719, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1.03333, 1.5, 2.03333, 2.53333, 3, 3.5, 4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AllThe3d/Camera3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(195.651, -0.25, 0, 0.25, 0, 195.651, -0.25, 0, 0.25, 0, 195.651, -0.25, 0, 0.25, 0, 195.651, -0.25, 0, 0.25, 0, 195.651, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.03333, 2.03333, 3, 4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j5fpy"]
+_data = {
+&"RESET": SubResource("Animation_17sxd"),
+&"camera_bob": SubResource("Animation_bgatl")
+}
+
+[sub_resource type="QuadMesh" id="QuadMesh_bgatl"]
+size = Vector2(0.01, 0.01)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r5ivv"]
+font = ExtResource("7_u1c7q")
+font_size = 32
+
+[node name="BattleScene" type="CanvasLayer"]
+process_mode = 2
+visible = false
+script = ExtResource("1_tdjq8")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 0
+
+[node name="AllThe3d" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="blockbench_export" parent="SubViewportContainer/SubViewport/AllThe3d" instance=ExtResource("2_ttil8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.159, 194)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/AllThe3d"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.68726, 195.651)
+environment = SubResource("Environment_bfo36")
+fov = 70.0
+
+[node name="AlisaSprite" parent="SubViewportContainer/SubViewport/AllThe3d" instance=ExtResource("3_bgatl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.028, 195.1)
+
+[node name="LinaSprite" parent="SubViewportContainer/SubViewport/AllThe3d" instance=ExtResource("3_bgatl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.028, 195.1)
+
+[node name="EnemySprite" parent="SubViewportContainer/SubViewport/AllThe3d" instance=ExtResource("4_bgatl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.201684, 193.895)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/AllThe3d"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.96697, 195)
+light_energy = 16.0
+light_indirect_energy = 10.0
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.1
+spot_angle = 24.5378
+
+[node name="CameraBobAnimation" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/AllThe3d"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_j5fpy")
+}
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="SubViewportContainer/SubViewport/AllThe3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17838, 0.959459, 194.297)
+amount = 500
+lifetime = 30.0
+mesh = SubResource("QuadMesh_bgatl")
+emission_shape = 3
+emission_box_extents = Vector3(0.1, 1, 1)
+gravity = Vector3(0.5, 0, 0)
+
+[node name="AllThe2d" type="Control" parent="SubViewportContainer/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RightContorls" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d"]
+anchors_preset = 0
+offset_left = 1157.0
+offset_top = 183.0
+offset_right = 1197.0
+offset_bottom = 223.0
+
+[node name="Up" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls"]
+texture_filter = 1
+position = Vector2(350, 730)
+scale = Vector2(2, 2)
+texture = ExtResource("6_j5fpy")
+
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Up"]
+position = Vector2(-85, 0)
+texture = ExtResource("6_wljnh")
+
+[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Up"]
+texture_filter = 1
+offset_left = -73.0
+offset_top = -12.5
+offset_right = 85.0
+offset_bottom = 13.5
+text = "Procrastinate"
+label_settings = SubResource("LabelSettings_r5ivv")
+
+[node name="Down" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls"]
+texture_filter = 1
+position = Vector2(350, 860)
+scale = Vector2(2, 2)
+texture = ExtResource("6_j5fpy")
+
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Down"]
+position = Vector2(-85, 0)
+texture = ExtResource("6_wljnh")
+
+[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Down"]
+offset_left = -73.0
+offset_top = -12.5
+offset_right = 85.0
+offset_bottom = 13.5
+text = "Procrastinate"
+label_settings = SubResource("LabelSettings_r5ivv")
+
+[node name="Left" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls"]
+texture_filter = 1
+position = Vector2(140, 795)
+scale = Vector2(2, 2)
+texture = ExtResource("6_j5fpy")
+
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Left"]
+position = Vector2(-85, 0)
+texture = ExtResource("6_wljnh")
+
+[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Left"]
+offset_left = -73.0
+offset_top = -12.5
+offset_right = 85.0
+offset_bottom = 13.5
+text = "Procrastinate"
+label_settings = SubResource("LabelSettings_r5ivv")
+
+[node name="Right" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls"]
+texture_filter = 1
+position = Vector2(560, 795)
+scale = Vector2(2, 2)
+texture = ExtResource("6_j5fpy")
+
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Right"]
+position = Vector2(-85, 0)
+texture = ExtResource("6_wljnh")
+
+[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Right"]
+offset_left = -73.0
+offset_top = -12.5
+offset_right = 85.0
+offset_bottom = 13.5
+text = "Procrastinate"
+label_settings = SubResource("LabelSettings_r5ivv")
+
+[node name="LeftContorls" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d"]
+anchors_preset = 0
+offset_left = 62.0
+offset_top = 183.0
+offset_right = 102.0
+offset_bottom = 223.0
+
+[node name="Up" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls"]
+texture_filter = 1
+position = Vector2(350, 730)
+scale = Vector2(2, 2)
+texture = ExtResource("6_j5fpy")
+
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Up"]
+position = Vector2(-85, 0)
+texture = ExtResource("6_wljnh")
+
+[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Up"]
+offset_left = -73.0
+offset_top = -12.5
+offset_right = 85.0
+offset_bottom = 13.5
+text = "Procrastinate"
+label_settings = SubResource("LabelSettings_r5ivv")
+
+[node name="Down" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls"]
+texture_filter = 1
+position = Vector2(350, 860)
+scale = Vector2(2, 2)
+texture = ExtResource("6_j5fpy")
+
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Down"]
+position = Vector2(-85, 0)
+texture = ExtResource("6_wljnh")
+
+[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Down"]
+offset_left = -73.0
+offset_top = -12.5
+offset_right = 85.0
+offset_bottom = 13.5
+text = "Procrastinate"
+label_settings = SubResource("LabelSettings_r5ivv")
+
+[node name="Left" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls"]
+texture_filter = 1
+position = Vector2(140, 795)
+scale = Vector2(2, 2)
+texture = ExtResource("6_j5fpy")
+
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Left"]
+position = Vector2(-85, 0)
+texture = ExtResource("6_wljnh")
+
+[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Left"]
+offset_left = -73.0
+offset_top = -12.5
+offset_right = 85.0
+offset_bottom = 13.5
+text = "Procrastinate"
+label_settings = SubResource("LabelSettings_r5ivv")
+
+[node name="Right" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls"]
+texture_filter = 1
+position = Vector2(560, 795)
+scale = Vector2(2, 2)
+texture = ExtResource("6_j5fpy")
+
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Right"]
+position = Vector2(-85, 0)
+texture = ExtResource("6_wljnh")
+
+[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Right"]
+offset_left = -73.0
+offset_top = -12.5
+offset_right = 85.0
+offset_bottom = 13.5
+text = "Procrastinate"
+label_settings = SubResource("LabelSettings_r5ivv")
+
+[connection signal="alisa_input_pressed" from="." to="." method="_on_alisa_input_pressed"]
+[connection signal="lina_input_pressed" from="." to="." method="_on_lina_input_pressed"]
+[connection signal="turn_ended" from="." to="." method="_on_turn_ended"]

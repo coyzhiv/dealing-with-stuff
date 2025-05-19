@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://b27nnjmo1f5j6"]
 
-[ext_resource type="Texture2D" uid="uid://b75axy1k1dtgw" path="res://resourses/sprites/interface/arrow.png" id="1_ocsbu"]
+[ext_resource type="Texture2D" uid="uid://c2wgl73djpuc8" path="res://resourses/sprites/interface/icons/badass_chocker.png" id="1_ocsbu"]
 [ext_resource type="Script" uid="uid://cfhu3p2bw4vtk" path="res://scenes/globals/items.gd" id="1_rrkfv"]
 
 [resource]

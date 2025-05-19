@@ -19,8 +19,12 @@ config/icon="res://scenes/globals/icon.svg"
 
 BattleScene="*res://scenes/globals/battle_scene.tscn"
 Globals="*res://scenes/globals/globals.gd"
-PauseMenu="*res://scenes/menus/pause_menu.tscn"
 Dialogue="*res://scenes/globals/dialogue.tscn"
+PauseMenu="*res://scenes/menus/new_pause_menu.tscn"
+Transition="*res://scenes/globals/transition.tscn"
+InteractionMemory="*res://scenes/globals/interaction_memory.gd"
+Soundtrack="*res://scenes/globals/soundtrack.tscn"
+SaveAndLoad="*res://scenes/globals/save_and_load.tscn"
 
 [display]
 
@@ -28,6 +32,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
 window/stretch/mode="canvas_items"
+
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
 
 [input]
 

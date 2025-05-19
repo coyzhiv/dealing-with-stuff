@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://7l6k4yhkihp4"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://7l6k4yhkihp4"]
 
 [ext_resource type="Texture2D" uid="uid://c8qtu87affos4" path="res://resourses/sprites/interface/settings_menu/ui_slider.png" id="1_6rcrm"]
 [ext_resource type="Texture2D" uid="uid://bdrfg30h5b8ji" path="res://resourses/sprites/interface/settings_menu/ui_slider_highlight.png" id="2_1mxem"]
@@ -28,9 +28,15 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vb8tb"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mxem"]
+bg_color = Color(0.204835, 0.698948, 0.494347, 1)
+
 [resource]
 default_font = ExtResource("3_f6v7v")
-default_font_size = 48
+default_font_size = 96
 HSlider/icons/grabber = ExtResource("1_6rcrm")
 HSlider/icons/grabber_disabled = ExtResource("1_6rcrm")
 HSlider/icons/grabber_highlight = ExtResource("2_1mxem")
@@ -40,4 +46,9 @@ HSlider/styles/slider = SubResource("StyleBoxTexture_1mxem")
 ItemList/colors/font_color = Color(1, 1, 1, 1)
 ItemList/constants/h_separation = 10
 ItemList/constants/v_separation = 14
+ItemList/font_sizes/font_size = 64
 ItemList/styles/focus = SubResource("StyleBoxFlat_6rcrm")
+ProgressBar/constants/outline_size = 10
+ProgressBar/font_sizes/font_size = 64
+ProgressBar/styles/background = SubResource("StyleBoxFlat_vb8tb")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_1mxem")

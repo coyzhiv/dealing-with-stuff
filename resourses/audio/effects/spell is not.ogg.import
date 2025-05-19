@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5fp67qal3iar"
+path="res://.godot/imported/spell is not.ogg-d9011762386135b76dd6b6b1b32d9d88.oggvorbisstr"
+
+[deps]
+
+source_file="res://resourses/audio/effects/spell is not.ogg"
+dest_files=["res://.godot/imported/spell is not.ogg-d9011762386135b76dd6b6b1b32d9d88.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

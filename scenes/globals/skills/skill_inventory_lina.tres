@@ -1,12 +1,15 @@
-[gd_resource type="Resource" script_class="SkillInv" load_steps=6 format=3 uid="uid://wo8qe2k1gbvp"]
+[gd_resource type="Resource" script_class="SkillInv" load_steps=9 format=3 uid="uid://wo8qe2k1gbvp"]
 
 [ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="1_fi38l"]
-[ext_resource type="Resource" uid="uid://76ivfmormvq0" path="res://scenes/globals/skills/heal.tres" id="2_poup6"]
-[ext_resource type="Resource" uid="uid://cp6pot8c5iv5x" path="res://scenes/globals/skills/hit.tres" id="3_fi38l"]
-[ext_resource type="Resource" uid="uid://bwkvc3oc8cxmi" path="res://scenes/globals/skills/atk_buff.tres" id="4_poup6"]
+[ext_resource type="Resource" uid="uid://f60dg4wwi6h4" path="res://scenes/globals/skills/grind.tres" id="2_03j5x"]
+[ext_resource type="Resource" uid="uid://cp6pot8c5iv5x" path="res://scenes/globals/skills/hurry.tres" id="3_g755d"]
+[ext_resource type="Resource" uid="uid://76ivfmormvq0" path="res://scenes/globals/skills/clear_mind.tres" id="4_m7i3s"]
 [ext_resource type="Script" uid="uid://dclj03trtr3ny" path="res://scenes/globals/skill_inventory.gd" id="5_g755d"]
+[ext_resource type="Resource" uid="uid://bwkvc3oc8cxmi" path="res://scenes/globals/skills/concentrate.tres" id="5_ih01x"]
+[ext_resource type="Resource" uid="uid://4r8gutokm2gw" path="res://scenes/globals/skills/brave_up.tres" id="6_acvfr"]
+[ext_resource type="Resource" uid="uid://crj138bf84dto" path="res://scenes/globals/skills/procrastinate.tres" id="7_ontqq"]
 
 [resource]
 script = ExtResource("5_g755d")
-items = Array[ExtResource("1_fi38l")]([ExtResource("2_poup6"), ExtResource("3_fi38l"), ExtResource("4_poup6")])
+items = Array[ExtResource("1_fi38l")]([ExtResource("2_03j5x"), ExtResource("3_g755d"), ExtResource("4_m7i3s"), ExtResource("5_ih01x"), ExtResource("6_acvfr"), ExtResource("7_ontqq")])
 metadata/_custom_type_script = "uid://dclj03trtr3ny"

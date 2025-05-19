@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cenrtmcmn5tnt"
+path="res://.godot/imported/Attack Sound.ogg-d7e6714bac8165537ee0fe41d63fcb26.oggvorbisstr"
+
+[deps]
+
+source_file="res://resourses/audio/effects/Attack Sound.ogg"
+dest_files=["res://.godot/imported/Attack Sound.ogg-d7e6714bac8165537ee0fe41d63fcb26.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

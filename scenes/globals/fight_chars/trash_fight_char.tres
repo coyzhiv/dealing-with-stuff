@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="FightChar" load_steps=9 format=3 uid="uid://cch0gtgb1wfdu"]
+
+[ext_resource type="Texture2D" uid="uid://b83cdm5veldb3" path="res://resourses/sprites/interface/battle_icons/trash.png" id="1_r1nvs"]
+[ext_resource type="Script" uid="uid://c2wuvx4hcwafo" path="res://scenes/globals/fight_chars/fight_char.gd" id="2_f3url"]
+[ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="3_p8v2j"]
+[ext_resource type="Resource" uid="uid://cp6pot8c5iv5x" path="res://scenes/globals/skills/hurry.tres" id="4_ha8es"]
+[ext_resource type="Resource" uid="uid://crj138bf84dto" path="res://scenes/globals/skills/procrastinate.tres" id="5_dm0qb"]
+[ext_resource type="Resource" uid="uid://76ivfmormvq0" path="res://scenes/globals/skills/clear_mind.tres" id="6_s68u8"]
+[ext_resource type="Script" uid="uid://dclj03trtr3ny" path="res://scenes/globals/skill_inventory.gd" id="7_27din"]
+
+[sub_resource type="Resource" id="Resource_dnoot"]
+script = ExtResource("7_27din")
+items = Array[ExtResource("3_p8v2j")]([ExtResource("4_ha8es"), ExtResource("5_dm0qb"), ExtResource("6_s68u8")])
+metadata/_custom_type_script = "uid://dclj03trtr3ny"
+
+[resource]
+script = ExtResource("2_f3url")
+icon = ExtResource("1_r1nvs")
+id = 4
+hp = 200
+atk = 100
+def = 100
+spd = 120
+base_hp = 0
+base_spd = 0
+natural_spd = 0
+skills = SubResource("Resource_dnoot")
+metadata/_custom_type_script = "uid://c2wuvx4hcwafo"

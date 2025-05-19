@@ -1,0 +1,139 @@
+[gd_scene load_steps=13 format=3 uid="uid://iapuv7wp0yjt"]
+
+[ext_resource type="PackedScene" uid="uid://bf8lip7yqhxow" path="res://scenes/levels/parent_level.tscn" id="1_t0rps"]
+[ext_resource type="PackedScene" uid="uid://kplaxinx0cvp" path="res://scenes/areas/interaction_area.tscn" id="2_8ws1j"]
+[ext_resource type="PackedScene" uid="uid://dn3h0rjp7gqqg" path="res://resourses/models/tutorial/corridor.gltf" id="2_ea46k"]
+[ext_resource type="PackedScene" uid="uid://colskfe7l1c2v" path="res://scenes/areas/change_scene_area.tscn" id="2_xdske"]
+[ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="3_ea46k"]
+[ext_resource type="PackedScene" uid="uid://curgtrce5ljrd" path="res://scenes/characters/alisa_follow.tscn" id="6_b1hcp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hcynr"]
+size = Vector3(0.167267, 0.124756, 0.200317)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ws1j"]
+size = Vector3(0.219666, 0.12146, 0.0815735)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1hcp"]
+size = Vector3(0.220184, 0.215332, 0.0919189)
+
+[sub_resource type="Environment" id="Environment_ea46k"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ea46k"]
+size = Vector3(0.189063, 0.3, 0.110547)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xdske"]
+size = Vector3(1.2447, 0.222388, 0.1)
+
+[node name="Corridor" instance=ExtResource("1_t0rps")]
+location = "apartament"
+variant = 1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00947353, 0.52773, 0.10534)
+light_color = Color(0.992612, 0.876747, 0.825426, 1)
+light_energy = 0.5
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 0.01
+
+[node name="InteractionArea" parent="InteractionAreas" index="0" instance=ExtResource("2_8ws1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02695, 0.241019, 0)
+collision_mask = 6
+prompt = "cant_leave_enter"
+body_entering = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/InteractionArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.290237, 0.0531006, 0.00921631)
+shape = SubResource("BoxShape3D_hcynr")
+
+[node name="TVRoom" parent="ChangingAreas" index="0" instance=ExtResource("2_xdske")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450846, 0.0638093, -0.41265)
+file = "res://scenes/levels/apartament/apartament_room.tscn"
+target_position = Vector3(0.114, 0.116, 0.55)
+direction = "up"
+location = "apartament"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/TVRoom" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0101013, 0.354618, 0.128464)
+shape = SubResource("BoxShape3D_8ws1j")
+debug_fill = false
+
+[node name="Kitchen" parent="ChangingAreas" index="1" instance=ExtResource("2_xdske")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.808203, 0.0402578, -0.113676)
+file = "res://scenes/levels/apartament/kitchen.tscn"
+target_position = Vector3(-0.218, 0.117, 0.436)
+direction = "right"
+location = "apartament"
+sound_id = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Kitchen" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0101013, 0.354618, 0.128464)
+shape = SubResource("BoxShape3D_8ws1j")
+debug_fill = false
+
+[node name="Bathroom" parent="ChangingAreas" index="2" instance=ExtResource("2_xdske")]
+file = "res://scenes/levels/apartament/bathroom.tscn"
+target_position = Vector3(0.124, 0.116, 0.344)
+direction = "up"
+location = "apartament"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Bathroom" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00894608, 0.392334, -0.263367)
+shape = SubResource("BoxShape3D_b1hcp")
+
+[node name="PcRoom" parent="ChangingAreas" index="3" instance=ExtResource("2_xdske")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.431004, 0, 0)
+file = "res://scenes/levels/apartament/PcRoom.tscn"
+target_position = Vector3(-0.194, 0.116, 0.291)
+direction = "up"
+location = "apartament"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/PcRoom" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00894608, 0.392334, -0.263367)
+shape = SubResource("BoxShape3D_b1hcp")
+
+[node name="blockbench_export" parent="." index="4" instance=ExtResource("2_ea46k")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Player" parent="." index="5" instance=ExtResource("3_ea46k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435421, 0.338739, -0.00117307)
+
+[node name="Camera3D" type="Camera3D" parent="Player" index="6"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.834835, 0.704218)
+environment = SubResource("Environment_ea46k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.734408, 0.371302, 0.150193)
+shape = SubResource("BoxShape3D_ea46k")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.722816, 0.371302, 0.149352)
+shape = SubResource("BoxShape3D_ea46k")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWalls" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.714893, 0.37999, -0.14681)
+shape = SubResource("BoxShape3D_ea46k")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="InvisibleWalls" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.708812, 0.371302, -0.154985)
+shape = SubResource("BoxShape3D_ea46k")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="InvisibleWalls" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000838712, 0.392144, 0.174688)
+shape = SubResource("BoxShape3D_xdske")
+
+[node name="Follow" parent="." index="7" instance=ExtResource("6_b1hcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.163, 0)
+
+[node name="CollisionShape3D" parent="Follow" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00356158, 0.0191944, -0.0141742)
+
+[node name="InteractionArea" parent="Follow" index="4"]
+easy_interact = true
+easy_text = "I say penis you say pussy."
+
+[editable path="Follow"]

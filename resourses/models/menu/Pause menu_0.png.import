@@ -3,23 +3,22 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bajyclvrklgsn"
-path.s3tc="res://.godot/imported/Pause menu_0.png-04b373ce7928ec205087dbfb96ec5278.s3tc.ctex"
+path="res://.godot/imported/Pause menu_0.png-04b373ce7928ec205087dbfb96ec5278.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "05f4f8f9b5683b0e4acf0e3d881072d1"
+"md5": "e91ec07ec3119d48b9c866a9f136c112"
 }
 
 [deps]
 
 source_file="res://resourses/models/menu/Pause menu_0.png"
-dest_files=["res://.godot/imported/Pause menu_0.png-04b373ce7928ec205087dbfb96ec5278.s3tc.ctex"]
+dest_files=["res://.godot/imported/Pause menu_0.png-04b373ce7928ec205087dbfb96ec5278.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

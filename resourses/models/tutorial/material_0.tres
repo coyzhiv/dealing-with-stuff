@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://8p41sf6u5m5c"]
+
+[ext_resource type="Texture2D" uid="uid://i7vgqvdeliqv" path="res://resourses/models/tutorial/corridor_0.png" id="1_tn4ub"]
+
+[resource]
+resource_name = "material_0"
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_tn4ub")
+texture_filter = 0
+texture_repeat = false

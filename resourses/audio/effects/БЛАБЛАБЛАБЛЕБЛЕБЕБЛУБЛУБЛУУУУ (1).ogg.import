@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bnrv6kb2ywmkx"
+path="res://.godot/imported/БЛАБЛАБЛАБЛЕБЛЕБЕБЛУБЛУБЛУУУУ (1).ogg-de1940ac41f923d7b6121ad9294e995f.oggvorbisstr"
+
+[deps]
+
+source_file="res://resourses/audio/effects/БЛАБЛАБЛАБЛЕБЛЕБЕБЛУБЛУБЛУУУУ (1).ogg"
+dest_files=["res://.godot/imported/БЛАБЛАБЛАБЛЕБЛЕБЕБЛУБЛУБЛУУУУ (1).ogg-de1940ac41f923d7b6121ad9294e995f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

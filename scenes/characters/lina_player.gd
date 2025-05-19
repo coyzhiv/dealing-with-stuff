@@ -6,6 +6,7 @@ var can_interact = false
 var interactable_area:Area3D
 
 @onready var interact_area = $InteractArea
+@onready var interact_label = $InteractLabel
 
 func _process(delta):
 	if not Dialogue.is_dialogue_active:
@@ -14,6 +15,7 @@ func _process(delta):
 		applies(delta)
 		interact()
 		move_and_slide()
+		
 #move inputs
 func move():
 	inputDirection = Input.get_vector("left", "right", "up", "down")
@@ -79,10 +81,20 @@ func interact():
 			interactable_area.recieve_interaction()
 
 func _on_interact_area_area_entered(area: Area3D) -> void:
-	if area.has_method('recieve_interaction') and not Dialogue.is_dialogue_active:
-		can_interact = true
-		interactable_area = area
+	if InteractionMemory.get(area.condition) == area.condition_state or area.condition == "":
+		if area.used_memory_id != "" and not area.body_entering:
+			if InteractionMemory.get(area.used_memory_id) == false:
+				interact_label.visible = true
+				if area.has_method('recieve_interaction') and not Dialogue.is_dialogue_active:
+					can_interact = true
+					interactable_area = area
+		elif not area.body_entering:
+			interact_label.visible = true
+			if area.has_method('recieve_interaction') and not Dialogue.is_dialogue_active:
+					can_interact = true
+					interactable_area = area
 
 
 func _on_interact_area_area_exited(area: Area3D) -> void:
+	interact_label.visible = false
 	can_interact = false
