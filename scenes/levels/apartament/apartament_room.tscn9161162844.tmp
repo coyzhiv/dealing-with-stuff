@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://dfukpmbhdyeh0"]
+
+[ext_resource type="PackedScene" uid="uid://bf8lip7yqhxow" path="res://scenes/levels/parent_level.tscn" id="1_2o1gc"]
+[ext_resource type="Script" uid="uid://dcmtev8r8ekha" path="res://scenes/levels/apartament/apartament_room.gd" id="2_xl33j"]
+[ext_resource type="PackedScene" uid="uid://kplaxinx0cvp" path="res://scenes/areas/interaction_area.tscn" id="3_w6gkq"]
+[ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="4_2o1gc"]
+[ext_resource type="PackedScene" uid="uid://colskfe7l1c2v" path="res://scenes/areas/change_scene_area.tscn" id="4_uich4"]
+[ext_resource type="PackedScene" uid="uid://ctvbdq5ye7u4" path="res://scenes/characters/alisa_npc.tscn" id="5_3e5wv"]
+[ext_resource type="PackedScene" uid="uid://curgtrce5ljrd" path="res://scenes/characters/alisa_follow.tscn" id="6_ol2cc"]
+[ext_resource type="PackedScene" uid="uid://1nt3y1bgt2nx" path="res://resourses/models/tutorial/new_apartament_room.gltf" id="8_ol2cc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e5wv"]
+size = Vector3(0.122792, 0.142944, 0.0933914)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uich4"]
+size = Vector3(0.303906, 0.181714, 0.257031)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bj0r7"]
+size = Vector3(0.13342285, 0.1538086, 0.16461182)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ipybi"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Environment" id="Environment_ol2cc"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.026033, 0.245928, 0.397646, 1)
+ambient_light_energy = 0.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ol2cc"]
+size = Vector3(0.374878, 0.241699, 0.181396)
+
+[node name="ApartamentRoom" unique_id=1505341927 instance=ExtResource("1_2o1gc")]
+process_mode = 1
+script = ExtResource("2_xl33j")
+location = "apartament"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Light" index="0" unique_id=613974775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13534, 0.14435, 0.506977)
+light_color = Color(3.94672e-06, 0.785262, 0.786266, 1)
+light_energy = 0.515
+light_size = 0.131
+shadow_enabled = true
+spot_range = 1.408
+spot_angle = 57.0
+
+[node name="TV" parent="InteractionAreas" index="0" unique_id=771796443 instance=ExtResource("3_w6gkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109281, 0.00420293, 0.644168)
+collision_mask = 4
+prompt = "res://JSON Scripts/Dialogues/Apartament/tv_interact.json"
+used_memory_id = "tv_used"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/TV" index="0" unique_id=1494688626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0224709, 0.12262, -0.106583)
+shape = SubResource("BoxShape3D_3e5wv")
+
+[node name="Fridge" parent="InteractionAreas" index="1" unique_id=1273840572 instance=ExtResource("3_w6gkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.473738, 0.00420293, -0.145049)
+prompt = "res://JSON Scripts/Dialogues/Apartament/fridge_interact.json"
+used_memory_id = "fridge_used"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/Fridge" index="0" unique_id=659853546]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452063, 0.12262, -0.104824)
+shape = SubResource("BoxShape3D_3e5wv")
+
+[node name="StartingDialogue" parent="InteractionAreas" index="2" unique_id=117981531 instance=ExtResource("3_w6gkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.108742, 0.00420293, -0.14359)
+collision_mask = 6
+prompt = "res://JSON Scripts/Dialogues/Apartament/starting_dialogue.json"
+used_memory_id = "starting_dialogue_used"
+body_entering = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/StartingDialogue" index="0" unique_id=483738064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452063, 0.12262, -0.104824)
+shape = SubResource("BoxShape3D_3e5wv")
+
+[node name="TestFight" parent="InteractionAreas" index="3" unique_id=957793491 instance=ExtResource("3_w6gkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504271, 0.00420293, 0.671308)
+prompt = "test_fight"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/TestFight" index="0" unique_id=113312522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154263, 0.163477, -0.195994)
+shape = SubResource("BoxShape3D_uich4")
+
+[node name="Sit" parent="InteractionAreas" index="4" unique_id=557174574 instance=ExtResource("3_w6gkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31544477, 0.18440892, -0.55450064)
+sitting_place = true
+sit_direction = "down"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/Sit" index="0" unique_id=1978189174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0065307617, -0.022705093, -0.0128479)
+shape = SubResource("BoxShape3D_bj0r7")
+
+[node name="Corridor" parent="ChangingAreas" index="0" unique_id=1899715706 instance=ExtResource("4_uich4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100204, 0, 0.706432)
+file = "res://scenes/levels/apartament/corridor.tscn"
+target_position = Vector3(0.5674011, 0.34283695, 0.06202138)
+direction = "down"
+location = "apartament"
+sound_id = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Corridor" index="0" unique_id=192431271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14655027, 0.134435, -0.005571544)
+shape = SubResource("BoxShape3D_ipybi")
+
+[node name="AlisaNPC" parent="." index="4" unique_id=1351345509 instance=ExtResource("5_3e5wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12927914, 0.18883136, -0.55307335)
+should_dissapear = true
+
+[node name="Follow" parent="." index="5" unique_id=1409203338 instance=ExtResource("6_ol2cc")]
+process_mode = 0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139, 0)
+
+[node name="CollisionShape3D" parent="Follow" index="1" unique_id=293680734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00356158, 0.0224847, -0.0141742)
+
+[node name="InteractionArea" parent="Follow" index="4"]
+easy_interact = true
+easy_text = "This room is my favourite place on earth."
+
+[node name="Player" parent="." index="6" unique_id=2077595128 instance=ExtResource("4_2o1gc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114283, 0.139159, -0.243702)
+
+[node name="Camera3D" type="Camera3D" parent="Player" index="6" unique_id=203266742]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.8, 0.79)
+environment = SubResource("Environment_ol2cc")
+projection = 1
+size = 1.8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" index="0" unique_id=1174731894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32767415, 0.107178, 0.5760182)
+shape = SubResource("BoxShape3D_ol2cc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" index="1" unique_id=1395092646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23430383, 0.107178, 0.5760182)
+shape = SubResource("BoxShape3D_ol2cc")
+
+[node name="blockbench_export" parent="." index="8" unique_id=1034602632 instance=ExtResource("8_ol2cc")]
+transform = Transform3D(-4.4585615e-08, 0, 1.02, 0, 1.02, 0, -1.02, 0, -4.4585615e-08, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="blockbench_export" index="7" unique_id=259265317]
+transform = Transform3D(-0.37517983, 0, -0.90576434, 0, 0.98039216, 0, 0.90576434, 0, -0.37517983, -0.34221327, 0.18713276, -0.34297505)
+light_color = Color(3.94672e-06, 0.785262, 0.786266, 1)
+light_energy = 0.515
+shadow_enabled = true
+spot_range = 1.408
+spot_attenuation = 1.13
+spot_angle = 60.42
+
+[editable path="Follow"]

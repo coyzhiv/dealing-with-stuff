@@ -1,0 +1,7 @@
+{
+  "dialogue": [
+	{"func": "new_dialogue_window", "args": ["", "You think you might cry seeing this.", "", "left"]},
+	{"func": "give_item", "args": ["You receive Last Beer.", "last_beer"]},
+	{"func": "set_interaction_memory", "args": ["fridge_used", true]} 
+  ]
+}

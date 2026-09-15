@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://fb861oy6yq6w"]
+
+[ext_resource type="PackedScene" uid="uid://xft0djclif6m" path="res://resourses/models/tutorial/new_pc_room.gltf" id="1_i2uqa"]
+[ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="2_6403l"]
+[ext_resource type="Texture2D" uid="uid://bsnpfke0xthgj" path="res://resourses/sprites/testing things/window_view.png" id="3_6403l"]
+
+[sub_resource type="Environment" id="Environment_hudfi"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.026033, 0.245928, 0.397646, 1)
+ambient_light_energy = 0.7
+
+[node name="Node3D" type="Node3D" unique_id=1947067785]
+
+[node name="blockbench_export" parent="." unique_id=670657808 instance=ExtResource("1_i2uqa")]
+transform = Transform3D(-4.4585615e-08, 0, 1.02, 0, 1.02, 0, -1.02, 0, -4.4585615e-08, 0, 0, 0)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=803929167]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.12362735, 0.6374873, 0.430928)
+light_energy = 0.05
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 0.01
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1362603363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06538193, 0.34836504, -0.7171812)
+light_color = Color(0.9947576, 0.73515534, 0.51283705, 1)
+light_energy = 0.4
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_opacity = 0.58
+omni_range = 15.283
+omni_attenuation = 0.62
+
+[node name="Player" parent="." unique_id=991614113 instance=ExtResource("2_6403l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041439734, 0.12262753, 0.13637477)
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=379841503]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.8, 0.79)
+environment = SubResource("Environment_hudfi")
+projection = 1
+size = 1.8
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1681654542]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.067698956, 0.25259355, -0.48456675)
+texture_filter = 0
+texture = ExtResource("3_6403l")

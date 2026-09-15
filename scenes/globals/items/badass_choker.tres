@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://b27nnjmo1f5j6"]
+[gd_resource type="Resource" script_class="Items" format=3 uid="uid://b27nnjmo1f5j6"]
 
 [ext_resource type="Texture2D" uid="uid://c2wgl73djpuc8" path="res://resourses/sprites/interface/icons/badass_chocker.png" id="1_ocsbu"]
 [ext_resource type="Script" uid="uid://cfhu3p2bw4vtk" path="res://scenes/globals/items.gd" id="1_rrkfv"]
@@ -6,12 +6,13 @@
 [resource]
 script = ExtResource("1_rrkfv")
 title = "Badass Choker"
+rus_title = "Клёвый Чоккер"
 description = "Does nothing but look cool. COOL!!"
+rus_description = "Он просто выглядит круто. КРУТО!"
 icon = ExtResource("1_ocsbu")
 effect = "empty"
 hp_value = 1
 atk_value = 1
 def_value = 1
 spd_value = 1
-effect_value = 0
 metadata/_custom_type_script = "uid://cfhu3p2bw4vtk"

@@ -1,0 +1,9 @@
+{
+  "dialogue": [
+	{"func": "turn_player", "args": ["down"]},
+	{"func": "new_dialogue_window", "args": ["", "Screen of the TV almost blinds you when you get close.", "", "left"]},
+	{"func": "new_dialogue_window", "args": ["", "You slightly close your eyes and step away from it.", "", "left"]},
+	{"func": "player_walk", "args": [0, -1, "down", 0.2, 1]},
+	{"func": "set_interaction_memory", "args": ["tv_used", true]},
+  ]
+}

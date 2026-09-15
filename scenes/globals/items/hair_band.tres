@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://drbq3te078ckf"]
+[gd_resource type="Resource" script_class="Items" format=3 uid="uid://drbq3te078ckf"]
 
 [ext_resource type="Texture2D" uid="uid://bayt64d36tdmd" path="res://resourses/sprites/interface/icons/hair_band.png" id="1_51ctq"]
 [ext_resource type="Script" uid="uid://cfhu3p2bw4vtk" path="res://scenes/globals/items.gd" id="2_jfngd"]
@@ -6,12 +6,13 @@
 [resource]
 script = ExtResource("2_jfngd")
 title = "Hair Band"
+rus_title = "Резинка Для Волос"
 description = "Does nothing except holding your hair. WOW!!"
+rus_description = "Просто держит твои волосы. ВАУ!!"
 icon = ExtResource("1_51ctq")
 effect = "empty"
 hp_value = 1
 atk_value = 1
 def_value = 1
 spd_value = 1
-effect_value = 0
 metadata/_custom_type_script = "uid://cfhu3p2bw4vtk"

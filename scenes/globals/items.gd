@@ -3,7 +3,9 @@ extends Resource
 class_name Items
 
 @export var title: String
+@export var rus_title: String
 @export var description: String
+@export var rus_description: String
 @export var icon: Texture2D
 @export var effect: String
 @export var hp_value: int

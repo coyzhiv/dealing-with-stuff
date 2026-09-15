@@ -1,0 +1,27 @@
+{
+	"dialogue": [
+		{"func": "set_global", "args": ["current_scene","res://scenes/levels/apartament/apartament_room.tscn"]},
+		{"func": "set_interaction_memory", "args": ["starting_dialogue_used", true]},
+		{"func": "new_dialogue_window", "args": ["Lina","Aghhh.","LinaSigh", "right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","I just had the WEIRDEST dream EVER.","LinaAngry","right"]},
+		{"func": "turn_player", "args": ["right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","...","LinaDefault","right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","Alice's still sleeping..","LinaDefault","right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","Hmm.. What do i do now?","LinaDefault","right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","...","LinaDefault","right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","AGHHHH!! DISHES!!","LinaAngry", "right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","Maybe if I wait long enough Alice will wake up and do them for me.","LinaSigh","right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","...","LinaDefault","right"]},
+		{"func": "turn_player", "args": ["right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","Ptss.. Wake up...","LinaDefault","right"]},
+		{"func": "new_dialogue_window", "args": ["Alice","...", "" ,"left"]},
+		{"func": "turn_player", "args": ["down"]},
+		{"func": "new_dialogue_window", "args": ["Lina","...", "LinaDefault" ,"right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","Just one more minute..", "LinaDefault" ,"right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","...", "LinaDefault" ,"right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","Okay..", "LinaSigh" ,"right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","She's a guest after all.. Maybe I should be less lazy...","LinaSigh", "right"]},
+		{"func": "new_dialogue_window", "args": ["Lina","Let's get it over with.", "LinaAngry" ,"right"]},
+		{"func": "save", "args": []}
+	]
+}

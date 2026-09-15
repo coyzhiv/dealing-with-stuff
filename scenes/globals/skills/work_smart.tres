@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Skills" format=3 uid="uid://bsnpq8kunw6g1"]
+
+[ext_resource type="Texture2D" uid="uid://drn2r04l8n554" path="res://resourses/sprites/interface/icons/hp_damage.png" id="1_i17hc"]
+[ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_lx12k"]
+
+[resource]
+script = ExtResource("2_lx12k")
+title = "Work Smart"
+rus_title = "Работа Умом"
+description = "Take advantage of your problems."
+rus_description = "Выкрути свои проблемы под себя."
+icon = ExtResource("1_i17hc")
+effect = "damage"
+effect_info = "vampirism"
+value = 8
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Skills" load_steps=3 format=3 uid="uid://f60dg4wwi6h4"]
+[gd_resource type="Resource" script_class="Skills" format=3 uid="uid://f60dg4wwi6h4"]
 
 [ext_resource type="Texture2D" uid="uid://drn2r04l8n554" path="res://resourses/sprites/interface/icons/hp_damage.png" id="1_naxhl"]
 [ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_4aw65"]
@@ -6,9 +6,12 @@
 [resource]
 script = ExtResource("2_4aw65")
 title = "Grind"
+rus_title = "Труд"
 description = "Persistent work always pays off. Deals more damage the more max HP you have."
+rus_description = "Старательная работа всегда ведет к хорошим результатам. Наносит больше урона, когда у тебя больше ХП."
 icon = ExtResource("1_naxhl")
 effect = "damage"
 effect_info = "hp"
-value = 0.5
+value = 10.0
+steps = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0])
 metadata/_custom_type_script = "uid://b3ac4cep4lk6n"

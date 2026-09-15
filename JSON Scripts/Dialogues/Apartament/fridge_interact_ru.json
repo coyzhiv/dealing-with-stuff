@@ -1,0 +1,7 @@
+{
+  "dialogue": [
+	{"func": "new_dialogue_window", "args": ["", "Кажется, ты сейчас заплачешь.", "", "left"]},
+	{"func": "give_item", "args": ["Ты получаешь последнее пиво.", "last_beer"]},
+	{"func": "set_interaction_memory", "args": ["fridge_used", true]} 
+  ]
+}

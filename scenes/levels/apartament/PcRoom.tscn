@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://y7evy8l76bvh"]
+[gd_scene format=3 uid="uid://y7evy8l76bvh"]
 
 [ext_resource type="PackedScene" uid="uid://bf8lip7yqhxow" path="res://scenes/levels/parent_level.tscn" id="1_ew078"]
 [ext_resource type="Script" uid="uid://cc2pwopcpkir" path="res://scenes/levels/apartament/pc_room.gd" id="2_77j1g"]
-[ext_resource type="PackedScene" uid="uid://dvitlgnmfavlw" path="res://resourses/models/tutorial/Pc_Room.gltf" id="2_jwg4w"]
 [ext_resource type="PackedScene" uid="uid://colskfe7l1c2v" path="res://scenes/areas/change_scene_area.tscn" id="3_77j1g"]
 [ext_resource type="PackedScene" uid="uid://kplaxinx0cvp" path="res://scenes/areas/interaction_area.tscn" id="4_2ipap"]
 [ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="4_gmcf4"]
@@ -10,7 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://ctvbdq5ye7u4" path="res://scenes/characters/alisa_npc.tscn" id="7_gmcf4"]
 [ext_resource type="PackedScene" uid="uid://d5lqh23wc7mm" path="res://scenes/objects/changing_model.tscn" id="8_wn2mv"]
 [ext_resource type="PackedScene" uid="uid://d4i5qvagl1p5u" path="res://resourses/models/tutorial/changing objects/trash1.gltf" id="9_2ipap"]
+[ext_resource type="PackedScene" uid="uid://sy77guobc0mr" path="res://resourses/models/tutorial/changing objects/trash3.gltf" id="9_5o8qk"]
 [ext_resource type="PackedScene" uid="uid://cahccv5eq7jeo" path="res://resourses/models/tutorial/changing objects/trash2.gltf" id="10_5o8qk"]
+[ext_resource type="PackedScene" uid="uid://xft0djclif6m" path="res://resourses/models/tutorial/new_pc_room.gltf" id="11_5o8qk"]
+[ext_resource type="Texture2D" uid="uid://bsnpfke0xthgj" path="res://resourses/sprites/testing things/window_view.png" id="12_s6ncp"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ew078"]
 agent_height = 0.16
@@ -26,99 +28,127 @@ size = Vector3(0.219666, 0.12146, 0.0815735)
 size = Vector3(0.335876, 0.191406, 0.106201)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jwg4w"]
-size = Vector3(0.18811, 0.150635, 0.152969)
+size = Vector3(0.18811, 0.25354016, 0.91031253)
 
-[sub_resource type="Environment" id="Environment_ggrda"]
+[sub_resource type="Environment" id="Environment_2ipap"]
 background_mode = 1
 ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.2
+ambient_light_color = Color(0.026033, 0.245928, 0.397646, 1)
+ambient_light_energy = 0.7
 
-[node name="PcRoom" instance=ExtResource("1_ew078")]
+[node name="PcRoom" unique_id=1892522765 instance=ExtResource("1_ew078")]
 script = ExtResource("2_77j1g")
 location = "apartament"
 variant = 1
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." index="0"]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." index="0" unique_id=1982831525]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_ew078")
 
-[node name="blockbench_export" parent="NavigationRegion3D" index="0" instance=ExtResource("2_jwg4w")]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Light" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0521494, 0.302286, 0.295242)
-light_color = Color(0.992612, 0.876747, 0.825426, 1)
-light_energy = 0.5
+[node name="OmniLight3D2" type="OmniLight3D" parent="Light" index="0" unique_id=2106323208]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.12362735, 0.6374873, 0.430928)
+light_energy = 0.05
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_blur = 0.01
 
-[node name="InteractionArea" parent="InteractionAreas" index="0" instance=ExtResource("4_2ipap")]
+[node name="OmniLight3D" type="OmniLight3D" parent="Light" index="1" unique_id=377217573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06538193, 0.34836504, -0.7171812)
+light_color = Color(0.9947576, 0.73515534, 0.51283705, 1)
+light_energy = 0.4
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_opacity = 0.58
+omni_range = 15.283
+omni_attenuation = 0.62
+
+[node name="InteractionArea" parent="InteractionAreas" index="0" unique_id=895211501 instance=ExtResource("4_2ipap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.068959594, 0)
 collision_mask = 6
-prompt = "trash_dialogue"
+prompt = "res://JSON Scripts/Dialogues/Apartament/trash_dialogue.json"
+prompt_ru = "res://JSON Scripts/Dialogues/Apartament/trash_dialogue_ru.json"
 used_memory_id = "trash_dialogue_used"
 body_entering = true
 condition_state = true
 condition = "washing_machine_dialogue_used"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/InteractionArea" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0560913, 0.111145, -0.168823)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/InteractionArea" index="0" unique_id=1400959206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0560913, 0.17367497, -0.12560374)
 shape = SubResource("BoxShape3D_5o8qk")
 
-[node name="Corridor" parent="ChangingAreas" index="0" instance=ExtResource("3_77j1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165927, -0.217031, 0.446085)
+[node name="Corridor" parent="ChangingAreas" index="0" unique_id=652090376 instance=ExtResource("3_77j1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165927, -0.217031, 0.49271253)
 file = "res://scenes/levels/apartament/corridor.tscn"
-target_position = Vector3(-0.44, 0.335, -0.001)
+target_position = Vector3(-0.314, 0.343, 0.062)
 direction = "down"
 location = "apartament"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Corridor" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Corridor" index="0" unique_id=194916448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0101013, 0.354618, 0.128464)
 shape = SubResource("BoxShape3D_xr7xn")
 debug_fill = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0893433, 0.0527344, 0.503458)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" index="0" unique_id=588103320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0893433, 0.0527344, 0.5021037)
 shape = SubResource("BoxShape3D_ew078")
 debug_fill = false
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" index="1"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" index="1" unique_id=1466642455]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.459827, 0.0527344, 0.503458)
 shape = SubResource("BoxShape3D_ew078")
 debug_fill = false
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWalls" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.280945, 0.133563, -0.127602)
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="InvisibleWalls" index="2" unique_id=1430301153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.408751, 0.19283745, 0.0063491464)
 shape = SubResource("BoxShape3D_jwg4w")
 debug_fill = false
 
-[node name="Player" parent="." index="6" instance=ExtResource("4_gmcf4")]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWalls" index="3" unique_id=132125954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53988254, 0.18501557, -0.00072702765)
+shape = SubResource("BoxShape3D_jwg4w")
+debug_fill = false
+
+[node name="Player" parent="." index="6" unique_id=483922750 instance=ExtResource("4_gmcf4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0560658, 0.11511, 0.377482)
 
-[node name="Camera3D" type="Camera3D" parent="Player" index="6"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.834835, 0.704218)
-environment = SubResource("Environment_ggrda")
+[node name="Camera3D" type="Camera3D" parent="Player" index="6" unique_id=2014195482]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.8, 0.79)
+environment = SubResource("Environment_2ipap")
+projection = 1
+size = 1.8
 
-[node name="Follow" parent="." index="7" instance=ExtResource("5_jwg4w")]
+[node name="Follow" parent="." index="7" unique_id=1520603458 instance=ExtResource("5_jwg4w")]
+process_mode = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144, 0.116, 0.377)
 
-[node name="CollisionShape3D" parent="Follow" index="1"]
+[node name="CollisionShape3D" parent="Follow" index="1" unique_id=293680734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00356158, 0.0191944, -0.0141742)
 
 [node name="InteractionArea" parent="Follow" index="4"]
 easy_interact = true
-easy_text = "I say penis you say pussy."
+easy_text = "Trash amount is insane."
+easy_text_ru = "Мусора многовато.."
 
-[node name="AlisaNPC" parent="." index="8" instance=ExtResource("7_gmcf4")]
+[node name="AlisaNPC" parent="." index="8" unique_id=1339897228 instance=ExtResource("7_gmcf4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.83973, 0.240381, 0.606441)
 
-[node name="ChangingTrash" parent="." index="9" instance=ExtResource("8_wn2mv")]
+[node name="ChangingTrash" parent="." index="9" unique_id=1259944508 instance=ExtResource("8_wn2mv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 state_promt = "trash_state"
 
-[node name="blockbench_export" parent="ChangingTrash/State1" index="0" instance=ExtResource("9_2ipap")]
+[node name="blockbench_export" parent="ChangingTrash/State1" index="0" unique_id=1685040678 instance=ExtResource("9_2ipap")]
 
-[node name="blockbench_export" parent="ChangingTrash/State2" index="0" instance=ExtResource("10_5o8qk")]
+[node name="blockbench_export" parent="ChangingTrash/State2" index="0" unique_id=472701998 instance=ExtResource("10_5o8qk")]
+
+[node name="blockbench_export" parent="ChangingTrash/State3" index="0" unique_id=1430700600 instance=ExtResource("9_5o8qk")]
+
+[node name="blockbench_export" parent="." index="10" unique_id=384062650 instance=ExtResource("11_5o8qk")]
+transform = Transform3D(-4.4585615e-08, 0, 1.02, 0, 1.02, 0, -1.02, 0, -4.4585615e-08, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="11" unique_id=1940162403]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.067698956, 0.25259355, -0.48456675)
+texture_filter = 0
+texture = ExtResource("12_s6ncp")
 
 [editable path="Follow"]
 [editable path="ChangingTrash"]

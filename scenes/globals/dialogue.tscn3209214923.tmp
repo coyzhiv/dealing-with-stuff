@@ -1,0 +1,495 @@
+[gd_scene format=3 uid="uid://cbykelotlwqua"]
+
+[ext_resource type="Texture2D" uid="uid://diu77an7bow6y" path="res://resourses/sprites/interface/dialogue_box1.png" id="1_r7jm6"]
+[ext_resource type="Script" uid="uid://bw5uba6kepmg7" path="res://scenes/globals/dialogue.gd" id="1_upakc"]
+[ext_resource type="Texture2D" uid="uid://cyvgmeiwuof5h" path="res://resourses/sprites/portraits/old/test.png" id="2_4i1nw"]
+[ext_resource type="FontFile" uid="uid://d13bi6hpu1ajl" path="res://resourses/fonts/ByteBounce.ttf" id="3_eoxbp"]
+[ext_resource type="Texture2D" uid="uid://dk74iac1rf0yh" path="res://resourses/sprites/portraits/old/alisa_test.png" id="3_hvu34"]
+[ext_resource type="Texture2D" uid="uid://drmbbc7guuvn3" path="res://resourses/sprites/portraits/old/lina_test.png" id="4_ganp7"]
+[ext_resource type="Texture2D" uid="uid://ccv04yinrt4sc" path="res://resourses/sprites/portraits/new/alisa_default.png" id="4_q52qt"]
+[ext_resource type="Texture2D" uid="uid://ctctmf1lu4h7l" path="res://resourses/sprites/portraits/new/alisa_smile.png" id="5_ko2dr"]
+[ext_resource type="Texture2D" uid="uid://brs6xhc150hd7" path="res://resourses/sprites/portraits/new/alisa_happy.png" id="6_btfj8"]
+[ext_resource type="Texture2D" uid="uid://b75axy1k1dtgw" path="res://resourses/sprites/interface/arrow.png" id="6_chant"]
+[ext_resource type="Texture2D" uid="uid://b5t1k7ktbmcx2" path="res://resourses/sprites/portraits/new/alisa_wow.png" id="7_k7kex"]
+[ext_resource type="AudioStream" uid="uid://bnrv6kb2ywmkx" path="res://resourses/audio/effects/БЛАБЛАБЛАБЛЕБЛЕБЕБЛУБЛУБЛУУУУ (1).ogg" id="7_nwrvn"]
+[ext_resource type="Texture2D" uid="uid://bxxq1k1iswo25" path="res://resourses/sprites/portraits/new/alisa_que.png" id="8_ra1fr"]
+[ext_resource type="Texture2D" uid="uid://cx6237fpnbrmc" path="res://resourses/sprites/portraits/new/alisa_angry.png" id="9_mvh6b"]
+[ext_resource type="Texture2D" uid="uid://b5e7drpi4eg8x" path="res://resourses/sprites/portraits/new/alisa_sigh.png" id="10_w1ko1"]
+[ext_resource type="Texture2D" uid="uid://bt8hgel8kfd47" path="res://resourses/sprites/portraits/new/lina_default.png" id="12_msi87"]
+[ext_resource type="Texture2D" uid="uid://cdss1etss1r80" path="res://resourses/sprites/portraits/new/lina_smile.png" id="13_a2jc2"]
+[ext_resource type="Texture2D" uid="uid://7x8yu667qi53" path="res://resourses/sprites/portraits/new/lina_smug.png" id="14_455bw"]
+[ext_resource type="Texture2D" uid="uid://b1nquuu8vw1d8" path="res://resourses/sprites/portraits/new/lina_angry.png" id="15_ksv1j"]
+[ext_resource type="Texture2D" uid="uid://dbn2bbhg7dee2" path="res://resourses/sprites/portraits/new/lina_wow.png" id="16_pxysq"]
+[ext_resource type="Texture2D" uid="uid://b6atw7nswgntl" path="res://resourses/sprites/portraits/new/lina_laugh.png" id="17_k0ja0"]
+[ext_resource type="Texture2D" uid="uid://lfxngjs7elhe" path="res://resourses/sprites/portraits/new/lina_sigh.png" id="18_pcvsp"]
+[ext_resource type="FontFile" uid="uid://c4ohbbx885w7l" path="res://resourses/fonts/BoldPixels.ttf" id="24_btfj8"]
+[ext_resource type="AudioStream" uid="uid://d45xngngk8f7" path="res://resourses/audio/effects/переход коротки как твой члстоп.ogg" id="26_ko2dr"]
+
+[sub_resource type="FontVariation" id="FontVariation_q52qt"]
+base_font = ExtResource("3_eoxbp")
+spacing_glyph = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_upakc"]
+line_spacing = 1.0
+font = ExtResource("24_btfj8")
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dwuim"]
+font = ExtResource("24_btfj8")
+
+[sub_resource type="Animation" id="Animation_4i1nw"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portraits/RightPortrait:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(960, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Portraits/RightPortrait:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(540, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Portraits/LeftPortarit:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(960, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Portraits/LeftPortarit:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(540, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Portraits/LeftPortarit:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Portraits/RightPortrait:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nwrvn"]
+resource_name = "bounce_left_portrait"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portraits/LeftPortarit:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.1, 0, 0.1, 0, 0, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Portraits/LeftPortarit:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.1, 0, 0.033333335, -15, 0, -0.03333333, -16, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Portraits/LeftPortarit:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Portraits/RightPortrait:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.776471, 0.776471, 0.776471, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_chant"]
+resource_name = "bounce_right_portrait"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portraits/RightPortrait:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Portraits/RightPortrait:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.033333335, -16, 0, -0.03333333, -16, 0.166667, -77.8904),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Portraits/RightPortrait:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Portraits/LeftPortarit:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.776471, 0.776471, 0.776471, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2s4d0"]
+resource_name = "fade_dark_both"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portraits/LeftPortarit:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.753984, 0.753984, 0.753984, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Portraits/RightPortrait:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.752941, 0.752941, 0.752941, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7ibq6"]
+resource_name = "fade_dark_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portraits/LeftPortarit:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.753984, 0.753984, 0.753984, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hvu34"]
+resource_name = "fade_dark_right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Portraits/RightPortrait:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.752941, 0.752941, 0.752941, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ganp7"]
+_data = {
+&"RESET": SubResource("Animation_4i1nw"),
+&"bounce_left_portrait": SubResource("Animation_nwrvn"),
+&"bounce_right_portrait": SubResource("Animation_chant"),
+&"fade_dark_both": SubResource("Animation_2s4d0"),
+&"fade_dark_left": SubResource("Animation_7ibq6"),
+&"fade_dark_right": SubResource("Animation_hvu34")
+}
+
+[sub_resource type="Animation" id="Animation_0yfty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemIcon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemIcon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ganp7"]
+resource_name = "new item"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemIcon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.366667, 0.766667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(8, 8), Vector2(12, 12), Vector2(12, 12), Vector2(8, 8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemIcon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.366667, 0.766667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.539307, 0.26529, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2s4d0"]
+_data = {
+&"RESET": SubResource("Animation_0yfty"),
+&"new item": SubResource("Animation_ganp7")
+}
+
+[node name="Dialogue" type="CanvasLayer" unique_id=567082225]
+script = ExtResource("1_upakc")
+
+[node name="Portraits" type="Node2D" parent="." unique_id=350344326]
+
+[node name="LeftPortarit" type="Sprite2D" parent="Portraits" unique_id=1560697097]
+position = Vector2(960, 540)
+texture = ExtResource("2_4i1nw")
+centered = false
+flip_h = true
+
+[node name="RightPortrait" type="Sprite2D" parent="Portraits" unique_id=1367554057]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("2_4i1nw")
+centered = false
+
+[node name="Alisa" type="Node2D" parent="Portraits" unique_id=1047328463]
+
+[node name="AlisaTest" type="Sprite2D" parent="Portraits/Alisa" unique_id=136450175]
+visible = false
+texture = ExtResource("3_hvu34")
+offset = Vector2(960, 540)
+
+[node name="AlisaDefault" type="Sprite2D" parent="Portraits/Alisa" unique_id=1852467230]
+visible = false
+texture = ExtResource("4_q52qt")
+centered = false
+
+[node name="AlisaSmile" type="Sprite2D" parent="Portraits/Alisa" unique_id=294427341]
+visible = false
+texture = ExtResource("5_ko2dr")
+centered = false
+
+[node name="AlisaHappy" type="Sprite2D" parent="Portraits/Alisa" unique_id=312391814]
+visible = false
+texture = ExtResource("6_btfj8")
+centered = false
+
+[node name="AlisaWow" type="Sprite2D" parent="Portraits/Alisa" unique_id=1952959674]
+visible = false
+texture = ExtResource("7_k7kex")
+centered = false
+
+[node name="AlisaQue" type="Sprite2D" parent="Portraits/Alisa" unique_id=829003475]
+visible = false
+texture = ExtResource("8_ra1fr")
+centered = false
+
+[node name="AlisaAngry" type="Sprite2D" parent="Portraits/Alisa" unique_id=1942563368]
+visible = false
+texture = ExtResource("9_mvh6b")
+centered = false
+
+[node name="AlisaLaugh" type="Sprite2D" parent="Portraits/Alisa" unique_id=6530114]
+visible = false
+texture = ExtResource("5_ko2dr")
+centered = false
+
+[node name="AlisaSigh" type="Sprite2D" parent="Portraits/Alisa" unique_id=1035124381]
+visible = false
+texture = ExtResource("10_w1ko1")
+centered = false
+
+[node name="Lina" type="Node2D" parent="Portraits" unique_id=2064942557]
+
+[node name="LinaTest" type="Sprite2D" parent="Portraits/Lina" unique_id=99676848]
+visible = false
+texture = ExtResource("4_ganp7")
+centered = false
+
+[node name="LinaDefault" type="Sprite2D" parent="Portraits/Lina" unique_id=1687189170]
+visible = false
+texture = ExtResource("12_msi87")
+centered = false
+
+[node name="LinaSmile" type="Sprite2D" parent="Portraits/Lina" unique_id=2067393580]
+visible = false
+texture = ExtResource("13_a2jc2")
+centered = false
+
+[node name="Lina4Wall" type="Sprite2D" parent="Portraits/Lina" unique_id=1432432809]
+visible = false
+texture = ExtResource("14_455bw")
+centered = false
+
+[node name="LinaCocky" type="Sprite2D" parent="Portraits/Lina" unique_id=677987364]
+visible = false
+texture = ExtResource("14_455bw")
+centered = false
+
+[node name="LinaAngry" type="Sprite2D" parent="Portraits/Lina" unique_id=1368146076]
+visible = false
+texture = ExtResource("15_ksv1j")
+centered = false
+
+[node name="LinaWow" type="Sprite2D" parent="Portraits/Lina" unique_id=1967055147]
+visible = false
+texture = ExtResource("16_pxysq")
+centered = false
+
+[node name="LinaLaugh" type="Sprite2D" parent="Portraits/Lina" unique_id=1044147233]
+visible = false
+texture = ExtResource("17_k0ja0")
+centered = false
+
+[node name="LinaSigh" type="Sprite2D" parent="Portraits/Lina" unique_id=1168293151]
+visible = false
+texture = ExtResource("18_pcvsp")
+centered = false
+
+[node name="DialogueBoxBig" type="Sprite2D" parent="." unique_id=473754181]
+position = Vector2(240, 180)
+texture = ExtResource("1_r7jm6")
+
+[node name="TextLabel" type="Label" parent="." unique_id=1924143823]
+offset_left = 85.0
+offset_top = 277.0
+offset_right = 460.0
+offset_bottom = 348.0
+theme_override_fonts/font = SubResource("FontVariation_q52qt")
+label_settings = SubResource("LabelSettings_upakc")
+autowrap_mode = 3
+clip_text = true
+
+[node name="NameLabel" type="Label" parent="." unique_id=54326707]
+offset_left = 4.0
+offset_top = 278.0
+offset_right = 76.0
+offset_bottom = 313.0
+label_settings = SubResource("LabelSettings_dwuim")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=658381808]
+libraries/ = SubResource("AnimationLibrary_ganp7")
+
+[node name="ItemIcon" type="Sprite2D" parent="." unique_id=1790260646]
+visible = false
+position = Vector2(960, 400)
+scale = Vector2(5, 5)
+texture = ExtResource("6_chant")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=811860310]
+libraries/ = SubResource("AnimationLibrary_2s4d0")
+
+[node name="Audio" type="Node2D" parent="." unique_id=753556100]
+
+[node name="DialogueSound" type="AudioStreamPlayer" parent="Audio" unique_id=705042546]
+stream = ExtResource("7_nwrvn")
+bus = &"SFX"
+
+[node name="TransitionSound" type="AudioStreamPlayer" parent="Audio" unique_id=1105654864]
+stream = ExtResource("26_ko2dr")
+bus = &"SFX"

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Skills" format=3 uid="uid://bl7sg2d201cpv"]
+
+[ext_resource type="Texture2D" uid="uid://cyqvubawcntae" path="res://resourses/sprites/interface/icons/buff_bulk.png" id="1_ge7hv"]
+[ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_durpi"]
+
+[resource]
+script = ExtResource("2_durpi")
+title = "Cheer Up"
+rus_title = "Взбодрить"
+description = "She knows what comes next and she is ready. Increases Max HP and DEF"
+rus_description = "Она знает, что её ждет и она готова. Увеличивает максимальное здоровье и защиту."
+icon = ExtResource("1_ge7hv")
+effect = "buff"
+effect_info = "hp and def"
+value = 1.1
+target = "other"
+price = Array[int]([500, 500, 500, 500, 500])
+steps = Array[float]([0.1, 0.1, 0.1, 0.1, 0.1])
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"

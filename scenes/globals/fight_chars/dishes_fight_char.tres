@@ -1,28 +1,43 @@
-[gd_resource type="Resource" script_class="FightChar" load_steps=9 format=3 uid="uid://y1uhy2a7hh0x"]
+[gd_resource type="Resource" script_class="FightChar" format=3 uid="uid://y1uhy2a7hh0x"]
 
 [ext_resource type="Texture2D" uid="uid://dycqd26eqjw5o" path="res://resourses/sprites/interface/battle_icons/dishes_icon.png" id="1_is7v1"]
 [ext_resource type="Script" uid="uid://c2wuvx4hcwafo" path="res://scenes/globals/fight_chars/fight_char.gd" id="2_n1mpq"]
 [ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="3_f5jur"]
-[ext_resource type="Resource" uid="uid://cp6pot8c5iv5x" path="res://scenes/globals/skills/hurry.tres" id="4_e427a"]
-[ext_resource type="Resource" uid="uid://76ivfmormvq0" path="res://scenes/globals/skills/clear_mind.tres" id="5_6jvv1"]
-[ext_resource type="Resource" uid="uid://crj138bf84dto" path="res://scenes/globals/skills/procrastinate.tres" id="6_40s8p"]
-[ext_resource type="Script" uid="uid://dclj03trtr3ny" path="res://scenes/globals/skill_inventory.gd" id="7_t3pu5"]
+[ext_resource type="Texture2D" uid="uid://clmnmow6hs7kq" path="res://resourses/sprites/interface/icons/fast_damage.png" id="4_yrqm8"]
+[ext_resource type="Texture2D" uid="uid://d4bje4bcghc3a" path="res://resourses/sprites/interface/icons/heal.png" id="5_ex7lk"]
 
-[sub_resource type="Resource" id="Resource_u5rrk"]
-script = ExtResource("7_t3pu5")
-items = Array[ExtResource("3_f5jur")]([ExtResource("4_e427a"), ExtResource("5_6jvv1"), ExtResource("6_40s8p")])
-metadata/_custom_type_script = "uid://dclj03trtr3ny"
+[sub_resource type="Resource" id="Resource_yrqm8"]
+script = ExtResource("3_f5jur")
+title = "Hurry"
+rus_title = "Спешка"
+description = "Never underestimate consequences of haste. Deals more damage the more speed you have."
+rus_description = "Никогда не недооценивай последствия спешки. Наносит больше урона, когда у тебя больше скорости."
+icon = ExtResource("4_yrqm8")
+effect = "damage"
+effect_info = "speed"
+value = 1.0
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"
+
+[sub_resource type="Resource" id="Resource_ex7lk"]
+script = ExtResource("3_f5jur")
+title = "Clear Mind"
+rus_title = "Очистить Разум"
+description = "You can relax a bit. Restores HP by 20."
+rus_description = "Ты можешь немного расслабиться. Восстанавливает здоровье."
+icon = ExtResource("5_ex7lk")
+effect = "heal"
+value = 40.0
+target = "self"
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"
 
 [resource]
 script = ExtResource("2_n1mpq")
 icon = ExtResource("1_is7v1")
 id = 2
-hp = 160
-atk = 80
-def = 100
-spd = 80
-base_hp = 0
-base_spd = 0
-natural_spd = 0
-skills = SubResource("Resource_u5rrk")
+hp = 200
+atk = 8
+def = 10
+spd = 12
+reward_points = 100
+skills = Array[ExtResource("3_f5jur")]([SubResource("Resource_yrqm8"), SubResource("Resource_ex7lk")])
 metadata/_custom_type_script = "uid://c2wuvx4hcwafo"

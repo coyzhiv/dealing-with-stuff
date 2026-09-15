@@ -1,15 +1,74 @@
-[gd_resource type="Resource" script_class="SkillInv" load_steps=9 format=3 uid="uid://do3vuq4qyw1sa"]
+[gd_resource type="Resource" script_class="SkillInv" format=3 uid="uid://do3vuq4qyw1sa"]
 
 [ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="1_r6vk8"]
-[ext_resource type="Resource" uid="uid://f60dg4wwi6h4" path="res://scenes/globals/skills/grind.tres" id="2_1knro"]
-[ext_resource type="Resource" uid="uid://76ivfmormvq0" path="res://scenes/globals/skills/clear_mind.tres" id="2_tskfm"]
-[ext_resource type="Resource" uid="uid://bwkvc3oc8cxmi" path="res://scenes/globals/skills/concentrate.tres" id="3_ijxpb"]
+[ext_resource type="Texture2D" uid="uid://drn2r04l8n554" path="res://resourses/sprites/interface/icons/hp_damage.png" id="2_1knro"]
+[ext_resource type="Texture2D" uid="uid://clmnmow6hs7kq" path="res://resourses/sprites/interface/icons/fast_damage.png" id="3_msk3a"]
 [ext_resource type="Script" uid="uid://dclj03trtr3ny" path="res://scenes/globals/skill_inventory.gd" id="3_tskfm"]
-[ext_resource type="Resource" uid="uid://cp6pot8c5iv5x" path="res://scenes/globals/skills/hurry.tres" id="4_x0flb"]
-[ext_resource type="Resource" uid="uid://4r8gutokm2gw" path="res://scenes/globals/skills/brave_up.tres" id="6_msk3a"]
-[ext_resource type="Resource" uid="uid://crj138bf84dto" path="res://scenes/globals/skills/procrastinate.tres" id="7_p12r1"]
+[ext_resource type="Texture2D" uid="uid://d4bje4bcghc3a" path="res://resourses/sprites/interface/icons/heal.png" id="4_p12r1"]
+[ext_resource type="Texture2D" uid="uid://dr6oamnrixwkg" path="res://resourses/sprites/interface/icons/buff_atk.png" id="5_vo6ip"]
+[ext_resource type="Texture2D" uid="uid://cyqvubawcntae" path="res://resourses/sprites/interface/icons/buff_bulk.png" id="6_m073n"]
+[ext_resource type="Texture2D" uid="uid://yeicnm8a84ae" path="res://resourses/sprites/interface/icons/buff_speed.png" id="7_thwl1"]
+
+[sub_resource type="Resource" id="Resource_skm68"]
+script = ExtResource("1_r6vk8")
+title = "Grind"
+description = "Persistent work always pays off. Deals more damage the more max HP you have."
+icon = ExtResource("2_1knro")
+effect = "damage"
+effect_info = "hp"
+value = 5
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"
+
+[sub_resource type="Resource" id="Resource_dj07i"]
+script = ExtResource("1_r6vk8")
+title = "Hurry"
+description = "Never underestimate consequences of haste. Deals more damage the more speed you have."
+icon = ExtResource("3_msk3a")
+effect = "damage"
+effect_info = "speed"
+value = 5
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"
+
+[sub_resource type="Resource" id="Resource_afofv"]
+script = ExtResource("1_r6vk8")
+title = "Clear Mind"
+description = "You can relax a bit. Restores HP by 20."
+icon = ExtResource("4_p12r1")
+effect = "heal"
+value = 10
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"
+
+[sub_resource type="Resource" id="Resource_0d8pt"]
+script = ExtResource("1_r6vk8")
+title = "Concentrate"
+description = "Always helps, right? Increases ATK till end of the fight."
+icon = ExtResource("5_vo6ip")
+effect = "buff"
+effect_info = "atk"
+value = 10
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"
+
+[sub_resource type="Resource" id="Resource_2dxdp"]
+script = ExtResource("1_r6vk8")
+title = "Brave up"
+description = "You know what comes next and you are ready. Increases Max HP and DEF"
+icon = ExtResource("6_m073n")
+effect = "buff"
+effect_info = "hp and def"
+value = 10
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"
+
+[sub_resource type="Resource" id="Resource_xdn5d"]
+script = ExtResource("1_r6vk8")
+title = "Procrastinate"
+description = "Makes you belive you can do everything in time. Increases speed."
+icon = ExtResource("7_thwl1")
+effect = "buff"
+effect_info = "speed"
+value = 10
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"
 
 [resource]
 script = ExtResource("3_tskfm")
-items = Array[ExtResource("1_r6vk8")]([ExtResource("2_1knro"), ExtResource("4_x0flb"), ExtResource("2_tskfm"), ExtResource("3_ijxpb"), ExtResource("6_msk3a"), ExtResource("7_p12r1")])
+items = Array[ExtResource("1_r6vk8")]([SubResource("Resource_skm68"), SubResource("Resource_dj07i"), SubResource("Resource_afofv"), SubResource("Resource_0d8pt"), SubResource("Resource_2dxdp"), SubResource("Resource_xdn5d")])
 metadata/_custom_type_script = "uid://dclj03trtr3ny"

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bhh7krj8v5v21"]
+
+[ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="1_h43ni"]
+[ext_resource type="PackedScene" uid="uid://1nt3y1bgt2nx" path="res://resourses/models/tutorial/new_apartament_room.gltf" id="2_h43ni"]
+
+[sub_resource type="Environment" id="Environment_mbk3g"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.026033, 0.245928, 0.397646, 1)
+ambient_light_energy = 0.7
+
+[node name="new_tv_room" type="Node3D" unique_id=451238574]
+
+[node name="Player" parent="." unique_id=991614113 instance=ExtResource("1_h43ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041439734, 0.139159, 0.13637477)
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=660337790]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.8, 0.79)
+environment = SubResource("Environment_mbk3g")
+projection = 1
+size = 1.8
+
+[node name="blockbench_export" parent="." unique_id=480368724 instance=ExtResource("2_h43ni")]
+transform = Transform3D(-4.4585615e-08, 0, 1.02, 0, 1.02, 0, -1.02, 0, -4.4585615e-08, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="blockbench_export" unique_id=862581635]
+transform = Transform3D(-0.37517983, 0, -0.90576434, 0, 0.98039216, 0, 0.90576434, 0, -0.37517983, -0.34221327, 0.18713276, -0.34297505)
+light_color = Color(3.94672e-06, 0.785262, 0.786266, 1)
+light_energy = 0.515
+shadow_enabled = true
+spot_range = 1.408
+spot_attenuation = 1.13
+spot_angle = 60.42

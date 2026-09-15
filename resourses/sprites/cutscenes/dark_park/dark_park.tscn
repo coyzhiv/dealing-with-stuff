@@ -1,0 +1,428 @@
+[gd_scene format=3 uid="uid://c3ecfo6w52fji"]
+
+[ext_resource type="Script" uid="uid://2res04ge4ira" path="res://resourses/sprites/cutscenes/dark_park/dark_park.gd" id="1_ie081"]
+[ext_resource type="PackedScene" uid="uid://by37boh4pdnpq" path="res://resourses/models/tutorial/cutscenes/dark_park.gltf" id="2_nril7"]
+[ext_resource type="Texture2D" uid="uid://4p4l7nj2laus" path="res://resourses/sprites/cutscenes/dark_park/lina_test1.png" id="3_y83yx"]
+[ext_resource type="Texture2D" uid="uid://1a5meteckpb" path="res://resourses/sprites/cutscenes/dark_park/lina_test2.png" id="4_3ho2k"]
+[ext_resource type="Texture2D" uid="uid://b8wjskseiwwtm" path="res://resourses/sprites/cutscenes/dark_park/lina_test3.png" id="5_lrdm6"]
+[ext_resource type="Texture2D" uid="uid://04j3rsakvoe1" path="res://resourses/sprites/cutscenes/dark_park/lina_test4.png" id="6_y7pks"]
+[ext_resource type="Texture2D" uid="uid://dx5x1y203tm68" path="res://resourses/sprites/cutscenes/dark_park/lina_test5.png" id="7_l4hek"]
+[ext_resource type="Texture2D" uid="uid://du3b0gsnn351e" path="res://resourses/sprites/cutscenes/dark_park/lina_test6.png" id="8_ljkyk"]
+[ext_resource type="Texture2D" uid="uid://dfh4gdl4unfsy" path="res://resourses/sprites/cutscenes/dark_park/lina_test7.png" id="9_3xcei"]
+[ext_resource type="Texture2D" uid="uid://cnf6b205h61sm" path="res://resourses/sprites/cutscenes/dark_park/lina_test8.png" id="10_2vfw3"]
+[ext_resource type="Texture2D" uid="uid://dxdqtlnkp8o1" path="res://resourses/sprites/cutscenes/dark_park/lina_test9.png" id="11_6gd0n"]
+[ext_resource type="AudioStream" uid="uid://2t1rdims3fwa" path="res://resourses/audio/temp_audio/AZALI - game over - (320 Kbps).mp3" id="12_nril7"]
+[ext_resource type="AudioStream" uid="uid://dl3arbbmywik7" path="res://resourses/audio/temp_audio/step1.wav" id="13_y7pks"]
+[ext_resource type="FontFile" uid="uid://c4ohbbx885w7l" path="res://resourses/fonts/BoldPixels.ttf" id="13_y83yx"]
+[ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="14_3ho2k"]
+[ext_resource type="AudioStream" uid="uid://deopgql6jxcvh" path="res://resourses/audio/temp_audio/step2.wav" id="14_l4hek"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pippe"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_ufh25"]
+sky_material = SubResource("ProceduralSkyMaterial_pippe")
+
+[sub_resource type="Environment" id="Environment_k81e3"]
+background_mode = 1
+sky = SubResource("Sky_ufh25")
+ambient_light_source = 3
+ambient_light_color = Color(0, 0.2518736, 0, 1)
+ambient_light_sky_contribution = 0.8
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_0jsp4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneCamera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutsceneCamera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.9398811, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CutsceneCamera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CutsceneCamera3D:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.89632106, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CutsceneCamera3D:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.20674065, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CutsceneCamera3D:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.29537824, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Step1:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Step2:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1um3l"]
+resource_name = "camera_bob"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneCamera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.080975465, -0.001999394, 0.1, 0.0024691357, 0.01, -0.40000015, 2.1786429e-05, 0, 0, 0, -0.13333309, 0.009150326, 0, 0, -0.01, -0.49999988, -0.0007480029, 0, 0, 0, -0.19999981, -0.005083515, 0, 0, 0.0002904865, -0.32015538, 0.005228758, 0, 0, 0.01, -0.40666676, -0.012045905, 0, 0, -0.0035183793, -0.2666664, 0.023559578, 0, 0, 0, -0.32000017, -0.020819943, 0, 0, -0.01, -0.33665466, 0.01885984, 0.13001204, -0.0059767608, 0, -0.03333333, -0.002908882, 0, 0),
+"times": PackedFloat32Array(0, 0.7, 1.5333333, 2.6666667, 3.3, 3.9, 4.9, 5.5666666, 6.4333334, 7.2, 7.9666667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutsceneCamera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-1.9398811, -0.09617453, 0.0015451079, 0.23333333, -0.0037486553, -1.9462037, -0.36666664, 0.0007492304, 0, 0, -1.94, -0.36666644, -0.0065305233, 0, 0, -1.935, -0.43159533, 0.00045204163, 0, 0, -1.94, -0.29826212, 0.004145026, 0, 0, -1.94, -0.4333334, -0.0038324594, 0, 0, -1.9444407, -0.3000002, 0.009989858, 0, 0, -1.94, -0.26333284, -0.00798893, 0, 0, -1.94, -0.4137559, 0.0073040724, 0, 0, -1.9398811, -0.29375553, -0.0050154924, 0.33957767, 0.0048974752, -1.94, -0.03333333, 0, 0, 0),
+"times": PackedFloat32Array(0, 1, 1.7666667, 2.4, 3.1, 4.1666665, 4.733333, 5.733333, 6.3533335, 7.1, 7.9666667)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CutsceneCamera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.13045545, 0.0041194917, 0.20962928, -0.006619624, 0.0061980486, -0.13565683, -0.009484265, 0, 0, 0.014132702, -0.5666665, 0.0012576077, 0, 0, -0.00037637877, -0.099999905, 0.012467461, 0, 0, -0.01, -0.59999967, -0.0005440712, 0, 0, 0.00030373438, -0.20000005, -0.0092953835, 0, 0, 0, -0.44930887, 0.013002613, 0, 0, 0.0073315706, -0.23333359, -0.013375559, 0, 0, 0, -0.31860685, 0.017462213, 0, 0, 0.006424753, -0.35703754, -0.016976392, 0.24296284, 0.010673124, 0, -0.15703726, 0.008007862, 0, 0),
+"times": PackedFloat32Array(0, 0.6, 1.4666667, 2.5666666, 3.3, 3.9666667, 4.9, 5.4666667, 6.266667, 6.9666667, 7.9666667)
+}
+
+[sub_resource type="Animation" id="Animation_ufh25"]
+resource_name = "start_walk"
+length = 7.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneCamera3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-0.89632106, -0.25, 0, 0.25, 0, -0.8787117, -0.16666667, -0.003276229, 0.16666667, 0.003276229, -0.8570063, -0.33333334, -0.007206604, 0.33333334, 0.007206604, -0.8353918, -0.16666667, -0.003930375, 0.16666667, 0.003930375, -0.8098418, -0.050000004, -0.0061405404, 0, 0, -0.80531424, -0.04609275, -0.0007545948, 0, 0),
+"times": PackedFloat32Array(0, 1.489446, 3.0158317, 4.551452, 6.0408974, 6.317454)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutsceneCamera3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.20674065, -0.89345014, -0.019546932, 0.2, 0.004375607, 0.20674063, -0.36666667, 0.0032543093, 0.0067218053, -5.9658636e-05, 0.20674065, -0.5666667, 0.005496934, 0.00019065199, -1.849414e-06, 0.20674065, -0.4000001, 0.0029739738, 0.0002426984, -1.8044464e-06, 0.20674065, -0.5, 0.004936278, 0, 0, 0.20674065, -0.04609275, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.489446, 3.0158317, 4.551452, 6.0408974, 6.3174973)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CutsceneCamera3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.29537824, -0.25, 0, 0.25, 0, 0.30015212, -0.16666667, -0.0008923958, 0.16666667, 0.0008923958, 0.306087, -0.33333334, -0.002021961, 0.33333334, 0.002021961, 0.3119905, -0.16666667, -0.0011295652, 0.16666667, 0.0011295652, 0.31964177, -0.050000004, -0.0026044548, 0, 0, 0.323, -0.04609275, -0.0008242031, 0, 0),
+"times": PackedFloat32Array(0, 1.489446, 3.0158317, 4.551452, 6.0408974, 6.3174973)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CutsceneCamera3D:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.49203703, -0.13732795, 0.015715448, 0.3010497, 0.010736853, 0, -0.5738754, 0.005577434, 0.1, 0.0024691357),
+"times": PackedFloat32Array(6.0408974, 7.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CutsceneCamera3D:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-2.6112652, -0.16666667, 0, 0.41745138, 0.13175797, -1.9398811, -0.7232857, 0.026467085, 0.23333333, -0.0037486553),
+"times": PackedFloat32Array(6.0408974, 7.5)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Step1:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3, 6, 7.4599996),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Step2:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.5, 4.5, 6.93),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7i57j"]
+_data = {
+&"RESET": SubResource("Animation_0jsp4"),
+&"camera_bob": SubResource("Animation_1um3l"),
+&"start_walk": SubResource("Animation_ufh25")
+}
+
+[sub_resource type="Animation" id="Animation_b6ebu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_v4i6i"]
+resource_name = "initial_turn"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.81000006, 1.0400002, 1.62, 1.91, 2.23, 4.5300007, 4.9400005),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1hi8c"]
+_data = {
+&"RESET": SubResource("Animation_b6ebu"),
+&"initial_turn": SubResource("Animation_v4i6i")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifmb6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_y83yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3ho2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lrdm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y7pks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l4hek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ljkyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3xcei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2vfw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6gd0n")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ho2k"]
+font = ExtResource("13_y83yx")
+
+[node name="Dark Park" type="Node3D" unique_id=1599108158]
+script = ExtResource("1_ie081")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=743095072]
+environment = SubResource("Environment_k81e3")
+
+[node name="CutsceneCamera3D" type="Camera3D" parent="." unique_id=301200417]
+transform = Transform3D(-0.3607618, 0, -0.9326575, 0, 1, 0, 0.9326575, 0, -0.3607618, -0.89632106, 0.20674065, 0.29537824)
+fov = 54.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2011105839]
+libraries/ = SubResource("AnimationLibrary_7i57j")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1535274653]
+root_node = NodePath("../CutsceneSprite")
+libraries/ = SubResource("AnimationLibrary_1hi8c")
+
+[node name="blockbench_export" parent="." unique_id=1829015603 instance=ExtResource("2_nril7")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2006007619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05145887, 0.45028937, 0.6273793)
+light_color = Color(0.9736367, 0.8815982, 0.85271066, 1)
+light_energy = 0.3
+shadow_enabled = true
+omni_range = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=2028293319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73288083, 0.46437526, 0.54554415)
+light_color = Color(0.9736367, 0.8815982, 0.85271066, 1)
+light_energy = 0.3
+shadow_enabled = true
+shadow_bias = 0.001
+omni_range = 0.5
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=79077612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7631604, 0.46437526, 0.23740774)
+light_color = Color(0.9736367, 0.8815982, 0.85271066, 1)
+light_energy = 0.3
+shadow_enabled = true
+omni_range = 0.5
+
+[node name="CutsceneSprite" type="AnimatedSprite3D" parent="." unique_id=347204243]
+transform = Transform3D(-0.009186398, 0, -0.059292573, 0, 0.059999995, 0, 0.059292573, 0, -0.009186398, -0.59612125, 0.17626579, 0.36664718)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ifmb6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=344277032]
+stream = ExtResource("12_nril7")
+volume_db = -5.0
+bus = &"Music"
+
+[node name="Step1" type="AudioStreamPlayer" parent="." unique_id=1865192393]
+stream = ExtResource("13_y7pks")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="Step2" type="AudioStreamPlayer" parent="." unique_id=1029796066]
+stream = ExtResource("14_l4hek")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1687944018]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Epilogue" type="Label" parent="ColorRect" unique_id=1771395052]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 347.0
+text = "EPILOGUE
+"
+label_settings = SubResource("LabelSettings_3ho2k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Titile" type="Label" parent="ColorRect" unique_id=1384992723]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_top = 31.0
+offset_right = 480.0
+offset_bottom = 360.0
+text = "Just good old regular days"
+label_settings = SubResource("LabelSettings_3ho2k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player" parent="." unique_id=991614113 instance=ExtResource("14_3ho2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.7460287)

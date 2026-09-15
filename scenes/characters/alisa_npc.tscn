@@ -1,18 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctvbdq5ye7u4"]
+[gd_scene format=3 uid="uid://ctvbdq5ye7u4"]
 
 [ext_resource type="PackedScene" uid="uid://bytuc1huhkkhc" path="res://scenes/characters/npc_template.tscn" id="1_s7wd8"]
 [ext_resource type="Script" uid="uid://cd8t4rbh7pvbj" path="res://scenes/characters/alisa_npc.gd" id="2_30l3m"]
 [ext_resource type="Texture2D" uid="uid://4rdm5o1n7loe" path="res://resourses/sprites/characters/alisa.png" id="2_rp5i6"]
 
-[node name="AlisaNPC" instance=ExtResource("1_s7wd8")]
+[node name="AlisaNPC" unique_id=2134219183 instance=ExtResource("1_s7wd8")]
 script = ExtResource("2_30l3m")
 should_dissapear = false
 
-[node name="CollisionShape3D" parent="." index="0"]
+[node name="CollisionShape3D" parent="." index="0" unique_id=293680734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0143011, 0.0343644, -0.0141742)
 
-[node name="Sprite3D" parent="." index="1"]
+[node name="Sprite3D" parent="." index="1" unique_id=1023008798]
 texture = ExtResource("2_rp5i6")
 
 [node name="InteractionArea" parent="." index="3"]
-prompt = "alisa_apartament_interact"
+prompt = "res://JSON Scripts/Dialogues/Apartament/alisa_apartament_iteract.json"
+prompt_ru = "res://JSON Scripts/Dialogues/Apartament/alisa_apartament_iteract_ru.json"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cebgcisl3p0kg"
+
+[deps]
+
+files=["res://localization/DWS Lang. Sheet - Лист1.ENG.translation", "res://localization/DWS Lang. Sheet - Лист1.RUS.translation", "res://localization/DWS Lang. Sheet - Лист1.en.translation", "res://localization/DWS Lang. Sheet - Лист1.en.translation"]
+
+source_file="res://localization/DWS Lang. Sheet - Лист1.csv"
+dest_files=["res://localization/DWS Lang. Sheet - Лист1.ENG.translation", "res://localization/DWS Lang. Sheet - Лист1.RUS.translation", "res://localization/DWS Lang. Sheet - Лист1.en.translation", "res://localization/DWS Lang. Sheet - Лист1.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

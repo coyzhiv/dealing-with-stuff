@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Skills" load_steps=3 format=3 uid="uid://crj138bf84dto"]
+[gd_resource type="Resource" script_class="Skills" format=3 uid="uid://crj138bf84dto"]
 
 [ext_resource type="Texture2D" uid="uid://yeicnm8a84ae" path="res://resourses/sprites/interface/icons/buff_speed.png" id="1_fi8es"]
 [ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_uuryk"]
@@ -6,9 +6,14 @@
 [resource]
 script = ExtResource("2_uuryk")
 title = "Procrastinate"
+rus_title = "Прокрастинация"
 description = "Makes you belive you can do everything in time. Increases speed."
+rus_description = "Заставляет тебя поверить, что ты сможешь все успеть. Увеличивает скорость."
 icon = ExtResource("1_fi8es")
 effect = "buff"
 effect_info = "speed"
 value = 1.1
+target = "self"
+price = Array[int]([500, 500, 500, 500, 500])
+steps = Array[float]([0.1, 0.1, 0.1, 0.1, 0.1])
 metadata/_custom_type_script = "uid://b3ac4cep4lk6n"

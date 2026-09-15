@@ -285,7 +285,7 @@ func alisa_lists_select():
 			alisa_item_select.set_item_disabled(i,true)
 	for i in alisa_skill_inventory.items.size():
 		alisa_skill_select.add_item(alisa_skill_inventory.items[i].title, alisa_skill_inventory.items[i].icon, true)
-		if Globals.alisa_equipped_skills.items.has(alisa_skill_inventory.items[i]):
+		if Globals.alisa_equipped_skills.has(Globals.alisa_skill_inventory[i]):
 			alisa_skill_select.select(i,false)
 		
 	alisa_skill_select.grab_focus()
@@ -365,7 +365,7 @@ func lina_lists_select():
 			lina_item_select.set_item_disabled(i,true)
 	for i in lina_skill_inventory.items.size():
 		lina_skill_select.add_item(lina_skill_inventory.items[i].title, lina_skill_inventory.items[i].icon, true)
-		if Globals.lina_equipped_skills.items.has(lina_skill_inventory.items[i]):
+		if Globals.lina_equipped_skills.has(Globals.lina_skill_inventory[i]):
 			lina_skill_select.select(i,false)
 		
 	lina_skill_select.grab_focus()
@@ -474,11 +474,11 @@ func _on_alisa_item_select_changed(index: Variant) -> void:
 
 func _on_alisa_skill_select_changed(index: Variant) -> void:
 	if index != -1:
-		Globals.alisa_equipped_skills.items.clear()
+		Globals.alisa_equipped_skills.clear()
 		if alisa_skill_select.get_selected_items().is_empty():
 			alisa_skill_select.select(index)
 		for i in alisa_skill_select.get_selected_items().size():
-			Globals.alisa_equipped_skills.items.append(alisa_skill_inventory.items[alisa_skill_select.get_selected_items()[i]])
+			Globals.alisa_equipped_skills.append(alisa_skill_inventory.items[alisa_skill_select.get_selected_items()[i]])
 
 
 func _on_lina_item_select_changed(index: Variant) -> void:
@@ -493,8 +493,8 @@ func _on_lina_item_select_changed(index: Variant) -> void:
 func _on_lina_skill_select_changed(index: Variant) -> void:
 	if index != -1:
 		
-		Globals.lina_equipped_skills.items.clear()
+		Globals.lina_equipped_skills.clear()
 		if lina_skill_select.get_selected_items().is_empty():
 			lina_skill_select.select(index)
 		for i in lina_skill_select.get_selected_items().size():
-			Globals.lina_equipped_skills.items.append(lina_skill_inventory.items[lina_skill_select.get_selected_items()[i]])
+			Globals.lina_equipped_skills.append(lina_skill_inventory[lina_skill_select.get_selected_items()[i]])

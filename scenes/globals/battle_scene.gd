@@ -8,7 +8,8 @@ var alisa_skill_pool: Array[Skills]
 var lina_skill_pool: Array[Skills]
 
 var callable
-var target
+var targets: Array
+var battle_lost = false
 
 var queue: Array
 var max_speed
@@ -30,25 +31,33 @@ enum directions
 var alisa_current_direction
 var lina_current_direction
 
-@onready var alisa_skill_display_up = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Up/Name
-@onready var alisa_skill_display_down = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Down/Name
-@onready var alisa_skill_display_left = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Left/Name
-@onready var alisa_skill_display_right = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Right/Name
-@onready var alisa_skill_display_up_icon = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Up/Icon
-@onready var alisa_skill_display_down_icon = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Down/Icon
-@onready var alisa_skill_display_left_icon = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Left/Icon
-@onready var alisa_skill_display_right_icon = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Right/Icon
+@onready var alisa_skill_display_up = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/UpName
+@onready var alisa_skill_display_down = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/DownName
+@onready var alisa_skill_display_left = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/LeftName
+@onready var alisa_skill_display_right = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/RightName
+@onready var alisa_skill_display_up_icon = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/IconUp
+@onready var alisa_skill_display_down_icon = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/IconDown
+@onready var alisa_skill_display_left_icon = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/IconLeft
+@onready var alisa_skill_display_right_icon = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/IconRight
+@onready var alisa_skill_display_up_particle = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/ParticleUp
+@onready var alisa_skill_display_down_particle = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/ParticleDown
+@onready var alisa_skill_display_left_particle = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/ParticleLeft
+@onready var alisa_skill_display_right_particle = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls/ParticleRight
 @onready var alisa_hp_bar = $SubViewportContainer/SubViewport/AllThe2d/AlisaHP
 @onready var alisa_skill_controls = $SubViewportContainer/SubViewport/AllThe2d/LeftContorls
 
-@onready var lina_skill_display_up = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/Up/Name
-@onready var lina_skill_display_down = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/Down/Name
-@onready var lina_skill_display_left = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/Left/Name
-@onready var lina_skill_display_right = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/Right/Name
-@onready var lina_skill_display_up_icon = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/Up/Icon
-@onready var lina_skill_display_down_icon = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/Down/Icon
-@onready var lina_skill_display_left_icon = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/Left/Icon
-@onready var lina_skill_display_right_icon = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/Right/Icon
+@onready var lina_skill_display_up = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/UpName
+@onready var lina_skill_display_down = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/DownName
+@onready var lina_skill_display_left = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/LeftName
+@onready var lina_skill_display_right = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/RightName
+@onready var lina_skill_display_up_icon = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/IconUp
+@onready var lina_skill_display_down_icon = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/IconDown
+@onready var lina_skill_display_left_icon = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/IconLeft
+@onready var lina_skill_display_right_icon = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/IconRight
+@onready var lina_skill_display_up_particle = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/ParticleUp
+@onready var lina_skill_display_down_particle = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/ParticleDown
+@onready var lina_skill_display_left_particle = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/ParticleLeft
+@onready var lina_skill_display_right_particle = $SubViewportContainer/SubViewport/AllThe2d/RightContorls/ParticleRight
 @onready var lina_hp_bar = $SubViewportContainer/SubViewport/AllThe2d/LinaHP
 @onready var lina_skill_controls = $SubViewportContainer/SubViewport/AllThe2d/RightContorls
 
@@ -89,10 +98,17 @@ signal turn_ended()
 signal alisa_input_pressed(direction)
 signal lina_input_pressed(direction)
 signal battle_over()
+signal confrim_pressed
+
 
 func _process(delta):
-	
+	$Guide/Screen1/Label.text = tr("SCREEN1")
+	$Guide/Screen2/Label.text = tr("SCREEN2")
+	$Guide/Screen3/Label.text = tr("SCREEN3")
+	$Guide/Screen4/Label.text = tr("SCREEN4")
+	$Guide/Screen5/Label.text = tr("SCREEN5")
 	if fight_active:
+		confirm()
 		clamping()
 		control_handle()
 		ko_handle()
@@ -110,7 +126,17 @@ func testing_stats_show():
 
 
 func start(enemy, enemy_animation):
+	alisa_skill_display_up_particle.emitting = false
+	alisa_skill_display_down_particle.emitting = false
+	alisa_skill_display_left_particle.emitting = false
+	alisa_skill_display_right_particle.emitting = false
+	lina_skill_display_up_particle.emitting = false
+	lina_skill_display_down_particle.emitting = false
+	lina_skill_display_left_particle.emitting = false
+	lina_skill_display_right_particle.emitting = false
+	battle_lost = false
 	$Audio/Encounter.play()
+	enemy_sprite.idle()
 	await get_tree().create_timer(0.8).timeout
 	slow_points = 0.0
 	fast_points = 0.0
@@ -124,16 +150,18 @@ func start(enemy, enemy_animation):
 	await get_tree().create_timer(0.3).timeout
 	$Audio/FightOST.play()
 	await get_tree().create_timer(0.4).timeout
+	
 	turn()
 	fight_active = true
 	
 	
+	
 
 func finish():
-	Transition.play_simple_transition()
+	Transition.play_battle_end_transiton(enemy_fight.reward_points)
 	fight_active = false
 	get_tree().paused = false
-	await get_tree().create_timer(0.6).timeout
+	await get_tree().create_timer(2.3).timeout
 	battle_over.emit()
 	$Audio/FightOST.stop()
 	visible = false
@@ -150,7 +178,11 @@ func characters_ready(enemy_animation):
 	alisa_fight.def = Globals.alisa_def
 	alisa_fight.spd = (speed_frame/2) - Globals.alisa_spd + (speed_frame/2)
 	alisa_fight.item = Globals.alisa_equipped_item
-	alisa_fight.skills = Globals.alisa_equipped_skills
+	alisa_fight.skills.clear()
+	for i in Globals.alisa_skill_inventory.size():
+		for j in Globals.alisa_equipped_skills.size():
+			if i == Globals.alisa_equipped_skills[j]:
+				alisa_fight.skills.append(Globals.alisa_skill_inventory[i])
 	alisa_fight.base_hp = alisa_fight.hp
 	alisa_fight.base_spd = alisa_fight.spd
 	alisa_sprite.init(alisa_fight)
@@ -163,7 +195,11 @@ func characters_ready(enemy_animation):
 	lina_fight.def = Globals.lina_def
 	lina_fight.spd = (speed_frame/2) - Globals.lina_spd + (speed_frame/2)
 	lina_fight.item = Globals.lina_equipped_item
-	lina_fight.skills = Globals.lina_equipped_skills
+	lina_fight.skills.clear()
+	for i in Globals.lina_skill_inventory.size():
+		for j in Globals.lina_equipped_skills.size():
+			if i == Globals.lina_equipped_skills[j]:
+				lina_fight.skills.append(Globals.lina_skill_inventory[i])
 	lina_fight.base_hp = lina_fight.hp
 	lina_fight.base_spd = lina_fight.spd
 	lina_hp_bar.max_value = lina_fight.base_hp
@@ -274,18 +310,19 @@ func ko_queue_refresh(kod_char):
 		else:
 			break
 
-func buff_queue_refresh(target):
+func buff_queue_refresh(targets):
 	alisa_fight.spd = alisa_queue_turn_memory[0]
 	lina_fight.spd = lina_queue_turn_memory[0]
 	enemy_fight.spd = enemy_queue_turn_memory[0]
 	speed_frame_calculate_on_buff()
 	create_queue()
-	if target == enemy_fight:
+	if targets[0] == enemy_fight:
 		await enemy_sprite.anim_ended
-	elif target == alisa_fight:
+	elif targets[0] == alisa_fight:
 		await alisa_sprite.anim_ended
-	elif target == lina_fight:
+	elif targets[0] == lina_fight:
 		await lina_sprite.anim_ended
+	targets.clear()
 	turn_ended.emit()
 
 
@@ -338,21 +375,21 @@ func new_turn_icons():
 	tween.set_parallel(true)
 	for i in battle_icons.size():
 		if i != draw_icon_index:
-			tween.tween_property(battle_icons[i], "position", Vector2(battle_icons[i].position.x, battle_icons[i].position.y - 72), 0.5).set_trans(Tween.TRANS_ELASTIC)
+			tween.tween_property(battle_icons[i], "position", Vector2(battle_icons[i].position.x, battle_icons[i].position.y - 19), 0.5).set_trans(Tween.TRANS_ELASTIC)
 		else:
-			tween.tween_property(battle_icons[i], "position", Vector2(battle_icons[i].position.x + 77, battle_icons[i].position.y), 0.5).set_trans(Tween.TRANS_ELASTIC)
+			tween.tween_property(battle_icons[i], "position", Vector2(battle_icons[i].position.x + 27, battle_icons[i].position.y), 0.5).set_trans(Tween.TRANS_ELASTIC)
 	await tween.finished
 	if draw_icon_index != 10:
-		battle_icons[draw_icon_index+1].position = Vector2(-38, 687)
+		battle_icons[draw_icon_index+1].position = Vector2(-16, 182.0)
 	else:
-		battle_icons[0].position = Vector2(-38, 687)
+		battle_icons[0].position = Vector2(-16, 182.0)
 
 func reset_icons():
 	var tween = get_tree().create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.set_parallel(true)
 	for i in battle_icons.size():
-		tween.tween_property(battle_icons[i], "position", Vector2(battle_icons[i].position.x - 77, battle_icons[i].position.y), 0.5).set_trans(Tween.TRANS_QUART)
+		tween.tween_property(battle_icons[i], "position", Vector2(battle_icons[i].position.x - 27, battle_icons[i].position.y), 0.5).set_trans(Tween.TRANS_QUART)
 	await tween.finished
 	icon_reset.play("RESETT")
 	var tween1 = get_tree().create_tween()
@@ -360,21 +397,21 @@ func reset_icons():
 	tween1.set_parallel(true)
 	for i in battle_icons.size():
 		if i != 10:
-			tween1.tween_property(battle_icons[i], "position", Vector2(battle_icons[i].position.x + 77, battle_icons[i].position.y), 0.5).set_trans(Tween.TRANS_QUART)
+			tween1.tween_property(battle_icons[i], "position", Vector2(battle_icons[i].position.x + 27, battle_icons[i].position.y), 0.5).set_trans(Tween.TRANS_QUART)
 	await tween1.finished
 	
 
 
 func draw_buff_icon(icon_set, icon, index):
-	icon_set[index].visible = true
+	icon_set[index].emitting = true
 	icon_set[index].get_children()[0].texture = icon
 	var tween = get_tree().create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-	tween.set_parallel(true)
-	tween.tween_property(icon_set[index], "position", Vector2(icon_set[index].position.x, icon_set[index].position.y - 64), 0.5).set_trans(Tween.TRANS_ELASTIC)
+	print(icon_set[index].get_child(0))
+	tween.tween_property(icon_set[index].get_child(0), "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.3)
 
 func reset_buff_icons():
-	$SubViewportContainer/SubViewport/AllThe2d/BuffIcons/BuffIconReset.play("RESETT")
+	$SubViewportContainer/SubViewport/AllThe2d/BuffIcons/BuffIconReset.play("RESET")
 	alisa_buff_icon_index = 0
 	lina_buff_icon_index = 0
 	enemy_buff_icon_index = 0
@@ -382,6 +419,16 @@ func reset_buff_icons():
 
 func turn():
 	new_turn_queue()
+	
+	alisa_skill_display_up_particle.gravity.y = 0
+	alisa_skill_display_down_particle.gravity.y = 0
+	alisa_skill_display_left_particle.gravity.x = 0
+	alisa_skill_display_right_particle.gravity.x = 0
+	lina_skill_display_up_particle.gravity.y = 0
+	lina_skill_display_down_particle.gravity.y = 0
+	lina_skill_display_left_particle.gravity.x = 0
+	lina_skill_display_right_particle.gravity.x = 0
+	
 	match current_turn:
 		enemy_fight: 
 			turn_enemy()
@@ -395,25 +442,74 @@ func turn_enemy():
 	if valid_targets.is_empty():
 		turn()
 		return
-	var random_skill_id = rng.randi_range(0, enemy_fight.skills.items.size()-1)
-	var random_skill_target = rng.randi_range(0, valid_targets.size()-1)
-	var target
-	match enemy_fight.skills.items[random_skill_id].effect:
-		"damage": target = valid_targets[random_skill_target]
-		"heal": target = enemy_fight
-		"buff": target = enemy_fight
-	enemy_skill_icon.texture = enemy_fight.skills.items[random_skill_id].icon
-	enemy_skill_name.text = enemy_fight.skills.items[random_skill_id].title
+	var callable: Callable
+	
+	var min_hp_target = valid_targets[0]
+	var max_hp_target = valid_targets[0]
+	for i in valid_targets:
+		if i.hp < min_hp_target.hp:
+			min_hp_target = i
+		if i.hp > max_hp_target.hp:
+			max_hp_target = i
+	
+	var max_damage = 0
+	print("search started")
+	for i in enemy_fight.skills:
+		print("new cycle")
+		if i.effect == "damage":
+			print("damage_found" + i.effect_info + str(min_hp_target))
+			if i.effect_info == "hp":
+				print("hp damage")
+				max_damage = int((i.value / 10) * (enemy_fight.atk/2 + enemy_fight.atk/2 - min_hp_target.def/2))
+			elif i.effect_info == "speed":
+				max_damage = int((i.value / 10) * (enemy_fight.atk/2 + enemy_fight.atk/2 - min_hp_target.def/2))
+			elif i.effect_info == "vampirism":
+				max_damage = int((i.value / 10) * (enemy_fight.atk/2 + enemy_fight.atk/2 - min_hp_target.def/2))
+			elif i.effect_info == "multi-hit":
+				max_damage = int((i.value / 10) * (enemy_fight.atk/2 + enemy_fight.atk/2 - min_hp_target.def/2)) * 3
+			if max_damage > min_hp_target.hp:
+				enemy_skill_icon.texture = i.icon
+				match Globals.language:
+					"ENG":enemy_skill_name.text = i.title
+					"RUS":enemy_skill_name.text = i.rus_title
+				enemy_anim.play("show_skill")
+				callable = Callable(self, i.effect)
+				callable.call(null, i.effect_info, i.value, min_hp_target, enemy_fight)
+				print("max damage applied " + str(max_damage))
+				return
+	print("max damage not applied" + str(max_damage))
+	var temp_skills: Array
+	for i in enemy_fight.skills:
+		print("hp", enemy_fight.hp, "base_hp", enemy_fight.base_hp)
+		if i.effect == "heal" and enemy_fight.hp < enemy_fight.base_hp / 2:
+			temp_skills.append(i)
+		elif i.effect == "buff" and enemy_buff_icon_index !=6:
+			temp_skills.append(i)
+		elif i.effect != "heal" and i.effect != "buff":
+			temp_skills.append(i)
+	
+	var random_skill_id = randi_range(0, temp_skills.size()-1)
+	targets.clear()
+	match temp_skills[random_skill_id].effect:
+		"damage": targets.append(max_hp_target)
+		"heal": targets.append(enemy_fight)
+		"buff": targets.append(enemy_fight)
+	enemy_skill_icon.texture = temp_skills[random_skill_id].icon
+	match Globals.language:
+		"ENG":enemy_skill_name.text = temp_skills[random_skill_id].title
+		"RUS":enemy_skill_name.text = temp_skills[random_skill_id].rus_title
 	enemy_anim.play("show_skill")
-	var callable = Callable(self, enemy_fight.skills.items[random_skill_id].effect)
-	callable.call(null, enemy_fight.skills.items[random_skill_id].effect_info, enemy_fight.skills.items[random_skill_id].value, target, enemy_fight)
+	callable = Callable(self, temp_skills[random_skill_id].effect)
+	callable.call(null, temp_skills[random_skill_id].effect_info, temp_skills[random_skill_id].value, temp_skills[random_skill_id].upgrade, temp_skills[random_skill_id].steps, targets, enemy_fight)
 	
 func turn_player(player):
+	
 	if player == alisa_fight:
 		alisa_skill_pool = skill_shuffle_and_display(player, alisa_skill_display_up, 
 		alisa_skill_display_down, alisa_skill_display_right, alisa_skill_display_left, 
 		alisa_skill_display_up_icon, alisa_skill_display_down_icon, alisa_skill_display_right_icon, 
-		alisa_skill_display_left_icon, alisa_skill_pool, alisa_skill_controls, alisa_buff_icon_index)
+		alisa_skill_display_left_icon, alisa_skill_pool, alisa_skill_controls, alisa_buff_icon_index,
+		alisa_skill_display_up_particle, alisa_skill_display_down_particle, alisa_skill_display_right_particle, alisa_skill_display_left_particle)
 		
 		
 		
@@ -421,10 +517,62 @@ func turn_player(player):
 		lina_skill_pool = skill_shuffle_and_display(player, lina_skill_display_up, 
 		lina_skill_display_down, lina_skill_display_right, lina_skill_display_left, 
 		lina_skill_display_up_icon, lina_skill_display_down_icon, lina_skill_display_right_icon, 
-		lina_skill_display_left_icon, lina_skill_pool, lina_skill_controls, lina_buff_icon_index)
+		lina_skill_display_left_icon, lina_skill_pool, lina_skill_controls, lina_buff_icon_index,
+		lina_skill_display_up_particle, lina_skill_display_down_particle, lina_skill_display_right_particle, lina_skill_display_left_particle)
 		
 		
+	if InteractionMemory.first_fight:
+		InteractionMemory.first_fight = false
+		var tween1 = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel()
+		tween1.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween1.tween_property($Guide/Screen1, "modulate", Color(1.0, 1.0, 1.0), 1)
+		await get_tree().create_timer(1).timeout
+		var tween2 = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel()
+		tween2.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween2.tween_property($Guide/Screen1/Confirm, "modulate", Color(1.0, 1.0, 1.0), 1)
+		await confrim_pressed
+		var tween3 = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel()
+		tween3.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween3.tween_property($Guide/Screen1, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
+		tween3.tween_property($Guide/Screen2, "modulate", Color(1.0, 1.0, 1.0), 1)
+		await get_tree().create_timer(1).timeout
+		var tween35 = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel()
+		tween35.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween35.tween_property($Guide/Screen2/Confirm, "modulate", Color(1.0, 1.0, 1.0), 1)
+		await confrim_pressed
+		var tween4 = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel()
+		tween4.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween4.tween_property($Guide/Screen2, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
+		tween4.tween_property($Guide/Screen3, "modulate", Color(1.0, 1.0, 1.0), 1)
+		await get_tree().create_timer(1).timeout
+		var tween45 = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel()
+		tween45.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween45.tween_property($Guide/Screen3/Confirm, "modulate", Color(1.0, 1.0, 1.0), 1)
+		await confrim_pressed
+		var tween5 = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel()
+		tween5.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween5.tween_property($Guide/Screen3, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
+		tween5.tween_property($Guide/Screen4, "modulate", Color(1.0, 1.0, 1.0), 1)
+		await get_tree().create_timer(1).timeout
+		var tween55 = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel()
+		tween55.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween55.tween_property($Guide/Screen4/Confirm, "modulate", Color(1.0, 1.0, 1.0), 1)
+		await confrim_pressed
+		var tween6 = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel()
+		tween6.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween6.tween_property($Guide/Screen4, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
+		tween6.tween_property($Guide/Screen5, "modulate", Color(1.0, 1.0, 1.0), 1)
+		await get_tree().create_timer(1).timeout
+		var tween65 = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel()
+		tween65.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween65.tween_property($Guide/Screen5/Confirm, "modulate", Color(1.0, 1.0, 1.0), 1)
+		await confrim_pressed
+		var tween7 = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel()
+		tween7.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween7.tween_property($Guide/Screen5, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
 		
+		
+	
 	if player == alisa_fight:
 		await get_tree().create_timer(0.5).timeout
 		for i in alisa_skill_pool.size():
@@ -452,9 +600,32 @@ func turn_player(player):
 				spell_not_sound.play()
 			else:
 				break
-				
-		interface_anim.play('remove_left')
+		var tween = get_tree().create_tween()
+		tween.set_parallel(true)
+		tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween.tween_property(alisa_skill_display_up, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(alisa_skill_display_down, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(alisa_skill_display_left, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(alisa_skill_display_right, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(alisa_skill_display_up_icon, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(alisa_skill_display_down_icon, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(alisa_skill_display_left_icon, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(alisa_skill_display_right_icon, "modulate", Color("#ffffff00"), 0.3)
+		
+		alisa_skill_display_up_particle.emitting = false
+		alisa_skill_display_down_particle.emitting = false
+		alisa_skill_display_left_particle.emitting = false
+		alisa_skill_display_right_particle.emitting = false
+		if alisa_current_direction == 0:
+			alisa_skill_display_up_particle.gravity.y = -100
+		elif alisa_current_direction == 1:
+			alisa_skill_display_down_particle.gravity.y = 100
+		elif alisa_current_direction == 2:
+			alisa_skill_display_right_particle.gravity.x = 100
+		elif alisa_current_direction == 3:
+			alisa_skill_display_left_particle.gravity.x = -100
 		skill_handle(alisa_fight, alisa_skill_pool, alisa_current_direction)
+	
 	if player == lina_fight:
 		await get_tree().create_timer(0.5).timeout
 		for i in lina_skill_pool.size():
@@ -481,48 +652,94 @@ func turn_player(player):
 				spell_not_sound.play()
 			else:
 				break
-		interface_anim.play('remove_right')
+		var tween = get_tree().create_tween()
+		tween.set_parallel(true)
+		tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		tween.tween_property(lina_skill_display_up, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(lina_skill_display_down, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(lina_skill_display_left, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(lina_skill_display_right, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(lina_skill_display_up_icon, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(lina_skill_display_down_icon, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(lina_skill_display_left_icon, "modulate", Color("#ffffff00"), 0.3)
+		tween.tween_property(lina_skill_display_right_icon, "modulate", Color("#ffffff00"), 0.3)
+		
+		lina_skill_display_up_particle.emitting = false
+		lina_skill_display_down_particle.emitting = false
+		lina_skill_display_left_particle.emitting = false
+		lina_skill_display_right_particle.emitting = false
+		if lina_current_direction == 0:
+			lina_skill_display_up_particle.gravity.y = -100
+		elif lina_current_direction == 1:
+			lina_skill_display_down_particle.gravity.y = 100
+		elif lina_current_direction == 2:
+			lina_skill_display_right_particle.gravity.x = 100
+		elif lina_current_direction == 3:
+			lina_skill_display_left_particle.gravity.x = -100
+			
 		skill_handle(lina_fight, lina_skill_pool, lina_current_direction)
 		
 	
-func skill_shuffle_and_display(player, up, down, left, right, icon_up, icon_down, icon_left, icon_right, skill_pool, side, buff_index):
+func skill_shuffle_and_display(player, up, down, left, right, icon_up, icon_down, icon_left, icon_right, skill_pool, side, buff_index, particle_up, particle_down, particle_left, particle_right):
 	skills_clear()
 	skill_pool.clear()
-	if side == alisa_skill_controls:
-		interface_anim.play_backwards('remove_left')
-	if side == lina_skill_controls:
-		interface_anim.play_backwards('remove_right')
-	if player.skills.items.size() < 5: 
-		for i in player.skills.items.size():
-			skill_pool.append(player.skills.items[i])
-	if player.skills.items.size() >= 5: 
-		player.skills.items.shuffle()
+	var tween = get_tree().create_tween()
+	tween.set_parallel(true)
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	if player.skills.size() < 5: 
+		for i in player.skills.size():
+			skill_pool.append(player.skills[i])
+	if player.skills.size() >= 5: 
+		player.skills.shuffle()
 		for i in 4:
-			skill_pool.append(player.skills.items[i])
+			skill_pool.append(player.skills[i])
 	if skill_pool.size() > 0:
-		up.text = player.skills.items[0].title
-		icon_up.texture = player.skills.items[0].icon
+		match Globals.language:
+			"ENG":up.text = player.skills[0].title
+			"RUS":up.text = player.skills[0].rus_title
+		icon_up.texture = player.skills[0].icon
+		particle_up.emitting = true
+		tween.tween_property(up, "modulate", Color("#ffffff"), 0.3)
+		tween.tween_property(icon_up, "modulate", Color("#ffffff"), 0.3)
 		if skill_pool[0].effect == "buff" and buff_index == 6:
 			up.modulate = "777777"
 		else:
 			up.modulate = "ffffff"
+			
 	if skill_pool.size() > 1:
-		down.text = player.skills.items[1].title
-		icon_down.texture = player.skills.items[1].icon
+		match Globals.language:
+			"ENG":down.text = player.skills[1].title
+			"RUS":down.text = player.skills[1].rus_title
+		icon_down.texture = player.skills[1].icon
+		particle_down.emitting = true
+		tween.tween_property(down, "modulate", Color("#ffffff"), 0.3)
+		tween.tween_property(icon_down, "modulate", Color("#ffffff"), 0.3)
 		if skill_pool[1].effect == "buff" and buff_index == 6:
 			down.modulate = "777777"
 		else:
 			down.modulate = "ffffff"
+			
 	if skill_pool.size() > 2:
-		left.text = player.skills.items[2].title
-		icon_left.texture = player.skills.items[2].icon
+		match Globals.language:
+			"ENG":left.text = player.skills[2].title
+			"RUS":left.text = player.skills[2].rus_title
+		icon_left.texture = player.skills[2].icon
+		particle_left.emitting = true
+		tween.tween_property(left, "modulate", Color("#ffffff"), 0.3)
+		tween.tween_property(icon_left, "modulate", Color("#ffffff"), 0.3)
 		if skill_pool[2].effect == "buff" and buff_index == 6:
 			left.modulate = "777777"
 		else:
 			left.modulate = "ffffff"
+			
 	if skill_pool.size() > 3:
-		right.text = player.skills.items[3].title
-		icon_right.texture = player.skills.items[3].icon
+		match Globals.language:
+			"ENG":right.text = player.skills[3].title
+			"RUS":right.text = player.skills[3].rus_title
+		icon_right.texture = player.skills[3].icon
+		particle_right.emitting = true
+		tween.tween_property(right, "modulate", Color("#ffffff"), 0.3)
+		tween.tween_property(icon_right, "modulate", Color("#ffffff"), 0.3)
 		if skill_pool[3].effect == "buff" and buff_index == 6:
 			right.modulate = "777777"
 		else:
@@ -573,15 +790,20 @@ func control_handle():
 		lina_input_pressed.emit(directions.LEFT)
 
 func skill_handle(user, skill_pool, direction):
+	targets.clear()
 	if skill_pool[direction].effect == "damage":
-		target = enemy_fight
+		targets.append(enemy_fight)
 	if skill_pool[direction].effect == "heal":
-		target = user
+		targets.append(user)
 	if skill_pool[direction].effect == "buff":
-		target = user
+		if skill_pool[direction].target == "self":
+			targets.append(user)
+		if skill_pool[direction].target == "both":
+			targets.append(alisa_fight)
+			targets.append(lina_fight)
 	
 	callable = Callable(self, skill_pool[direction].effect)
-	callable.call(skill_pool[direction].icon, skill_pool[direction].effect_info, skill_pool[direction].value, target, user)
+	callable.call(skill_pool[direction].icon, skill_pool[direction].effect_info, skill_pool[direction].value, skill_pool[direction].upgrade, skill_pool[direction].steps , targets, user)
 
 func ko_handle():
 	if alisa_fight.hp == 0 and valid_targets.has(alisa_fight):
@@ -593,17 +815,29 @@ func ko_handle():
 		lina_sprite.recieve_ko()
 		create_queue()
 	if enemy_fight.hp == 0:
+		battle_lost = false
 		fight_active = false
 		await enemy_sprite.anim_ended
 		enemy_sprite.recieve_ko()
 		await enemy_sprite.anim_ended
 		finish()
 	if valid_targets.is_empty():
+		print(1)
+		battle_lost = true
 		fight_active = false
+		reset_buff_icons()
 		await get_tree().create_timer(1).timeout
-		finish()
+		$Audio/FightOST.stop()
+		visible = false
+		get_tree().paused = false
+		battle_over.emit()
+		SaveAndLoad.save_load(true)
 
-
+func sum_value(level, steps):
+	var power = 0
+	for i in level:
+		power += steps[level]
+	return power
 
 func clamping():
 	alisa_fight.hp = clamp(alisa_fight.hp, 0, alisa_fight.base_hp)
@@ -612,7 +846,8 @@ func clamping():
 
 
 
-func damage(icon, effect_info, value, target, user):
+func damage(icon, effect_info, value, level, steps, targets, user):
+	value += sum_value(level, steps)
 	attack_sound.pitch_scale = randf_range(0.9,1.1)
 	if user == enemy_fight:
 		enemy_sprite.punch()
@@ -625,38 +860,52 @@ func damage(icon, effect_info, value, target, user):
 	elif user == lina_fight and effect_info == "speed":
 		lina_sprite.punch_fast()
 	
+	print("value", value, "atk",user.atk, "def", targets[0].def)
 	if effect_info == "hp":
 		if user == enemy_fight:
-			target.hp -= int(value * (user.atk/2 + user.atk/2 - target.def/2) * float(user.base_hp / 200 ))
+			targets[0].hp -= int(value * (user.atk/2 + (user.atk/2 - targets[0].def/2)))
 		if user != enemy_fight:
-			target.hp -= int(value * (user.atk/2 + user.atk/2 - target.def/2) * float(user.base_hp / 100 ))
+			targets[0].hp -= int(value * (user.atk/2 + (user.atk/2 - targets[0].def/2)) + float(user.base_hp / 50 ))
+			print("damage = ", int(value * (user.atk/2 + (user.atk/2 - targets[0].def/2)) + float(user.base_hp / 50 )))
 			slow_points += 100.0 / user.natural_spd
-	if effect_info == "speed":
-		target.hp -= int(value * (user.atk/2 + user.atk/2 - target.def/2) * user.natural_spd / 100)
+	elif effect_info == "speed":
+		targets[0].hp -= int(value * (user.atk/2 + (user.atk/2 - targets[0].def/2)) + user.natural_spd / 20)
+		if user != enemy_fight:
+			fast_points += 100.0 / user.natural_spd
+	elif effect_info == "vampirism":
+		if user == enemy_fight:
+			targets[0].hp -= int(value * (user.atk/2 + (user.atk/2 + (user.atk/2 - targets[0].def/2))))
+			user.hp += int((value) * (user.atk/2 +  + (user.atk/2 - targets[0].def/2))) / 20
+		else:
+			targets[0].hp -= int(value * (user.atk/2 + (user.atk/2 - targets[0].def/2)) + float(user.base_hp / 20 ))
+			user.hp += int(value * (user.atk/2  + (user.atk/2 - targets[0].def/2)) + float(user.base_hp / 20 )) / 20
+			slow_points += 100.0 / user.natural_spd
+	elif effect_info == "multi-hit":
+		targets[0].hp -= int((value / 10) * (user.atk/2 + (user.atk/2 + (user.atk/2 - targets[0].def/2))) + user.natural_spd / 20) * 3
 		if user != enemy_fight:
 			fast_points += 100.0 / user.natural_spd
 		
-	if target == enemy_fight:
+	if targets[0] == enemy_fight:
 		enemy_sprite.recieve_damage()
-		enemy_recieve_damage(enemy_hp_bar, target)
+		enemy_recieve_damage(enemy_hp_bar, targets)
 		await enemy_sprite.anim_ended
-	elif target == alisa_fight:
+	elif targets[0] == alisa_fight:
 		attack_sound.play()
-		animate_progress_bar(alisa_hp_bar, target)
+		animate_progress_bar(alisa_hp_bar, targets)
 		alisa_sprite.recieve_damage()
 		await alisa_sprite.anim_ended
-	elif target == lina_fight:
+	elif targets[0] == lina_fight:
 		attack_sound.play()
-		animate_progress_bar(lina_hp_bar, target)
+		animate_progress_bar(lina_hp_bar, targets)
 		lina_sprite.recieve_damage()
 		await lina_sprite.anim_ended
 	
 	turn_ended.emit()
 	
-func enemy_recieve_damage(bar,target):
+func enemy_recieve_damage(bar,targets):
 	await get_tree().create_timer(0.7).timeout
 	attack_sound.play()
-	animate_progress_bar(bar, target)
+	animate_progress_bar(bar, targets)
 	enemy_hp_bar_container.position.x += 10 
 	await get_tree().create_timer(0.1).timeout
 	enemy_hp_bar_container.position.x -= 20 
@@ -665,64 +914,74 @@ func enemy_recieve_damage(bar,target):
 	await get_tree().create_timer(0.1).timeout
 	enemy_hp_bar_container.position.x -= 10 
 	
-func animate_progress_bar(bar, target):
+func animate_progress_bar(bar, targets):
+	clamping()
 	var tween = get_tree().create_tween()
 	tween.set_parallel(true)
 	tween.set_trans(Tween.TRANS_QUAD)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-	tween.tween_property(bar, "max_value", float(target.base_hp), 0.5)
-	tween.tween_property(bar, "value", float(target.hp), 0.5)
-	if target != enemy_fight:
-		bar.get_children()[0].text = str(target.hp) + "/" + str(target.base_hp)
+	for target in targets:
+		tween.tween_property(bar, "max_value", float(target.base_hp), 0.5)
+		tween.tween_property(bar, "value", float(target.hp), 0.5)
+	if targets[0] != enemy_fight:
+		bar.get_children()[0].text = str(targets[0].hp) + "/" + str(targets[0].base_hp)
 
 
-func heal(icon, effect_info, value, target, user):
+func heal(icon, effect_info, value, level, steps, targets, user):
+	value += sum_value(level, steps)
 	heal_sound.pitch_scale = randf_range(0.9,1.1)
-	target.hp += value
+	for target in targets:
+		target.hp += value 
 	heal_sound.play()
 	if user == enemy_fight:
 		enemy_sprite.punch()
-		animate_progress_bar(enemy_hp_bar, target)
+		animate_progress_bar(enemy_hp_bar, targets)
 		await enemy_sprite.anim_ended
 	elif user == alisa_fight:
 		alisa_sprite.recieve_buff()
-		animate_progress_bar(alisa_hp_bar, target)
+		animate_progress_bar(alisa_hp_bar, targets)
 		await alisa_sprite.anim_ended
 	elif user == lina_fight:
 		lina_sprite.recieve_buff()
-		animate_progress_bar(lina_hp_bar, target)
+		animate_progress_bar(lina_hp_bar, targets)
 		await lina_sprite.anim_ended
 	turn_ended.emit()
 
-func buff(icon, effect_info, value, target, user):
+func buff(icon, effect_info, value, level, steps, targets, user):
+	value += sum_value(level, steps)
 	buff_sound.pitch_scale = randf_range(0.9,1.1)
 	buff_sound.play()
 	if effect_info == "atk":
-		target.atk *= value
+		for target in targets:
+			target.atk *= value 
+			print(target.atk, "+ ", value)
 	if effect_info == "speed":
-		target.natural_spd *= 1.1
-		buff_queue_refresh(target)
+		for target in targets:
+			target.natural_spd *= value 
+			buff_queue_refresh(targets)
 	if effect_info == "hp and def":
-		var old_base_hp = target.base_hp
-		target.base_hp *= value
-		target.hp += target.base_hp - old_base_hp
+		var old_base_hp
+		for target in targets:
+			old_base_hp = target.base_hp
+			target.base_hp *= value 
+			target.hp += target.base_hp - old_base_hp
 	if user == enemy_fight:
 		enemy_buff_icon_index += 1
 		enemy_sprite.punch()
-		animate_progress_bar(enemy_hp_bar, target)
+		animate_progress_bar(enemy_hp_bar, targets)
 		await enemy_sprite.anim_ended
 	elif user == alisa_fight:
 		alisa_sprite.recieve_buff()
 		draw_buff_icon(alisa_buff_icons, icon, alisa_buff_icon_index)
 		alisa_buff_icon_index += 1
-		animate_progress_bar(alisa_hp_bar, target)
+		animate_progress_bar(alisa_hp_bar, targets)
 		await alisa_sprite.anim_ended
 	elif user == lina_fight:
 		lina_sprite.recieve_buff()
 		draw_buff_icon(lina_buff_icons, icon, lina_buff_icon_index)
 		lina_buff_icon_index += 1
-		animate_progress_bar(lina_hp_bar, target)
+		animate_progress_bar(lina_hp_bar, targets)
 		await lina_sprite.anim_ended
 	if effect_info != "speed":
 		turn_ended.emit()
@@ -751,3 +1010,7 @@ func _on_lina_input_pressed(direction: Variant) -> void:
 			directions.DOWN: lina_current_direction = 1
 			directions.RIGHT: lina_current_direction = 2
 			directions.LEFT: lina_current_direction = 3
+
+func confirm():
+	if Input.is_action_just_pressed("confirm"):
+		confrim_pressed.emit()

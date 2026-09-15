@@ -1,54 +1,73 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://7l6k4yhkihp4"]
+[gd_resource type="Theme" format=3 uid="uid://7l6k4yhkihp4"]
 
-[ext_resource type="Texture2D" uid="uid://c8qtu87affos4" path="res://resourses/sprites/interface/settings_menu/ui_slider.png" id="1_6rcrm"]
-[ext_resource type="Texture2D" uid="uid://bdrfg30h5b8ji" path="res://resourses/sprites/interface/settings_menu/ui_slider_highlight.png" id="2_1mxem"]
-[ext_resource type="Texture2D" uid="uid://c2kx8y0w7ig3" path="res://resourses/sprites/interface/settings_menu/ui_slider_slider.png" id="3_7ud5v"]
-[ext_resource type="FontFile" uid="uid://d13bi6hpu1ajl" path="res://resourses/fonts/ByteBounce.ttf" id="3_f6v7v"]
+[ext_resource type="FontFile" uid="uid://c4ohbbx885w7l" path="res://resourses/fonts/BoldPixels.ttf" id="1_5dril"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ud5v"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hot6g"]
-bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1mxem"]
-texture = ExtResource("3_7ud5v")
-expand_margin_top = 20.0
-expand_margin_bottom = 20.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61658"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rcrm"]
 bg_color = Color(1, 1, 1, 1)
 draw_center = false
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 1
 corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hot6g"]
+bg_color = Color(0.45385897, 0.6804082, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6o2l"]
+bg_color = Color(0.15294118, 0.15294118, 0.15294118, 0.6431373)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dril"]
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dk8db"]
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vb8tb"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mxem"]
-bg_color = Color(0.204835, 0.698948, 0.494347, 1)
+bg_color = Color(0.80372334, 0.99703926, 0.89233416, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ud5v"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi44o"]
+bg_color = Color(0.60933006, 0.6093302, 0.60932994, 1)
 
 [resource]
-default_font = ExtResource("3_f6v7v")
-default_font_size = 96
-HSlider/icons/grabber = ExtResource("1_6rcrm")
-HSlider/icons/grabber_disabled = ExtResource("1_6rcrm")
-HSlider/icons/grabber_highlight = ExtResource("2_1mxem")
-HSlider/styles/grabber_area = SubResource("StyleBoxFlat_7ud5v")
-HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_hot6g")
-HSlider/styles/slider = SubResource("StyleBoxTexture_1mxem")
+default_font = ExtResource("1_5dril")
+default_font_size = 16
+Button/styles/focus = SubResource("StyleBoxFlat_61658")
 ItemList/colors/font_color = Color(1, 1, 1, 1)
-ItemList/constants/h_separation = 10
-ItemList/constants/v_separation = 14
-ItemList/font_sizes/font_size = 64
+ItemList/constants/h_separation = 5
+ItemList/constants/v_separation = 7
+ItemList/font_sizes/font_size = 16
+ItemList/icons/scroll_hint = null
+ItemList/styles/cursor = SubResource("StyleBoxFlat_6rcrm")
+ItemList/styles/cursor_unfocused = SubResource("StyleBoxFlat_6rcrm")
 ItemList/styles/focus = SubResource("StyleBoxFlat_6rcrm")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_hot6g")
+ItemList/styles/panel = SubResource("StyleBoxFlat_y6o2l")
+ItemList/styles/selected = SubResource("StyleBoxFlat_5dril")
+ItemList/styles/selected_focus = SubResource("StyleBoxFlat_dk8db")
 ProgressBar/constants/outline_size = 10
 ProgressBar/font_sizes/font_size = 64
 ProgressBar/styles/background = SubResource("StyleBoxFlat_vb8tb")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_1mxem")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_7ud5v")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_xi44o")

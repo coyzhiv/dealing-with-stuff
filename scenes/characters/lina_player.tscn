@@ -1,53 +1,144 @@
-[gd_scene load_steps=8 format=3 uid="uid://bphllt3vmprul"]
+[gd_scene format=3 uid="uid://bphllt3vmprul"]
 
 [ext_resource type="PackedScene" uid="uid://bscr266w3g4jn" path="res://scenes/characters/character_template.tscn" id="1_axwp8"]
 [ext_resource type="Script" uid="uid://d2wah0xttwbl3" path="res://scenes/characters/lina_player.gd" id="1_eme7l"]
 [ext_resource type="Texture2D" uid="uid://c4skk04cxjl20" path="res://resourses/sprites/characters/lina.png" id="2_eme7l"]
-[ext_resource type="FontFile" uid="uid://d13bi6hpu1ajl" path="res://resourses/fonts/ByteBounce.ttf" id="4_6atw6"]
+[ext_resource type="FontFile" uid="uid://c4ohbbx885w7l" path="res://resourses/fonts/BoldPixels.ttf" id="5_6atw6"]
 [ext_resource type="PackedScene" uid="uid://gp071xtynewa" path="res://scenes/inputs/changing_key.tscn" id="5_7jg5q"]
+[ext_resource type="Texture2D" uid="uid://bqv7ddrwi22mp" path="res://resourses/sprites/characters/question_mark.png" id="6_7jg5q"]
+
+[sub_resource type="Animation" id="Animation_7jg5q"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D2:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.7853982, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D2:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D2:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7jtbw"]
+resource_name = "que"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D2:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.7853982, -0.25, 0, 0.25, 0, -0.7853982, -0.041666675, 0, 0.041666668, 0, -0.7853982, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D2:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.041666668, 0, 0.041666668, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D2:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.23287287, -0.37183103, 0, -0.25758314, 0.36424264, 0.25779122, -0.37183103, 0.015176777, -0.24602634, 0.3338891, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8nxxo"]
+_data = {
+&"RESET": SubResource("Animation_7jg5q"),
+&"que": SubResource("Animation_7jtbw")
+}
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_a5781"]
 radius = 0.001
 
 [sub_resource type="LabelSettings" id="LabelSettings_7jtbw"]
-font = ExtResource("4_6atw6")
-font_size = 64
+font = ExtResource("5_6atw6")
 
-[node name="LinaPlayer" instance=ExtResource("1_axwp8")]
+[node name="LinaPlayer" unique_id=991614113 instance=ExtResource("1_axwp8")]
 process_mode = 1
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_eme7l")
+sitting = false
+ready_to_stand = false
 
-[node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00214707, 0.0270698, -0.01994)
+[node name="QueAnim" type="AnimationPlayer" parent="." index="0" unique_id=1148367024]
+libraries/ = SubResource("AnimationLibrary_8nxxo")
 
-[node name="Sprite3D" parent="." index="1"]
+[node name="Sprite3D2" type="Sprite3D" parent="." index="1" unique_id=422726762]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.17988124, -0.0071369335)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("6_7jg5q")
+
+[node name="CollisionShape3D" parent="." index="2" unique_id=293680734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00214707, 0.025144748, -0.01994)
+
+[node name="Sprite3D" parent="." index="3" unique_id=1023008798]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.70710677, 0, -0.70710677, 0.7071068, 0, 0, 0)
 texture = ExtResource("2_eme7l")
 
-[node name="InteractAreaPoints" type="Node3D" parent="." index="3"]
+[node name="InteractAreaPoints" type="Node3D" parent="." index="5" unique_id=127378935]
 
-[node name="Down" type="Marker3D" parent="InteractAreaPoints" index="0"]
+[node name="Down" type="Marker3D" parent="InteractAreaPoints" index="0" unique_id=470955234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0428928, 0.105448)
 
-[node name="Right" type="Marker3D" parent="InteractAreaPoints" index="1"]
+[node name="Right" type="Marker3D" parent="InteractAreaPoints" index="1" unique_id=1995068593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113, 0.043, -0.015)
 
-[node name="Left" type="Marker3D" parent="InteractAreaPoints" index="2"]
+[node name="Left" type="Marker3D" parent="InteractAreaPoints" index="2" unique_id=1612178186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.113271, 0.0426544, -0.0145255)
 
-[node name="Up" type="Marker3D" parent="InteractAreaPoints" index="3"]
+[node name="Up" type="Marker3D" parent="InteractAreaPoints" index="3" unique_id=979562669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000879757, 0.0452921, -0.120383)
 
-[node name="InteractArea" type="Area3D" parent="." index="4"]
+[node name="InteractArea" type="Area3D" parent="." index="6" unique_id=4682401]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" index="0" unique_id=695184423]
 shape = SubResource("SphereShape3D_a5781")
 
-[node name="InteractLabel" type="Control" parent="." index="5"]
-visible = false
+[node name="InteractLabel" type="Control" parent="." index="7" unique_id=142614056]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1036.0
@@ -55,19 +146,23 @@ offset_top = 811.0
 offset_right = 1076.0
 offset_bottom = 851.0
 
-[node name="ChangingKey" parent="InteractLabel" index="0" instance=ExtResource("5_7jg5q")]
-position = Vector2(0, 9)
-scale = Vector2(2, 2)
+[node name="ChangingKey" parent="InteractLabel" index="0" unique_id=156584410 instance=ExtResource("5_7jg5q")]
+position = Vector2(-1019, -469)
 keyboard_input = "z"
 xbox_input = "a"
 ps_input = "x"
 
-[node name="Label" type="Label" parent="InteractLabel" index="1"]
-layout_mode = 0
-offset_left = -230.0
-offset_top = -18.0
-offset_right = -86.0
-offset_bottom = 15.0
+[node name="Label" type="Label" parent="InteractLabel" index="1" unique_id=99735449]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -19.085001
+anchor_top = -12.85
+anchor_right = -19.085001
+anchor_bottom = -12.85
+offset_left = -243.59998
+offset_top = 39.0
+offset_right = -193.59998
+offset_bottom = 50.0
 text = "Interact"
 label_settings = SubResource("LabelSettings_7jtbw")
 

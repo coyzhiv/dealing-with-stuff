@@ -1,0 +1,27 @@
+{
+	"dialogue": [
+		{"func": "set_global", "args": ["current_scene","res://scenes/levels/apartament/apartament_room.tscn"]},
+		{"func": "set_interaction_memory", "args": ["starting_dialogue_used", true]},
+		{"func": "new_dialogue_window", "args": ["Лина","Охх..","LinaSigh", "right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","У меня только что был реально странный сон..","LinaAngry","right"]},
+		{"func": "turn_player", "args": ["right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","...","LinaDefault","right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","Алиса все ещё спит..","LinaDefault","right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","Хмм.. И чё ж мне делать?","LinaDefault","right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","...","LinaDefault","right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","Сука! Посуда..","LinaAngry", "right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","Может если я подожду Алиса проснётся и помоет её за меня..","LinaSigh","right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","...","LinaDefault","right"]},
+		{"func": "turn_player", "args": ["right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","Пссс.. Просыпайся.","LinaDefault","right"]},
+		{"func": "new_dialogue_window", "args": ["Алиса","...", "" ,"left"]},
+		{"func": "turn_player", "args": ["down"]},
+		{"func": "new_dialogue_window", "args": ["Лина","...", "LinaDefault" ,"right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","Ммм..", "LinaSigh" ,"right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","...", "LinaDefault" ,"right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","Ладно..","LinaSigh", "right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","Она всё таки гость. Наверное, мне стоит меньше лениться.","LinaSigh", "right"]},
+		{"func": "new_dialogue_window", "args": ["Лина","Разберусь с этим побыстрому.", "LinaAngry" ,"right"]},
+		{"func": "save", "args": []}
+	]
+}

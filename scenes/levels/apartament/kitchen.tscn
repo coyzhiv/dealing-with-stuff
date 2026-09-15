@@ -1,10 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://cwxr2frfn7del"]
+[gd_scene format=3 uid="uid://cwxr2frfn7del"]
 
 [ext_resource type="PackedScene" uid="uid://bf8lip7yqhxow" path="res://scenes/levels/parent_level.tscn" id="1_ih4xt"]
-[ext_resource type="PackedScene" uid="uid://dlnbuwark7qbu" path="res://resourses/models/tutorial/kitchen.gltf" id="2_xp6jv"]
+[ext_resource type="Script" uid="uid://b2goy4ppt36mn" path="res://scenes/levels/apartament/kitchen.gd" id="2_r0j4j"]
 [ext_resource type="PackedScene" uid="uid://kplaxinx0cvp" path="res://scenes/areas/interaction_area.tscn" id="3_fsdw2"]
 [ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="3_uv1er"]
-[ext_resource type="PackedScene" uid="uid://cfr0ev4ygp2cs" path="res://resourses/models/tutorial/just_the_counter.gltf" id="4_r0j4j"]
 [ext_resource type="PackedScene" uid="uid://d5lqh23wc7mm" path="res://scenes/objects/changing_model.tscn" id="4_sgqdo"]
 [ext_resource type="PackedScene" uid="uid://colskfe7l1c2v" path="res://scenes/areas/change_scene_area.tscn" id="4_xp6jv"]
 [ext_resource type="PackedScene" uid="uid://curgtrce5ljrd" path="res://scenes/characters/alisa_follow.tscn" id="5_fsdw2"]
@@ -12,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://ctvbdq5ye7u4" path="res://scenes/characters/alisa_npc.tscn" id="7_81mr0"]
 [ext_resource type="PackedScene" uid="uid://b6qdt3qi1fapf" path="res://resourses/models/tutorial/dishes_not_very_clean.gltf" id="7_w1avx"]
 [ext_resource type="PackedScene" uid="uid://bsbawva1nk574" path="res://resourses/models/tutorial/dishes_dirty.gltf" id="8_mrury"]
+[ext_resource type="PackedScene" uid="uid://b3yjy350ax210" path="res://resourses/models/tutorial/new_kitchen.gltf" id="11_sgqdo"]
+[ext_resource type="FontFile" uid="uid://c4ohbbx885w7l" path="res://resourses/fonts/BoldPixels.ttf" id="13_6deaa"]
+[ext_resource type="PackedScene" uid="uid://gp071xtynewa" path="res://scenes/inputs/changing_key.tscn" id="14_u4f5m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mrury"]
 size = Vector3(0.133694, 0.195801, 0.205132)
@@ -19,110 +21,295 @@ size = Vector3(0.133694, 0.195801, 0.205132)
 [sub_resource type="BoxShape3D" id="BoxShape3D_uv1er"]
 size = Vector3(0.195282, 0.12146, 0.0815735)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xp6jv"]
-size = Vector3(0.195007, 0.256226, 0.148102)
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0j4j"]
+size = Vector3(1.2608032, 0.47235107, 0.21791077)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fsdw2"]
-size = Vector3(0.856812, 0.346497, 0.101196)
+[sub_resource type="BoxShape3D" id="BoxShape3D_w1avx"]
+size = Vector3(0.12167969, 0.43444824, 0.65093994)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_81mr0"]
-size = Vector3(0.0302734, 0.459473, 0.122864)
+[sub_resource type="BoxShape3D" id="BoxShape3D_6deaa"]
+size = Vector3(0.7416382, 0.29174805, 0.14416504)
 
-[sub_resource type="Environment" id="Environment_xp6jv"]
+[sub_resource type="Environment" id="Environment_r0j4j"]
 background_mode = 1
 ambient_light_source = 2
-ambient_light_color = Color(0.994983, 0.78011, 0.6327, 1)
-ambient_light_energy = 0.1
+ambient_light_color = Color(0.026033, 0.245928, 0.397646, 1)
+ambient_light_energy = 0.7
 
-[node name="Kitchen" instance=ExtResource("1_ih4xt")]
+[sub_resource type="Animation" id="Animation_fmd85"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(128, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(251, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pause:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(137, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pause:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(263, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PauseRU:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(137, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PauseRU:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(263, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_yelg7"]
+resource_name = "guide_anim"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pause:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(263, -0.25, 0, 0.41277444, 9.94873, 263, -0.4407944, -13.572205, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PauseRU:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(137, -0.25, 0, 0.25, 0, 137, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PauseRU:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(263, -0.25, 0, 0.42, 13.341797, 263, -0.43, -9.498322, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nfq6s"]
+_data = {
+&"RESET": SubResource("Animation_fmd85"),
+&"guide_anim": SubResource("Animation_yelg7")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_pcb48"]
+font = ExtResource("13_6deaa")
+
+[node name="Kitchen" unique_id=802638064 instance=ExtResource("1_ih4xt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 251, 0)
+script = ExtResource("2_r0j4j")
 location = "apartament"
 variant = 1
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Light" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.512951, 0.197634, 0.195916)
-light_energy = 0.3
+[node name="OmniLight3D" type="OmniLight3D" parent="Light" index="0" unique_id=1250612325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81228316, 0.25944293, -0.048752714)
+light_color = Color(0.9947576, 0.73515534, 0.51283705, 1)
+light_energy = 0.4
+shadow_enabled = true
+shadow_opacity = 0.58
+omni_range = 217.539
+omni_attenuation = 0.62
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Light" index="1" unique_id=1637240955]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.121041834, 0.65757155, 0.016011551)
+light_energy = 0.05
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_blur = 0.01
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Light" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.207657, 0.295095, 0.556701)
-light_color = Color(0.998614, 0.932636, 0.901518, 1)
-light_energy = 0.2
-shadow_enabled = true
-shadow_bias = 0.01
-shadow_blur = 0.01
-
-[node name="DishesDialogue" parent="InteractionAreas" index="0" instance=ExtResource("3_fsdw2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0731404, -0.125838, -0.14359)
+[node name="DishesDialogue" parent="InteractionAreas" index="0" unique_id=947185352 instance=ExtResource("3_fsdw2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27558178, 0.013110325, -0.31157115)
 collision_mask = 4
-prompt = "dishes_dialogue"
+prompt = "res://JSON Scripts/Dialogues/Apartament/dishes_dialogue.json"
+prompt_ru = "res://JSON Scripts/Dialogues/Apartament/dishes_dialogue_ru.json"
 used_memory_id = "dishes_dialogue_used"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/DishesDialogue" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/DishesDialogue" index="0" unique_id=1846855026]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0649641, 0.210266, -0.00113904)
 shape = SubResource("BoxShape3D_mrury")
 
-[node name="Corridor" parent="ChangingAreas" index="0" instance=ExtResource("4_xp6jv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.456413, -0.271496, 0.269616)
+[node name="Corridor" parent="ChangingAreas" index="0" unique_id=1673237363 instance=ExtResource("4_xp6jv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6162788, -0.23316419, 0.028226733)
 file = "res://scenes/levels/apartament/corridor.tscn"
-target_position = Vector3(0.559, 0.335, 0.007)
+target_position = Vector3(0.69996107, 0.34169748, 0.031304)
 direction = "left"
 location = "apartament"
 sound_id = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Corridor" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Corridor" index="0" unique_id=691716131]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0201591, 0.403949, 0.128464)
 shape = SubResource("BoxShape3D_uv1er")
 debug_fill = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40448, 0.152161, 0.580673)
-shape = SubResource("BoxShape3D_xp6jv")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" index="0" unique_id=2135321419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29629076, 0.30130005, -0.37828827)
+shape = SubResource("BoxShape3D_r0j4j")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.136855, 0.229645, 0.711614)
-shape = SubResource("BoxShape3D_fsdw2")
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWalls" index="1" unique_id=90923067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43190497, 0.28277588, -0.34356558)
+shape = SubResource("BoxShape3D_w1avx")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWalls" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0521103, -0.0406189, 0.532018)
-shape = SubResource("BoxShape3D_81mr0")
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="InvisibleWalls" index="2" unique_id=643176227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27082664, 0.2993493, 0.3615259)
+shape = SubResource("BoxShape3D_r0j4j")
 
-[node name="blockbench_export2" parent="." index="5" instance=ExtResource("4_r0j4j")]
-transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 0.154686, -0.0273463, 0.333724)
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="InvisibleWalls" index="3" unique_id=340280999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53562766, 0.19497919, 0.103845)
+shape = SubResource("BoxShape3D_6deaa")
 
-[node name="ChangingDishes" parent="." index="6" instance=ExtResource("4_sgqdo")]
-transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 0.150375, -0.0284221, -0.063661)
+[node name="ChangingDishes" parent="." index="5" unique_id=2132929574 instance=ExtResource("4_sgqdo")]
+transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, -0.092756376, -0.016066385, -0.28107467)
 state_promt = "dishes_state"
 
-[node name="blockbench_export" parent="ChangingDishes/State1" index="0" instance=ExtResource("8_mrury")]
+[node name="blockbench_export" parent="ChangingDishes/State1" index="0" unique_id=440597642 instance=ExtResource("8_mrury")]
 
-[node name="blockbench_export" parent="ChangingDishes/State2" index="0" instance=ExtResource("6_r0j4j")]
+[node name="blockbench_export" parent="ChangingDishes/State2" index="0" unique_id=1221655890 instance=ExtResource("6_r0j4j")]
 
-[node name="blockbench_export" parent="ChangingDishes/State3" index="0" instance=ExtResource("7_w1avx")]
+[node name="blockbench_export" parent="ChangingDishes/State3" index="0" unique_id=1619611842 instance=ExtResource("7_w1avx")]
 
-[node name="blockbench_export" parent="." index="7" instance=ExtResource("2_xp6jv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.13546, 0, 0.221161)
-
-[node name="Follow" parent="." index="8" instance=ExtResource("5_fsdw2")]
+[node name="Follow" parent="." index="6" unique_id=1210683078 instance=ExtResource("5_fsdw2")]
+process_mode = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22191, 0.117, 0.0647898)
 
-[node name="CollisionShape3D" parent="Follow" index="1"]
+[node name="CollisionShape3D" parent="Follow" index="1" unique_id=293680734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00356158, 0.0191944, -0.0141742)
 
 [node name="InteractionArea" parent="Follow" index="4"]
 easy_interact = true
-easy_text = "I say penis you say pussy."
+easy_text = "Wish we didn't have things to do. We could sit on the kitchen in morning like we always do."
+easy_text_ru = "Вот бы мы могли просто посидеть на кухне, как в старые добрые."
 
-[node name="Player" parent="." index="9" instance=ExtResource("3_uv1er")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.218, 0.117, 0.436)
+[node name="Player" parent="." index="7" unique_id=1262344671 instance=ExtResource("3_uv1er")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.218, 0.117, 0.056736946)
 
-[node name="Camera3D" type="Camera3D" parent="Player" index="6"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.834835, 0.704218)
-environment = SubResource("Environment_xp6jv")
+[node name="Camera3D" type="Camera3D" parent="Player" index="6" unique_id=636768456]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.8, 0.8)
+environment = SubResource("Environment_r0j4j")
+projection = 1
+size = 1.8
 
-[node name="AlisaNPC" parent="." index="10" instance=ExtResource("7_81mr0")]
+[node name="AlisaNPC" parent="." index="8" unique_id=1716870088 instance=ExtResource("7_81mr0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.83973, 0.121381, 0.308639)
+
+[node name="blockbench_export2" parent="." index="9" unique_id=562963709 instance=ExtResource("11_sgqdo")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="GuideAnim" type="AnimationPlayer" parent="." index="10" unique_id=1827252731]
+libraries/ = SubResource("AnimationLibrary_nfq6s")
+
+[node name="Pause" type="Control" parent="." index="11" unique_id=646109338]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 137.0
+offset_top = 263.0
+offset_right = 177.00014
+offset_bottom = 303.0001
+
+[node name="Pause" type="Label" parent="Pause" index="0" unique_id=1088931049]
+layout_mode = 0
+offset_right = 214.0
+offset_bottom = 17.0
+text = "Press     to enter pause menu"
+label_settings = SubResource("LabelSettings_pcb48")
+horizontal_alignment = 1
+
+[node name="PauseKey" parent="Pause" index="1" unique_id=1203351000 instance=ExtResource("14_u4f5m")]
+position = Vector2(60, 8)
+keyboard_input = "esc"
+xbox_input = "start"
+ps_input = "start"
+
+[node name="PauseRU" type="Control" parent="." index="12" unique_id=1294362722]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 137.0
+offset_top = 263.0
+offset_right = 177.00014
+offset_bottom = 303.0001
+
+[node name="Pause" type="Label" parent="PauseRU" index="0" unique_id=707385522]
+layout_mode = 0
+offset_left = -136.0
+offset_right = 343.0
+offset_bottom = 17.0
+text = "Нажми     чтобы зайти в меню паузы"
+label_settings = SubResource("LabelSettings_pcb48")
+horizontal_alignment = 1
+
+[node name="PauseKey" parent="PauseRU" index="1" unique_id=930805737 instance=ExtResource("14_u4f5m")]
+position = Vector2(40, 8)
+keyboard_input = "esc"
+xbox_input = "start"
+ps_input = "start"
 
 [editable path="ChangingDishes"]
 [editable path="Follow"]

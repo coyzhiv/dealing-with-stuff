@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://kgy0eke6htgt"]
+[gd_resource type="Resource" script_class="Items" format=3 uid="uid://kgy0eke6htgt"]
 
 [ext_resource type="Texture2D" uid="uid://helrdeo0ysy1" path="res://resourses/sprites/interface/icons/last_beer.png" id="1_6rx0u"]
 [ext_resource type="Script" uid="uid://cfhu3p2bw4vtk" path="res://scenes/globals/items.gd" id="2_r3n0v"]
@@ -6,12 +6,14 @@
 [resource]
 script = ExtResource("2_r3n0v")
 title = "Last Beer"
+rus_title = "Последнее Пиво"
 description = "Reminds you of times when this was not the last one. You just cant put yourself to drink it."
+rus_description = "Напоминает времена, когда оно не было последним."
 icon = ExtResource("1_6rx0u")
 effect = "empty"
-hp_value = 10
-atk_value = 10
-def_value = 10
-spd_value = 10
-effect_value = 10
+hp_value = 3
+atk_value = 3
+def_value = 3
+spd_value = 3
+effect_value = 3
 metadata/_custom_type_script = "uid://cfhu3p2bw4vtk"

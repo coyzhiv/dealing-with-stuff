@@ -1,139 +1,201 @@
-[gd_scene load_steps=13 format=3 uid="uid://iapuv7wp0yjt"]
+[gd_scene format=3 uid="uid://iapuv7wp0yjt"]
 
 [ext_resource type="PackedScene" uid="uid://bf8lip7yqhxow" path="res://scenes/levels/parent_level.tscn" id="1_t0rps"]
 [ext_resource type="PackedScene" uid="uid://kplaxinx0cvp" path="res://scenes/areas/interaction_area.tscn" id="2_8ws1j"]
-[ext_resource type="PackedScene" uid="uid://dn3h0rjp7gqqg" path="res://resourses/models/tutorial/corridor.gltf" id="2_ea46k"]
 [ext_resource type="PackedScene" uid="uid://colskfe7l1c2v" path="res://scenes/areas/change_scene_area.tscn" id="2_xdske"]
 [ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="3_ea46k"]
 [ext_resource type="PackedScene" uid="uid://curgtrce5ljrd" path="res://scenes/characters/alisa_follow.tscn" id="6_b1hcp"]
+[ext_resource type="PackedScene" uid="uid://ve05hbj2vkfk" path="res://resourses/models/tutorial/new_corridor.gltf" id="6_hcynr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hcynr"]
-size = Vector3(0.167267, 0.124756, 0.200317)
+size = Vector3(0.206192, 0.124756, 0.25335675)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c40h0"]
+size = Vector3(0.117744, 0.124756, 0.200317)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ws1j"]
 size = Vector3(0.219666, 0.12146, 0.0815735)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_b1hcp"]
-size = Vector3(0.220184, 0.215332, 0.0919189)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ooo70"]
+size = Vector3(0.24681103, 0.31941986, 0.0815735)
 
-[sub_resource type="Environment" id="Environment_ea46k"]
+[sub_resource type="Environment" id="Environment_b1hcp"]
 background_mode = 1
 ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.2
+ambient_light_color = Color(0.026033, 0.245928, 0.397646, 1)
+ambient_light_energy = 0.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_avgbb"]
+size = Vector3(1.6286207, 0.5206849, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ea46k"]
 size = Vector3(0.189063, 0.3, 0.110547)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xdske"]
-size = Vector3(1.2447, 0.222388, 0.1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1hcp"]
+size = Vector3(0.16463636, 0.3, 0.39511725)
 
-[node name="Corridor" instance=ExtResource("1_t0rps")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xb4qe"]
+size = Vector3(0.31349626, 0.345569, 0.08320312)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xdske"]
+size = Vector3(0.9815241, 0.222388, 0.1)
+
+[node name="Corridor" unique_id=312592332 instance=ExtResource("1_t0rps")]
 location = "apartament"
 variant = 1
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Light" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00947353, 0.52773, 0.10534)
-light_color = Color(0.992612, 0.876747, 0.825426, 1)
+[node name="OmniLight3D" type="OmniLight3D" parent="Light" index="0" unique_id=1712810563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6305288, 0.9383671, 0.3756793)
+light_color = Color(0.9533115, 0.78117454, 0.68786246, 1)
 light_energy = 0.5
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_blur = 0.01
 
-[node name="InteractionArea" parent="InteractionAreas" index="0" instance=ExtResource("2_8ws1j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02695, 0.241019, 0)
-collision_mask = 6
-prompt = "cant_leave_enter"
-body_entering = true
+[node name="OmniLight3D2" type="OmniLight3D" parent="Light" index="1" unique_id=1728094796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8401909, 0.9383671, 0.3756793)
+light_color = Color(0.9533115, 0.78117454, 0.68786246, 1)
+light_energy = 0.5
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 0.01
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/InteractionArea" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.290237, 0.0531006, 0.00921631)
+[node name="Shelves" parent="InteractionAreas" index="0" unique_id=557174574 instance=ExtResource("2_8ws1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9766829, 0.57999897, 0.66380847)
+collision_mask = 6
+easy_interact = true
+easy_text = "Theres a lot socks over here.. Why there are socks right by the enterance?"
+easy_text_ru = "Многовато здесь носков.. Зачем тебе вообще носки перед входом?"
+condition = "trash_dialogue_used"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/Shelves" index="0" unique_id=1581208306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23505378, -0.2271696, -0.6464725)
 shape = SubResource("BoxShape3D_hcynr")
 
-[node name="TVRoom" parent="ChangingAreas" index="0" instance=ExtResource("2_xdske")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450846, 0.0638093, -0.41265)
-file = "res://scenes/levels/apartament/apartament_room.tscn"
-target_position = Vector3(0.114, 0.116, 0.55)
-direction = "up"
-location = "apartament"
+[node name="NoExit" parent="InteractionAreas" index="1" unique_id=100905198 instance=ExtResource("2_8ws1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48834145, 0.28999949, 0.33190423)
+collision_mask = 6
+prompt = "res://JSON Scripts/Dialogues/Apartament/cant_leave_enter.json"
+prompt_ru = "res://JSON Scripts/Dialogues/Apartament/cant_leave_enter_ru.json"
+body_entering = true
+condition = "trash_dialogue_used"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/TVRoom" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0101013, 0.354618, 0.128464)
-shape = SubResource("BoxShape3D_8ws1j")
-debug_fill = false
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/NoExit" index="0" unique_id=1704355242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3097, 0.0531006, 0.00921631)
+shape = SubResource("BoxShape3D_hcynr")
 
-[node name="Kitchen" parent="ChangingAreas" index="1" instance=ExtResource("2_xdske")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.808203, 0.0402578, -0.113676)
+[node name="Exit" parent="InteractionAreas" index="2" unique_id=1628403649 instance=ExtResource("2_8ws1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47360772, 0.27862322, 0.32059377)
+collision_mask = 6
+prompt = "res://JSON Scripts/Dialogues/Apartament/leave_enter.json"
+prompt_ru = "res://JSON Scripts/Dialogues/Apartament/leave_enter_ru.json"
+body_entering = true
+condition_state = true
+condition = "trash_dialogue_used"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/Exit" index="0" unique_id=2050605885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.265476, 0.0531006, 0.00921631)
+shape = SubResource("BoxShape3D_c40h0")
+
+[node name="Kitchen" parent="ChangingAreas" index="0" unique_id=140225374 instance=ExtResource("2_xdske")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9616003, 0.0402578, -0.113676)
 file = "res://scenes/levels/apartament/kitchen.tscn"
-target_position = Vector3(-0.218, 0.117, 0.436)
+target_position = Vector3(-0.3930046, 0.11859497, 0.10209402)
 direction = "right"
 location = "apartament"
 sound_id = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Kitchen" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Kitchen" index="0" unique_id=1299068823]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0101013, 0.354618, 0.128464)
 shape = SubResource("BoxShape3D_8ws1j")
 debug_fill = false
 
-[node name="Bathroom" parent="ChangingAreas" index="2" instance=ExtResource("2_xdske")]
+[node name="Bathroom" parent="ChangingAreas" index="1" unique_id=1645137228 instance=ExtResource("2_8ws1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30571544, 0, 0)
+change_scene = true
 file = "res://scenes/levels/apartament/bathroom.tscn"
-target_position = Vector3(0.124, 0.116, 0.344)
+target_position = Vector3(0.11858097, 0.11984371, 0.34839937)
 direction = "up"
 location = "apartament"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Bathroom" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00894608, 0.392334, -0.263367)
-shape = SubResource("BoxShape3D_b1hcp")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Bathroom" index="0" unique_id=123174139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4206217, 0.4293913, -0.13268021)
+shape = SubResource("BoxShape3D_ooo70")
+debug_fill = false
 
-[node name="PcRoom" parent="ChangingAreas" index="3" instance=ExtResource("2_xdske")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.431004, 0, 0)
+[node name="PCRoom" parent="ChangingAreas" index="2" unique_id=1270658440 instance=ExtResource("2_8ws1j")]
+change_scene = true
 file = "res://scenes/levels/apartament/PcRoom.tscn"
-target_position = Vector3(-0.194, 0.116, 0.291)
+target_position = Vector3(-0.19260424, 0.11984371, 0.3507135)
 direction = "up"
 location = "apartament"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/PcRoom" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00894608, 0.392334, -0.263367)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/PCRoom" index="0" unique_id=1511904734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31551036, 0.4293913, -0.13268021)
+shape = SubResource("BoxShape3D_ooo70")
+debug_fill = false
+
+[node name="TvRoom" parent="ChangingAreas" index="3" unique_id=4500594 instance=ExtResource("2_8ws1j")]
+change_scene = true
+file = "res://scenes/levels/apartament/apartament_room.tscn"
+target_position = Vector3(-0.046749108, 0.11973887, 0.43192834)
+direction = "up"
+location = "apartament"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/TvRoom" index="0" unique_id=1082948867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56921285, 0.4293913, -0.13268021)
+shape = SubResource("BoxShape3D_ooo70")
+debug_fill = false
+
+[node name="Player" parent="." index="4" unique_id=750481600 instance=ExtResource("3_ea46k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435421, 0.3362205, -0.00117307)
+
+[node name="Camera3D" type="Camera3D" parent="Player" index="6" unique_id=169664026]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.8, 0.79)
+environment = SubResource("Environment_b1hcp")
+projection = 1
+size = 1.8
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="InvisibleWalls" index="0" unique_id=201410507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07868767, 0.3775808, -0.15107656)
+shape = SubResource("BoxShape3D_avgbb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" index="1" unique_id=1784449179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86290276, 0.371302, 0.150193)
+shape = SubResource("BoxShape3D_ea46k")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" index="2" unique_id=350981940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73502934, 0.371302, 0.0070668757)
 shape = SubResource("BoxShape3D_b1hcp")
 
-[node name="blockbench_export" parent="." index="4" instance=ExtResource("2_ea46k")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="Player" parent="." index="5" instance=ExtResource("3_ea46k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435421, 0.338739, -0.00117307)
-
-[node name="Camera3D" type="Camera3D" parent="Player" index="6"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.834835, 0.704218)
-environment = SubResource("Environment_ea46k")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.734408, 0.371302, 0.150193)
-shape = SubResource("BoxShape3D_ea46k")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.722816, 0.371302, 0.149352)
-shape = SubResource("BoxShape3D_ea46k")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWalls" index="2"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWalls" index="3" unique_id=677906498]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.714893, 0.37999, -0.14681)
 shape = SubResource("BoxShape3D_ea46k")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="InvisibleWalls" index="3"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="InvisibleWalls" index="4" unique_id=1315811222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.708812, 0.371302, -0.154985)
 shape = SubResource("BoxShape3D_ea46k")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="InvisibleWalls" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000838712, 0.392144, 0.174688)
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="InvisibleWalls" index="5" unique_id=1350082999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5709756, 0.3328179, 0.20894128)
+shape = SubResource("BoxShape3D_xb4qe")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="InvisibleWalls" index="6" unique_id=301622558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27487874, 0.392144, 0.21266867)
 shape = SubResource("BoxShape3D_xdske")
 
-[node name="Follow" parent="." index="7" instance=ExtResource("6_b1hcp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.163, 0)
+[node name="Follow" parent="." index="6" unique_id=1356573270 instance=ExtResource("6_b1hcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33994448, 0)
 
-[node name="CollisionShape3D" parent="Follow" index="1"]
+[node name="CollisionShape3D" parent="Follow" index="1" unique_id=293680734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00356158, 0.0191944, -0.0141742)
 
 [node name="InteractionArea" parent="Follow" index="4"]
 easy_interact = true
-easy_text = "I say penis you say pussy."
+easy_text = "Let's go."
+easy_text_ru = "Пошли."
+
+[node name="blockbench_export" parent="." index="7" unique_id=1754823362 instance=ExtResource("6_hcynr")]
+transform = Transform3D(-4.4585615e-08, 0, 1.02, 0, 1.02, 0, -1.02, 0, -4.4585615e-08, 0, 0, 0)
 
 [editable path="Follow"]

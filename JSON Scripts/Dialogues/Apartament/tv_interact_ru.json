@@ -1,0 +1,9 @@
+{
+  "dialogue": [
+	{"func": "turn_player", "args": ["down"]},
+	{"func": "new_dialogue_window", "args": ["", "Экран телика сильно тебя слепит.", "", "left"]},
+	{"func": "new_dialogue_window", "args": ["", "Ты немного щуришься и отходишь от телевизора.", "", "left"]},
+	{"func": "player_walk", "args": [0, -1, "down", 0.2, 1]},
+	{"func": "set_interaction_memory", "args": ["tv_used", true]},
+  ]
+}

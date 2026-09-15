@@ -5,6 +5,7 @@ class_name ParentLevel
 @export var variant: int
 
 func _ready() -> void:
+	Globals.current_scene = scene_file_path
 	if Soundtrack.is_playing:
 		Soundtrack.change_soundtrack(location, variant)
 	if not Soundtrack.is_playing:

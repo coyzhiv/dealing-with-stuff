@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Skills" format=3 uid="uid://dfse8qdwoi5m"]
+
+[ext_resource type="Texture2D" uid="uid://d4bje4bcghc3a" path="res://resourses/sprites/interface/icons/heal.png" id="1_4mrww"]
+[ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_vxs4x"]
+
+[resource]
+script = ExtResource("2_vxs4x")
+title = "Clear Minds"
+rus_title = "Очистить Разумы"
+description = "You both can relax a bit. Restores HP by 20."
+rus_description = "Вы можете немного расслабиться. Восстанавливает здоровье."
+icon = ExtResource("1_4mrww")
+effect = "heal"
+value = 4
+target = "both"
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"

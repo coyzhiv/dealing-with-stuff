@@ -1,0 +1,7 @@
+{
+  "dialogue": [
+	{"func": "turn_player", "args": ["down"]},
+	{"func": "new_dialogue_window", "args": ["", "You can't leave just now. You have things to do.", "", "left"]},
+	{"func": "player_walk", "args": [0, -0.8, "down", 0.2, 1]}
+  ]
+}

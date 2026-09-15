@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b53h440kc84hk" path="res://scenes/characters/following_npc.gd" id="2_g14s6"]
 
 [node name="FollowingNPC" instance=ExtResource("1_iyneo")]
+process_mode = 1
 collision_layer = 8
 collision_mask = 1
 script = ExtResource("2_g14s6")

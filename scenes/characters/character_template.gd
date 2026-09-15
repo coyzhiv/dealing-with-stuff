@@ -36,6 +36,7 @@ func cutscene_walk(walk_direction:Vector2, look_direction:String, length:float, 
 			anim.play("go_down")
 			currentDirection = directions.DOWN
 		"left": 
+			print(1)
 			anim.play("go_left")
 			currentDirection = directions.LEFT
 		"right": 

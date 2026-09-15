@@ -1,0 +1,5 @@
+{
+  "dialogue": [
+	{"func": "new_dialogue_window", "args": ["Лина", "Мне не стоит её беспокоить..", "LinaDefault", "right"]},
+  ]
+}

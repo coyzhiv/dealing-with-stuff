@@ -1,0 +1,30 @@
+{
+  "dialogue": [
+	{"func": "find_follow", "args": []},
+	{"func": "play_transition", "args": []},
+	{"func": "wait", "args": [0.5]},
+	{"func": "relocate_player", "args": [-0.317, 0.343, 0.05]},
+	{"func": "relocate_follow", "args": [-0.114, 0.343, 0.05]},
+	{"func": "wait", "args": [0.5]},
+	{"func": "turn_player", "args": ["right"]},
+	{"func": "new_dialogue_window", "args": ["Лина", "После вас.", "LinaSmile", "right"]},
+	{"func": "player_walk", "args": [-1, 0, "right", 0.2, 1]},
+	{"func": "new_dialogue_window", "args": ["Алиса", "...", "AlisaDefault", "left"]},
+	{"func": "follow_walk", "args": [-1,0,"left",0.2,1]},
+	{"func": "follow_walk", "args": [0,1,"down",0.2,1]},
+	{"func": "follow_visible", "args": [false]},
+	{"func": "clear_portrait", "args": ["left"]},
+	{"func": "play_sound", "args": ["transition"]},
+	{"func": "wait", "args": [0.5]},
+	{"func": "new_dialogue_window", "args": ["Лина", "Конечно.. Спасибо, Лина.", "LinaSigh", "right"]},
+	{"func": "player_walk", "args": [1,0,"right",0.2,1]},
+	{"func": "player_walk", "args": [0,1,"down",0.2,1]},
+	{"func": "player_visible", "args": [false]},
+	{"func": "clear_portrait", "args": ["right"]},
+	{"func": "play_sound", "args": ["transition"]},
+	{"func": "wait", "args": [1]},
+	{"func": "play_transition", "args": []},
+	{"func": "wait", "args": [0.5]},
+	{"func": "quit", "args": []}
+  ]
+}

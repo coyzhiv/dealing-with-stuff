@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Skills" format=3 uid="uid://bi1q7hyoamu8m"]
+
+[ext_resource type="Texture2D" uid="uid://clmnmow6hs7kq" path="res://resourses/sprites/interface/icons/fast_damage.png" id="1_ne726"]
+[ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_16xg2"]
+
+[resource]
+script = ExtResource("2_16xg2")
+title = "Split Tasks"
+rus_title = "Разделить Задачи"
+description = "Its easier to do only a part of the task."
+rus_description = "Всегда легче просто сделать часть задачи."
+icon = ExtResource("1_ne726")
+effect = "damage"
+effect_info = "multi-hit"
+value = 3
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"

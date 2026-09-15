@@ -1,0 +1,1127 @@
+[gd_scene format=3 uid="uid://ilg00dhpijt0"]
+
+[ext_resource type="Script" uid="uid://buqb1k7hr8plv" path="res://main_menu.gd" id="1_ovrgc"]
+[ext_resource type="FontFile" uid="uid://mmlfwy32rowj" path="res://resourses/fonts/vcrosdmonorus_vhsicons.ttf" id="2_a3hrp"]
+[ext_resource type="VideoStream" uid="uid://si3rvqb5r8ps" path="res://resourses/audio/temp_audio/TV-STATIC-_4K-60FPS_.ogv" id="2_bh4e2"]
+[ext_resource type="PackedScene" uid="uid://gp071xtynewa" path="res://scenes/inputs/changing_key.tscn" id="3_2o76q"]
+[ext_resource type="Script" uid="uid://dwv5e4iekdmy6" path="res://scenes/menus/color_rect_3.gd" id="3_25m6f"]
+[ext_resource type="FontFile" uid="uid://d13bi6hpu1ajl" path="res://resourses/fonts/ByteBounce.ttf" id="4_6bivr"]
+[ext_resource type="Texture2D" uid="uid://cbj3tqvl3rc2a" path="res://resourses/sprites/main_menu/intro1.png" id="5_1hnlc"]
+[ext_resource type="Texture2D" uid="uid://cvdsit0c4dd1g" path="res://resourses/sprites/interface/Grabber_disabled.png" id="5_287l7"]
+[ext_resource type="Texture2D" uid="uid://daj3fxaac8khc" path="res://resourses/sprites/interface/Grabber.png" id="6_8hoqd"]
+[ext_resource type="Texture2D" uid="uid://c4yg667iahtty" path="res://resourses/sprites/main_menu/intro2.png" id="6_50h1w"]
+[ext_resource type="Shader" uid="uid://7cff7mphc3wc" path="res://scenes/menus/MainMenuShader.gdshader" id="6_a3hrp"]
+[ext_resource type="Texture2D" uid="uid://nh4u377h2rkk" path="res://resourses/sprites/main_menu/intro3.png" id="7_euy4r"]
+[ext_resource type="Shader" uid="uid://7p3gmtm4dmnc" path="res://scenes/menus/crt.gdshader" id="8_nkawv"]
+[ext_resource type="FontFile" uid="uid://c4ohbbx885w7l" path="res://resourses/fonts/BoldPixels.ttf" id="9_50h1w"]
+[ext_resource type="Texture2D" uid="uid://dstfumajtf8pw" path="res://resourses/sprites/main_menu/intro4_anim1.png" id="9_88kup"]
+[ext_resource type="Texture2D" uid="uid://rc56un2x8f3y" path="res://resourses/sprites/main_menu/intro4_anim2.png" id="10_bh4e2"]
+[ext_resource type="Texture2D" uid="uid://dmwq3yfq8mqay" path="res://resourses/sprites/main_menu/intro4_anim3.png" id="11_3w8rc"]
+[ext_resource type="Texture2D" uid="uid://b8t5fmmq7cdxc" path="res://resourses/sprites/main_menu/intro4_anim4.png" id="12_uxao6"]
+[ext_resource type="AudioStream" uid="uid://dcy5wik7dvdrr" path="res://resourses/audio/temp_audio/65400__firefreak__tv_crt_pal_turnon.wav" id="14_3w8rc"]
+[ext_resource type="AudioStream" uid="uid://dnaykcahq4xri" path="res://resourses/audio/temp_audio/winds.wav" id="14_vr0hv"]
+[ext_resource type="AudioStream" uid="uid://bdh8nc7s3ej4r" path="res://resourses/audio/temp_audio/click.wav" id="15_uxao6"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_a3hrp"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_25m6f"]
+resource_local_to_scene = true
+shader = ExtResource("6_a3hrp")
+shader_parameter/tex = SubResource("ViewportTexture_a3hrp")
+shader_parameter/mask_type = 0
+shader_parameter/curve = 0.30000001425
+shader_parameter/sharpness = 0.6666667
+shader_parameter/color_offset = 0.0
+shader_parameter/mask_brightness = 1.0
+shader_parameter/scanline_brightness = 1.0
+shader_parameter/min_scanline_thickness = 1.0
+shader_parameter/aspect = 0.75
+shader_parameter/wobble_strength = 0.470000022325
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5dril"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dk8db"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xi44o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6rcrm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1mxem"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rcrm"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hot6g"]
+bg_color = Color(0.45385897, 0.6804082, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6o2l"]
+bg_color = Color(0.15294118, 0.15294118, 0.15294118, 0.6431373)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dril"]
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dk8db"]
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vb8tb"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mxem"]
+bg_color = Color(0.80372334, 0.99703926, 0.89233416, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ud5v"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi44o"]
+bg_color = Color(0.60933006, 0.6093302, 0.60932994, 1)
+
+[sub_resource type="Theme" id="Theme_a3hrp"]
+default_font = ExtResource("2_a3hrp")
+default_font_size = 41
+Button/colors/font_color = Color(0.45428896, 0.5221619, 0.77365696, 1)
+Button/colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 0.13333334)
+Button/styles/disabled = SubResource("StyleBoxEmpty_5dril")
+Button/styles/focus = SubResource("StyleBoxEmpty_dk8db")
+Button/styles/hover = SubResource("StyleBoxEmpty_xi44o")
+Button/styles/normal = SubResource("StyleBoxEmpty_6rcrm")
+Button/styles/pressed = SubResource("StyleBoxEmpty_1mxem")
+ItemList/colors/font_color = Color(1, 1, 1, 1)
+ItemList/constants/h_separation = 5
+ItemList/constants/v_separation = 7
+ItemList/font_sizes/font_size = 16
+ItemList/icons/scroll_hint = null
+ItemList/styles/cursor = SubResource("StyleBoxFlat_6rcrm")
+ItemList/styles/cursor_unfocused = SubResource("StyleBoxFlat_6rcrm")
+ItemList/styles/focus = SubResource("StyleBoxFlat_6rcrm")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_hot6g")
+ItemList/styles/panel = SubResource("StyleBoxFlat_y6o2l")
+ItemList/styles/selected = SubResource("StyleBoxFlat_5dril")
+ItemList/styles/selected_focus = SubResource("StyleBoxFlat_dk8db")
+ProgressBar/constants/outline_size = 10
+ProgressBar/font_sizes/font_size = 64
+ProgressBar/styles/background = SubResource("StyleBoxFlat_vb8tb")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_1mxem")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_7ud5v")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_xi44o")
+
+[sub_resource type="Theme" id="Theme_25m6f"]
+default_font = ExtResource("2_a3hrp")
+default_font_size = 41
+Button/colors/font_color = Color(0.45428896, 0.5221619, 0.77365696, 1)
+Button/colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 0.13333334)
+Button/styles/disabled = SubResource("StyleBoxEmpty_5dril")
+Button/styles/focus = SubResource("StyleBoxEmpty_dk8db")
+Button/styles/hover = SubResource("StyleBoxEmpty_xi44o")
+Button/styles/normal = SubResource("StyleBoxEmpty_6rcrm")
+Button/styles/pressed = SubResource("StyleBoxEmpty_1mxem")
+ItemList/colors/font_color = Color(1, 1, 1, 1)
+ItemList/constants/h_separation = 5
+ItemList/constants/v_separation = 7
+ItemList/font_sizes/font_size = 16
+ItemList/icons/scroll_hint = null
+ItemList/styles/cursor = SubResource("StyleBoxFlat_6rcrm")
+ItemList/styles/cursor_unfocused = SubResource("StyleBoxFlat_6rcrm")
+ItemList/styles/focus = SubResource("StyleBoxFlat_6rcrm")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_hot6g")
+ItemList/styles/panel = SubResource("StyleBoxFlat_y6o2l")
+ItemList/styles/selected = SubResource("StyleBoxFlat_5dril")
+ItemList/styles/selected_focus = SubResource("StyleBoxFlat_dk8db")
+ProgressBar/constants/outline_size = 10
+ProgressBar/font_sizes/font_size = 64
+ProgressBar/styles/background = SubResource("StyleBoxFlat_vb8tb")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_1mxem")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_7ud5v")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_xi44o")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkawv"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w32d4"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_287l7"]
+bg_color = Color(1, 1, 1, 0.46666667)
+border_width_left = 1
+border_width_top = 11
+border_width_right = 1
+border_color = Color(0.8, 0.8, 0.8, 0.49411765)
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_nkawv"]
+default_font = ExtResource("2_a3hrp")
+default_font_size = 41
+Button/colors/font_color = Color(0.45428896, 0.5221619, 0.77365696, 1)
+Button/colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 0.13333334)
+Button/styles/disabled = SubResource("StyleBoxEmpty_5dril")
+Button/styles/focus = SubResource("StyleBoxEmpty_dk8db")
+Button/styles/hover = SubResource("StyleBoxEmpty_xi44o")
+Button/styles/normal = SubResource("StyleBoxEmpty_6rcrm")
+Button/styles/pressed = SubResource("StyleBoxEmpty_1mxem")
+HSlider/icons/grabber = ExtResource("5_287l7")
+HSlider/icons/grabber_disabled = ExtResource("5_287l7")
+HSlider/icons/grabber_highlight = ExtResource("6_8hoqd")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_nkawv")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_w32d4")
+HSlider/styles/slider = SubResource("StyleBoxFlat_287l7")
+ItemList/colors/font_color = Color(1, 1, 1, 1)
+ItemList/constants/h_separation = 5
+ItemList/constants/v_separation = 7
+ItemList/font_sizes/font_size = 16
+ItemList/icons/scroll_hint = null
+ItemList/styles/cursor = SubResource("StyleBoxFlat_6rcrm")
+ItemList/styles/cursor_unfocused = SubResource("StyleBoxFlat_6rcrm")
+ItemList/styles/focus = SubResource("StyleBoxFlat_6rcrm")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_hot6g")
+ItemList/styles/panel = SubResource("StyleBoxFlat_y6o2l")
+ItemList/styles/selected = SubResource("StyleBoxFlat_5dril")
+ItemList/styles/selected_focus = SubResource("StyleBoxFlat_dk8db")
+ProgressBar/constants/outline_size = 10
+ProgressBar/font_sizes/font_size = 64
+ProgressBar/styles/background = SubResource("StyleBoxFlat_vb8tb")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_1mxem")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_7ud5v")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_xi44o")
+
+[sub_resource type="LabelSettings" id="LabelSettings_imvie"]
+font = ExtResource("4_6bivr")
+font_size = 32
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w32d4"]
+shader = ExtResource("8_nkawv")
+shader_parameter/brightnessMult = 2.0000000298024
+shader_parameter/wiggleMult = 0.00259999993422
+shader_parameter/chromaticAberrationOffset = 0.001
+
+[sub_resource type="LabelSettings" id="LabelSettings_euy4r"]
+font = ExtResource("9_50h1w")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vr0hv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_88kup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bh4e2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3w8rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_uxao6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_88kup"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sky:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sky:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BackFar:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BackFar:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BackMid:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BackMid:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BackClose:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BackClose:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("A game by:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../ColorRect:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-85, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../ColorRect:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-360, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../ColorRect:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("BackClose:frame")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("A game by:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("A game by:position:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(40, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../ColorRect:modulate:r")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.05882353, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../ColorRect:modulate:g")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.05490196, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../ColorRect:modulate:b")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.08627451, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/18/type = "bezier"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../ColorRect:modulate:a")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath(".:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../TVOn:playing")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../Winds:volume_db")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bh4e2"]
+resource_name = "intro_down"
+length = 12.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sky:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 6.940664)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sky:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(60, -0.32262552, 0.09320997, 2.5261102, -0.72982025, 25, -2.5673356, -0.063863754, 0, 0),
+"times": PackedFloat32Array(0, 6.940664)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BackFar:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.1567833, 0, 0, 0),
+"times": PackedFloat32Array(0, 6.9407)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BackFar:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(200, -0.27255657, 2.6999578, 1.9498413, -19.315216, -30, -2.8673472, 8.229475, 0, 0),
+"times": PackedFloat32Array(0, 6.9407)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BackMid:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.1567833, 0, 0, 0),
+"times": PackedFloat32Array(0, 6.9407)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BackMid:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(400, -0.27059865, 1.0299135, 2.3840165, -9.0737, 0, -3.41204, 6.4086304, 0, 0),
+"times": PackedFloat32Array(0, 6.9407)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BackClose:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.1567833, 0, 0, 0),
+"times": PackedFloat32Array(0, 6.9407)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BackClose:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(400, -0.3060559, 1.8830161, 2.928709, -18.018951, -40, -3.1594288, 13.926447, 0, 0),
+"times": PackedFloat32Array(0, 6.9407)
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("A game by:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 6.0346684, 6.1675906),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../ColorRect:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 0),
+"points": PackedFloat32Array(-420, 0, 0, 1.5074561, 2.395935, -420, 0, 0, 0.23932838, 14.819244, -60, -0.04729843, -204.97485, 0, 0, -121.21944, -0.15975857, 2.918457, 0, 0, -60, -0.043096542, -55.95691, 0, 0),
+"times": PackedFloat32Array(0, 8.328977, 8.732478, 9.00257, 9.252512)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../ColorRect:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.06782627, -0.090096645, 0, -0.10577679, -0.06540081, 0, 0, -0.00029718387, -0.1190691, 0.10090729, 0, 0, 6.782322e-05, -0.05066967, -0.10251239, 0, 0),
+"times": PackedFloat32Array(8.330857, 8.732479, 9.011793, 9.247418)
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BackClose:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(7.081244, 7.3852687, 7.6512904, 7.904644),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("A game by:position:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 1),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 6.0551596)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("A game by:position:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(40, -0.25, 0, 2.7696629, -1.284153, 0, -1.8874869, 0.4057165, 0, 0),
+"times": PackedFloat32Array(0, 6.0551596)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../ColorRect:modulate:r")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0.05882353, -0.25, 0, 0.25, 0, 0.05882353, -0.16301124, 0, 0, 0),
+"times": PackedFloat32Array(11.021933, 12)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../ColorRect:modulate:g")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0.05490196, -0.25, 0, 0.25, 0, 0.05490196, -0.16301124, 0, 0, 0),
+"times": PackedFloat32Array(11.021933, 12)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../ColorRect:modulate:b")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0.08627451, -0.25, 0, 0.25, 0, 0.08627451, -0.16301124, 0, 0, 0),
+"times": PackedFloat32Array(11.021933, 12)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../ColorRect:modulate:a")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.16301124, 0.16666667, 0, 0),
+"times": PackedFloat32Array(11.021933, 12)
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath(".:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(10.09719, 10.464554),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../TVOn:playing")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(10.907923, 10.996596),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../Winds:volume_db")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(3.8889825, 8.424019),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -56.333]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3w8rc"]
+_data = {
+&"RESET": SubResource("Animation_88kup"),
+&"intro_down": SubResource("Animation_bh4e2")
+}
+
+[node name="MainMenu" type="Node" unique_id=1981924217]
+process_mode = 3
+script = ExtResource("1_ovrgc")
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=2145842474 node_paths=PackedStringArray("subviewport_node")]
+process_mode = 3
+material = SubResource("ShaderMaterial_25m6f")
+offset_right = 480.0
+offset_bottom = 360.0
+script = ExtResource("3_25m6f")
+subviewport_node = NodePath("../SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=378043822]
+process_mode = 3
+size = Vector2i(480, 360)
+render_target_update_mode = 4
+
+[node name="Menu" type="Control" parent="SubViewport" unique_id=1711723833]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport/Menu" unique_id=1841098138]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 360.0
+color = Color(0.18553564, 0.21830943, 0.64100885, 1)
+
+[node name="NewGame" type="Button" parent="SubViewport/Menu" unique_id=889422919]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -137.0
+offset_right = 220.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a3hrp")
+text = "New game"
+alignment = 0
+
+[node name="Continue" type="Button" parent="SubViewport/Menu" unique_id=80441276]
+process_mode = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -83.0
+offset_right = 163.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_25m6f")
+text = "Continue"
+alignment = 0
+
+[node name="Settings" type="Button" parent="SubViewport/Menu" unique_id=637475136]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -29.0
+offset_right = 252.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_nkawv")
+text = "Settings"
+alignment = 0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport/Menu" unique_id=267226046]
+visible = false
+modulate = Color(1, 1, 1, 0.03529412)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+stream = ExtResource("2_bh4e2")
+volume_db = -80.0
+autoplay = true
+loop = true
+
+[node name="SettingsMenu" type="Control" parent="SubViewport/Menu" unique_id=2026624655]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport/Menu/SettingsMenu" unique_id=1852948666]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 360.0
+color = Color(0.18553564, 0.21830943, 0.64100885, 1)
+
+[node name="Langage" type="Label" parent="SubViewport/Menu/SettingsMenu" unique_id=1503313147]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 222.0
+offset_bottom = 57.0
+theme = SubResource("Theme_nkawv")
+text = "Language"
+
+[node name="Russian" type="Button" parent="SubViewport/Menu/SettingsMenu" unique_id=1115844116]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = 50.0
+offset_right = 445.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a3hrp")
+text = "Русский"
+alignment = 0
+
+[node name="English" type="Button" parent="SubViewport/Menu/SettingsMenu" unique_id=2047560035]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 230.0
+offset_top = 50.0
+offset_right = 645.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a3hrp")
+text = "English
+"
+alignment = 0
+
+[node name="SFXLabel" type="Label" parent="SubViewport/Menu/SettingsMenu" unique_id=400819632]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 130.0
+offset_right = 222.0
+offset_bottom = 167.0
+theme = SubResource("Theme_nkawv")
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="SubViewport/Menu/SettingsMenu" unique_id=1945954966]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 180.0
+offset_right = 360.0
+offset_bottom = 212.0
+theme = SubResource("Theme_nkawv")
+value = 100.0
+
+[node name="MusicLabel" type="Label" parent="SubViewport/Menu/SettingsMenu" unique_id=1227504475]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 230.0
+offset_right = 222.0
+offset_bottom = 267.0
+theme = SubResource("Theme_nkawv")
+text = "Music
+"
+
+[node name="MusicSlider" type="HSlider" parent="SubViewport/Menu/SettingsMenu" unique_id=1249667957]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 280.0
+offset_right = 360.0
+offset_bottom = 312.0
+theme = SubResource("Theme_nkawv")
+value = 100.0
+
+[node name="Guide" type="Control" parent="SubViewport" unique_id=554305076]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 800.0
+offset_bottom = 40.0
+pivot_offset = Vector2(3785, 481)
+
+[node name="ColorRect2" type="ColorRect" parent="SubViewport/Guide" unique_id=322004268]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -12.0
+offset_right = 787.0
+offset_bottom = 588.0
+color = Color(0, 0, 0, 1)
+
+[node name="MovingGuide" type="Node2D" parent="SubViewport/Guide" unique_id=239227645]
+
+[node name="Up" parent="SubViewport/Guide/MovingGuide" unique_id=291698446 instance=ExtResource("3_2o76q")]
+position = Vector2(64, 32)
+keyboard_input = "up"
+xbox_input = "up"
+ps_input = "up"
+
+[node name="Down" parent="SubViewport/Guide/MovingGuide" unique_id=335823316 instance=ExtResource("3_2o76q")]
+position = Vector2(64, 60)
+keyboard_input = "down"
+xbox_input = "down"
+ps_input = "down"
+
+[node name="Left" parent="SubViewport/Guide/MovingGuide" unique_id=2006115476 instance=ExtResource("3_2o76q")]
+position = Vector2(32, 42)
+keyboard_input = "left"
+xbox_input = "left"
+ps_input = "left"
+
+[node name="Right" parent="SubViewport/Guide/MovingGuide" unique_id=151062158 instance=ExtResource("3_2o76q")]
+position = Vector2(96, 42)
+keyboard_input = "right"
+xbox_input = "right"
+ps_input = "right"
+
+[node name="Label" type="Label" parent="SubViewport/Guide/MovingGuide" unique_id=75039814]
+offset_left = 120.0
+offset_top = 31.0
+offset_right = 210.0
+offset_bottom = 53.0
+text = "- Move"
+label_settings = SubResource("LabelSettings_imvie")
+vertical_alignment = 1
+
+[node name="Sprint" parent="SubViewport/Guide/MovingGuide" unique_id=1612420905 instance=ExtResource("3_2o76q")]
+position = Vector2(64, 110)
+keyboard_input = "shift"
+xbox_input = "rt"
+ps_input = "rt"
+
+[node name="Label2" type="Label" parent="SubViewport/Guide/MovingGuide" unique_id=27187588]
+offset_left = 120.0
+offset_top = 100.0
+offset_right = 212.0
+offset_bottom = 122.0
+text = "- Sprint"
+label_settings = SubResource("LabelSettings_imvie")
+vertical_alignment = 1
+
+[node name="InputGuide" type="Node2D" parent="SubViewport/Guide" unique_id=178728442]
+
+[node name="Confirm2" parent="SubViewport/Guide/InputGuide" unique_id=1115780776 instance=ExtResource("3_2o76q")]
+position = Vector2(64, 160)
+keyboard_input = "z"
+xbox_input = "a"
+ps_input = "x"
+
+[node name="Confirm" parent="SubViewport/Guide/InputGuide" unique_id=251725588 instance=ExtResource("3_2o76q")]
+position = Vector2(300, 338)
+keyboard_input = "z"
+xbox_input = "a"
+ps_input = "x"
+
+[node name="Down" parent="SubViewport/Guide/InputGuide" unique_id=875965092 instance=ExtResource("3_2o76q")]
+position = Vector2(64, 210)
+keyboard_input = "x"
+xbox_input = "b"
+ps_input = "o"
+
+[node name="Pause" parent="SubViewport/Guide/InputGuide" unique_id=1866158692 instance=ExtResource("3_2o76q")]
+position = Vector2(64, 260)
+keyboard_input = "esc"
+xbox_input = "pause"
+ps_input = "pause"
+
+[node name="Label" type="Label" parent="SubViewport/Guide/InputGuide" unique_id=45414578]
+offset_left = 120.0
+offset_top = 250.0
+offset_right = 230.0
+offset_bottom = 272.0
+text = "- Confirm"
+label_settings = SubResource("LabelSettings_imvie")
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="SubViewport/Guide/InputGuide" unique_id=713547885]
+offset_left = 214.0
+offset_top = 325.0
+offset_right = 285.0
+offset_bottom = 347.0
+text = "Press"
+label_settings = SubResource("LabelSettings_imvie")
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="SubViewport/Guide/InputGuide" unique_id=1194441096]
+offset_left = 323.0
+offset_top = 325.0
+offset_right = 468.0
+offset_bottom = 347.0
+text = "to continue"
+label_settings = SubResource("LabelSettings_imvie")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="SubViewport/Guide/InputGuide" unique_id=1355905807]
+offset_left = 120.0
+offset_top = 150.0
+offset_right = 200.0
+offset_bottom = 172.0
+text = "- Back"
+label_settings = SubResource("LabelSettings_imvie")
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="SubViewport/Guide/InputGuide" unique_id=614889234]
+offset_left = 120.0
+offset_top = 200.0
+offset_right = 217.0
+offset_bottom = 228.0
+text = "- Pause"
+label_settings = SubResource("LabelSettings_imvie")
+vertical_alignment = 1
+
+[node name="Shader" type="Control" parent="SubViewport" unique_id=940313286]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport/Shader" unique_id=1934304453]
+material = SubResource("ShaderMaterial_w32d4")
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 360.0
+
+[node name="Intro" type="Control" parent="." unique_id=1399955285]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sky" type="Sprite2D" parent="Intro" unique_id=1369109408]
+texture = ExtResource("5_1hnlc")
+offset = Vector2(240, 180)
+
+[node name="BackFar" type="Sprite2D" parent="Intro" unique_id=1067875160]
+texture = ExtResource("6_50h1w")
+offset = Vector2(240, 180)
+
+[node name="BackMid" type="Sprite2D" parent="Intro" unique_id=2116369309]
+texture = ExtResource("7_euy4r")
+offset = Vector2(240, 180)
+
+[node name="A game by" type="Label" parent="Intro" unique_id=76482736]
+modulate = Color(0.05882353, 0.05490196, 0.08627451, 1)
+layout_mode = 0
+offset_top = 40.0
+offset_right = 480.0
+offset_bottom = 372.0
+text = "A Game By
+Broken TV Graveyard"
+label_settings = SubResource("LabelSettings_euy4r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackClose" type="AnimatedSprite2D" parent="Intro" unique_id=1818164929]
+sprite_frames = SubResource("SpriteFrames_vr0hv")
+offset = Vector2(240, 180)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Intro" unique_id=735638176]
+libraries/ = SubResource("AnimationLibrary_3w8rc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=336466725]
+visible = false
+modulate = Color(0.05882353, 0.05490196, 0.08627451, 1)
+offset_left = -85.0
+offset_top = -360.0
+offset_right = 565.0
+offset_bottom = 60.0
+pivot_offset = Vector2(325, 210)
+
+[node name="Winds" type="AudioStreamPlayer2D" parent="." unique_id=1091521033]
+position = Vector2(203, 326)
+stream = ExtResource("14_vr0hv")
+autoplay = true
+
+[node name="TVOn" type="AudioStreamPlayer" parent="." unique_id=1084409385]
+stream = ExtResource("14_3w8rc")
+
+[node name="TVButtonPress" type="AudioStreamPlayer2D" parent="." unique_id=2028307849]
+position = Vector2(191, 173)
+stream = ExtResource("15_uxao6")
+
+[connection signal="pressed" from="SubViewport/Menu/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="SubViewport/Menu/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="SubViewport/Menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="SubViewport/Menu/SettingsMenu/Russian" to="." method="_on_russian_pressed"]
+[connection signal="pressed" from="SubViewport/Menu/SettingsMenu/English" to="." method="_on_english_pressed"]
+[connection signal="changed" from="SubViewport/Menu/SettingsMenu/SFXSlider" to="." method="_on_sfx_slider_changed"]
+[connection signal="value_changed" from="SubViewport/Menu/SettingsMenu/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="changed" from="SubViewport/Menu/SettingsMenu/MusicSlider" to="." method="_on_music_slider_changed"]
+[connection signal="value_changed" from="SubViewport/Menu/SettingsMenu/MusicSlider" to="." method="_on_music_slider_value_changed"]

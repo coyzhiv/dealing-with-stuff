@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dos6jh3gw45eb"]
+
+[ext_resource type="PackedScene" uid="uid://cpckb0knghewi" path="res://resourses/models/tutorial/new_bathroom.gltf" id="1_328cf"]
+[ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="2_lbuyw"]
+
+[sub_resource type="Environment" id="Environment_vcx47"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.026033, 0.245928, 0.397646, 1)
+ambient_light_energy = 0.7
+
+[node name="Node3D" type="Node3D" unique_id=1490418090]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=619973343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009480715, 0.7176143, 0.31828642)
+light_energy = 0.3
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 0.1
+
+[node name="blockbench_export" parent="." unique_id=15506310 instance=ExtResource("1_328cf")]
+transform = Transform3D(-4.4585615e-08, 0, 1.02, 0, 1.02, 0, -1.02, 0, -4.4585615e-08, 0, 0, 0)
+
+[node name="Player" parent="." unique_id=991614113 instance=ExtResource("2_lbuyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041439734, 0.14217433, 0.13637477)
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1481647703]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.8, 0.79)
+environment = SubResource("Environment_vcx47")
+projection = 1
+size = 1.8

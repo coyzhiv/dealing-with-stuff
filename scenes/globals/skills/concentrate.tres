@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Skills" load_steps=3 format=3 uid="uid://bwkvc3oc8cxmi"]
+[gd_resource type="Resource" script_class="Skills" format=3 uid="uid://bwkvc3oc8cxmi"]
 
 [ext_resource type="Texture2D" uid="uid://dr6oamnrixwkg" path="res://resourses/sprites/interface/icons/buff_atk.png" id="1_dynd7"]
 [ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_mhda7"]
@@ -6,9 +6,14 @@
 [resource]
 script = ExtResource("2_mhda7")
 title = "Concentrate"
+rus_title = "Концентрация"
 description = "Always helps, right? Increases ATK till end of the fight."
+rus_description = "Всегда помогает, да? Увеличивает атаку до конца боя."
 icon = ExtResource("1_dynd7")
 effect = "buff"
 effect_info = "atk"
 value = 1.1
+target = "self"
+price = Array[int]([500, 500, 500, 500, 500])
+steps = Array[float]([0.1, 0.1, 0.1, 0.1, 0.1])
 metadata/_custom_type_script = "uid://b3ac4cep4lk6n"

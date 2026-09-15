@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Skills" load_steps=3 format=3 uid="uid://cp6pot8c5iv5x"]
+[gd_resource type="Resource" script_class="Skills" format=3 uid="uid://cp6pot8c5iv5x"]
 
 [ext_resource type="Texture2D" uid="uid://clmnmow6hs7kq" path="res://resourses/sprites/interface/icons/fast_damage.png" id="1_fr6p1"]
 [ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_7cjnh"]
@@ -6,9 +6,12 @@
 [resource]
 script = ExtResource("2_7cjnh")
 title = "Hurry"
+rus_title = "Спешка"
 description = "Never underestimate consequences of haste. Deals more damage the more speed you have."
+rus_description = "Никогда не недооценивай последствия спешки. Наносит больше урона, когда у тебя больше скорости."
 icon = ExtResource("1_fr6p1")
 effect = "damage"
 effect_info = "speed"
-value = 0.5
+value = 10.0
+steps = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0])
 metadata/_custom_type_script = "uid://b3ac4cep4lk6n"

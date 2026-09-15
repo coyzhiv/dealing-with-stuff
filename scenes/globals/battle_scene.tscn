@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://euwbl5ngxg1f"]
+[gd_scene format=3 uid="uid://euwbl5ngxg1f"]
 
 [ext_resource type="Script" uid="uid://bdne36ge17ny5" path="res://scenes/globals/battle_scene.gd" id="1_tdjq8"]
 [ext_resource type="PackedScene" uid="uid://dpi1idaeb8wri" path="res://resourses/models/battle_scenes/Battle_scene.gltf" id="2_ttil8"]
@@ -7,9 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dvsnn16l7ahhn" path="res://resourses/sprites/interface/icons/buff.png" id="5_k2jn5"]
 [ext_resource type="Texture2D" uid="uid://c2fse6xnnccey" path="res://resourses/sprites/interface/fight_box.png" id="6_j5fpy"]
 [ext_resource type="Texture2D" uid="uid://drn2r04l8n554" path="res://resourses/sprites/interface/icons/hp_damage.png" id="6_wljnh"]
+[ext_resource type="Texture2D" uid="uid://duog3gr4sbq3g" path="res://resourses/sprites/interface/bubbles.png" id="7_f6tx0"]
 [ext_resource type="FontFile" uid="uid://d13bi6hpu1ajl" path="res://resourses/fonts/ByteBounce.ttf" id="7_u1c7q"]
 [ext_resource type="Theme" uid="uid://7l6k4yhkihp4" path="res://scenes/menus/main_theme.tres" id="8_u1c7q"]
 [ext_resource type="Texture2D" uid="uid://orljyef1gt57" path="res://resourses/sprites/interface/battle_icons/lina_icon.png" id="9_xxkvk"]
+[ext_resource type="FontFile" uid="uid://c4ohbbx885w7l" path="res://resourses/fonts/BoldPixels.ttf" id="10_d8qkl"]
 [ext_resource type="Texture2D" uid="uid://b8o0q4u1al2jk" path="res://resourses/sprites/interface/battle_icons/icon_frame.png" id="10_k2jn5"]
 [ext_resource type="AudioStream" uid="uid://bigdu0olxd0y8" path="res://resourses/audio/effects/Punch sound.ogg" id="12_8bq7r"]
 [ext_resource type="AudioStream" uid="uid://d2dsn2oag2xvw" path="res://resourses/audio/effects/вжжжух 1-4.ogg" id="13_f6tx0"]
@@ -17,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://b5fp67qal3iar" path="res://resourses/audio/effects/spell is not.ogg" id="15_6fh3b"]
 [ext_resource type="AudioStream" uid="uid://bn0a7vch58xdk" path="res://resourses/audio/ost/Battle OST.ogg" id="16_d8qkl"]
 [ext_resource type="AudioStream" uid="uid://b87g7uj54bxb3" path="res://resourses/audio/ost/Battle OST Intro.ogg" id="17_6fh3b"]
+[ext_resource type="PackedScene" uid="uid://gp071xtynewa" path="res://scenes/inputs/changing_key.tscn" id="20_6fh3b"]
 
 [sub_resource type="Environment" id="Environment_bfo36"]
 background_mode = 1
@@ -112,96 +115,100 @@ _data = {
 [sub_resource type="QuadMesh" id="QuadMesh_bgatl"]
 size = Vector2(0.01, 0.01)
 
-[sub_resource type="Animation" id="Animation_rqv36"]
-resource_name = "RESETT"
+[sub_resource type="LabelSettings" id="LabelSettings_k2jn5"]
+font = ExtResource("7_u1c7q")
+font_color = Color(0.11532933, 0.5251258, 0.3411391, 1)
+
+[sub_resource type="Animation" id="Animation_8bq7r"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase1:position")
+tracks/0/path = NodePath("../RightContorls/LinaBuffIcons/IconBase1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(9, 950)]
+"values": [Vector2(264, 320.7)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase1:visible")
+tracks/1/path = NodePath("../RightContorls/LinaBuffIcons/IconBase2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(294.095, 307.525)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase2:visible")
+tracks/2/path = NodePath("../RightContorls/LinaBuffIcons/IconBase3:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(319.53, 295.655)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase2:position")
+tracks/3/path = NodePath("../RightContorls/LinaBuffIcons/IconBase4:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(78, 950)]
+"values": [Vector2(394.035, 279.32)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase3:position")
+tracks/4/path = NodePath("../RightContorls/LinaBuffIcons/IconBase5:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(148, 950)]
+"values": [Vector2(424.56, 281.26)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase3:visible")
+tracks/5/path = NodePath("../RightContorls/LinaBuffIcons/IconBase6:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(455.075, 281.15)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase4:position")
+tracks/6/path = NodePath("../RightContorls/LinaBuffIcons/IconBase1:emitting")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(624, 950)]
+"update": 1,
+"values": [false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase4:visible")
+tracks/7/path = NodePath("../RightContorls/LinaBuffIcons/IconBase2:emitting")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -213,19 +220,19 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase5:position")
+tracks/8/path = NodePath("../RightContorls/LinaBuffIcons/IconBase3:emitting")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(693, 950)]
+"update": 1,
+"values": [false]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase5:visible")
+tracks/9/path = NodePath("../RightContorls/LinaBuffIcons/IconBase4:emitting")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -237,19 +244,19 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase6:position")
+tracks/10/path = NodePath("../RightContorls/LinaBuffIcons/IconBase5:emitting")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(764, 950)]
+"update": 1,
+"values": [false]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase6:visible")
+tracks/11/path = NodePath("../RightContorls/LinaBuffIcons/IconBase6:emitting")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -261,103 +268,103 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../RightContorls/LinaBuffIcons/IconBase1:position")
+tracks/12/path = NodePath("../RightContorls/LinaBuffIcons/IconBase1/Icon:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(9, 950)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../RightContorls/LinaBuffIcons/IconBase1:visible")
+tracks/13/path = NodePath("../RightContorls/LinaBuffIcons/IconBase2/Icon:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("../RightContorls/LinaBuffIcons/IconBase2:position")
+tracks/14/path = NodePath("../RightContorls/LinaBuffIcons/IconBase3/Icon:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(78, 950)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("../RightContorls/LinaBuffIcons/IconBase2:visible")
+tracks/15/path = NodePath("../RightContorls/LinaBuffIcons/IconBase4/Icon:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("../RightContorls/LinaBuffIcons/IconBase3:position")
+tracks/16/path = NodePath("../RightContorls/LinaBuffIcons/IconBase5/Icon:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(148, 950)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("../RightContorls/LinaBuffIcons/IconBase3:visible")
+tracks/17/path = NodePath("../RightContorls/LinaBuffIcons/IconBase6/Icon:modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("../RightContorls/LinaBuffIcons/IconBase4:position")
+tracks/18/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase1:emitting")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(623, 950)]
+"update": 1,
+"values": [false]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("../RightContorls/LinaBuffIcons/IconBase4:visible")
+tracks/19/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase1:position")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(264, 320.7)]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("../RightContorls/LinaBuffIcons/IconBase5:visible")
+tracks/20/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase2:emitting")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -369,19 +376,19 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("../RightContorls/LinaBuffIcons/IconBase6:position")
+tracks/21/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase2:position")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(765, 950)]
+"values": [Vector2(294.095, 304.94)]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("../RightContorls/LinaBuffIcons/IconBase6:visible")
+tracks/22/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase3:emitting")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -390,19 +397,182 @@ tracks/22/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase3:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(319.53, 291.43)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase4:emitting")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase4:position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(394.035, 279.32)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase5:emitting")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase5:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(424.56, 281.26)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase6:emitting")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase6:position")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(455.075, 281.15)]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase1/Icon:modulate")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase2/Icon:modulate")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase3/Icon:modulate")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase4/Icon:modulate")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase5/Icon:modulate")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("../LeftContorls/AlisaBuffIcons/IconBase6/Icon:modulate")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8bq7r"]
 _data = {
-&"RESETT": SubResource("Animation_rqv36")
+&"RESET": SubResource("Animation_8bq7r")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_r5ivv"]
-font = ExtResource("7_u1c7q")
-font_size = 32
+[sub_resource type="Gradient" id="Gradient_d8qkl"]
+offsets = PackedFloat32Array(0, 0.69067794, 0.9872881)
+colors = PackedColorArray(0.96958274, 0.9914982, 0.9996745, 1, 0.95678025, 0.9831248, 0.9981834, 1, 0.95686275, 0.9843137, 1, 0)
 
-[sub_resource type="LabelSettings" id="LabelSettings_k2jn5"]
-font = ExtResource("7_u1c7q")
-font_size = 48
+[sub_resource type="Gradient" id="Gradient_ix1sa"]
+offsets = PackedFloat32Array(0, 0.17085427, 0.81407034, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r5ivv"]
+font = ExtResource("10_d8qkl")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d8qkl"]
+font = ExtResource("10_d8qkl")
 
 [sub_resource type="Animation" id="Animation_r5ivv"]
 length = 0.001
@@ -456,7 +626,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1400, 400), Vector2(1400, 300)]
+"values": [Vector2(250, 100), Vector2(250, 80)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_00f4r"]
@@ -467,222 +637,18 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_sxtqt"]
 length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RightContorls:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1157, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("RightContorls:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(183, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RightContorls:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("LeftContorls:position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(62, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("LeftContorls:position:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(183, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("LeftContorls:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_k2jn5"]
 resource_name = "remove_both"
 length = 0.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LeftContorls:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(62, -0.25, 0, 0.25, 0, 62, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("LeftContorls:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(183, -0.25, 0, 0.4, 65.5577, 415, -0.4, -47.3825, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("LeftContorls:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.485703, 0.485704, 0.485703, 1)]
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("RightContorls:position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1157, -0.25, 0, 0.25, 0, 1157, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("RightContorls:position:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(183, -0.25, 0, 0.25, 0, 415, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("RightContorls:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.525101, 0.525101, 0.525101, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_xxkvk"]
 resource_name = "remove_left"
 length = 0.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LeftContorls:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(62, -0.25, 0, 0.25, 0, 62, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("LeftContorls:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(183, -0.25, 0, 0.4, 65.5577, 415, -0.4, -47.3825, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("LeftContorls:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.485703, 0.485704, 0.485703, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_00f4r"]
 resource_name = "remove_right"
 length = 0.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RightContorls:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1157, -0.25, 0, 0.25, 0, 1157, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("RightContorls:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(183, -0.25, 0, 0.366667, 65.5577, 415.053, -0.4, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RightContorls:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.149283),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.470076, 0.470076, 0.470076, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xxkvk"]
 _data = {
@@ -690,6 +656,141 @@ _data = {
 &"remove_both": SubResource("Animation_k2jn5"),
 &"remove_left": SubResource("Animation_xxkvk"),
 &"remove_right": SubResource("Animation_00f4r")
+}
+
+[sub_resource type="Animation" id="Animation_d8qkl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QueueIcons/Icon1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QueueIcons/Icon2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 32)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("QueueIcons/Icon3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0009999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(13, 183), Vector2(13, 51)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("QueueIcons/Icon4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0009999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(13, 70), Vector2(13, 70)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("QueueIcons/Icon6:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 108)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("QueueIcons/Icon8:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 146)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("QueueIcons/Icon9:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 165)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("QueueIcons/Icon10:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.0009999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(13, 165), Vector2(13, 184)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("QueueIcons/Icon5:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 89)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("QueueIcons/Icon7:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 127)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("QueueIcons/Icon11:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 182)]
 }
 
 [sub_resource type="Animation" id="Animation_feg5y"]
@@ -705,7 +806,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-38, 39)]
+"values": [Vector2(-16, 11)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -717,7 +818,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-38, 111)]
+"values": [Vector2(-16, 30)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -729,7 +830,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-38, 183)]
+"values": [Vector2(-16, 49)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -741,7 +842,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-38, 255)]
+"values": [Vector2(-16, 68)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -753,7 +854,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-38, 327)]
+"values": [Vector2(-16, 87)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -765,7 +866,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-38, 399)]
+"values": [Vector2(-16, 106)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -777,7 +878,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-38, 471)]
+"values": [Vector2(-16, 125)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -789,7 +890,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-38, 543)]
+"values": [Vector2(-16, 144)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -801,7 +902,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-38, 615)]
+"values": [Vector2(-16, 163)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -813,7 +914,143 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-38, 684)]
+"values": [Vector2(-16, 182)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("QueueIcons/Icon11:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.0009999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-16, 182), Vector2(-16, 182)]
+}
+
+[sub_resource type="Animation" id="Animation_f6tx0"]
+resource_name = "RESETT2"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QueueIcons/Icon2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QueueIcons/Icon1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 11)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("QueueIcons/Icon3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 49)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("QueueIcons/Icon4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 68)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("QueueIcons/Icon5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 87)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("QueueIcons/Icon6:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 106)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("QueueIcons/Icon7:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 125)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("QueueIcons/Icon8:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 144)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("QueueIcons/Icon9:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 163)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("QueueIcons/Icon10:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 182)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -825,7 +1062,7 @@ tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-38, 684)]
+"values": [Vector2(-16, 182)]
 }
 
 [sub_resource type="Animation" id="Animation_csxge"]
@@ -845,78 +1082,93 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rqv36"]
 _data = {
+&"RESET": SubResource("Animation_d8qkl"),
 &"RESETT": SubResource("Animation_feg5y"),
+&"RESETT2": SubResource("Animation_f6tx0"),
 &"new_animation": SubResource("Animation_csxge")
 }
 
-[node name="BattleScene" type="CanvasLayer"]
+[sub_resource type="LabelSettings" id="LabelSettings_byylx"]
+font = ExtResource("10_d8qkl")
+
+[node name="BattleScene" type="CanvasLayer" unique_id=1037603586]
 process_mode = 2
 visible = false
 script = ExtResource("1_tdjq8")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1672115896]
 texture_filter = 1
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 480.0
+offset_bottom = 360.0
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=216725814]
 handle_input_locally = false
-size = Vector2i(1920, 1080)
+anisotropic_filtering_level = 0
+canvas_item_default_texture_filter = 0
+size = Vector2i(480, 360)
 render_target_update_mode = 0
 
-[node name="AllThe3d" type="Node3D" parent="SubViewportContainer/SubViewport"]
+[node name="AllThe3d" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1088536329]
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/AllThe3d"]
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/AllThe3d" unique_id=1864819973]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.68726, 195.651)
 environment = SubResource("Environment_bfo36")
 fov = 80.0
 
-[node name="blockbench_export" parent="SubViewportContainer/SubViewport/AllThe3d" instance=ExtResource("2_ttil8")]
+[node name="blockbench_export" parent="SubViewportContainer/SubViewport/AllThe3d" unique_id=627846266 instance=ExtResource("2_ttil8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.159, 194)
 
-[node name="AlisaSprite" parent="SubViewportContainer/SubViewport/AllThe3d" instance=ExtResource("3_bgatl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.028, 195.1)
+[node name="AlisaSprite" parent="SubViewportContainer/SubViewport/AllThe3d" unique_id=1633083964 instance=ExtResource("3_bgatl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29983655, -0.028, 195.1)
 
-[node name="LinaSprite" parent="SubViewportContainer/SubViewport/AllThe3d" instance=ExtResource("3_bgatl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.028, 195.1)
+[node name="LinaSprite" parent="SubViewportContainer/SubViewport/AllThe3d" unique_id=568499987 instance=ExtResource("3_bgatl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33534253, -0.028, 195.1)
 
-[node name="EnemySprite" parent="SubViewportContainer/SubViewport/AllThe3d" instance=ExtResource("4_bgatl")]
+[node name="EnemySprite" parent="SubViewportContainer/SubViewport/AllThe3d" unique_id=1055818809 instance=ExtResource("4_bgatl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.201684, 193.895)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/AllThe3d"]
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/AllThe3d" unique_id=146910612]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.96697, 195)
-light_energy = 15.0
-light_indirect_energy = 10.0
-light_specular = 0.1
-shadow_enabled = true
-shadow_blur = 0.1
-spot_angle = 23.364
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/AllThe3d"]
-transform = Transform3D(0.583541, 0.588088, 0.560029, -6.02885e-08, -0.68962, 0.724172, 0.812083, -0.422584, -0.402421, 2.96701, 2.81416, 193.042)
+light_color = Color(0.93333334, 0.84705883, 0.7921569, 1)
 light_energy = 5.0
-light_indirect_energy = 10.0
+light_size = 0.118
 light_specular = 0.1
 shadow_enabled = true
 shadow_blur = 0.1
-spot_angle = 24.5378
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+spot_angle = 25.099255
+spot_angle_attenuation = 0.019915022
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="SubViewportContainer/SubViewport/AllThe3d"]
-transform = Transform3D(0.583541, -0.588088, -0.560029, 6.02885e-08, -0.68962, 0.724172, -0.812083, -0.422584, -0.402421, -2.91424, 2.81416, 193.042)
-light_energy = 5.0
-light_indirect_energy = 10.0
+[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/AllThe3d" unique_id=923932993]
+transform = Transform3D(-0.7615873, 0.44002983, 0.4757716, -0.26448646, -0.88126504, 0.3916868, 0.5916348, 0.17246851, 0.7875423, 2.3520536, 1.2117584, 196.78873)
+light_color = Color(0.93333334, 0.84705883, 0.7921569, 1)
+light_energy = 3.0
 light_specular = 0.1
 shadow_enabled = true
-shadow_blur = 0.1
-spot_angle = 24.5378
+shadow_bias = 0.3
+shadow_blur = 0.0
+spot_range = 4.9938517
+spot_angle = 29.030895
+spot_angle_attenuation = 0.17075495
 
-[node name="CameraBobAnimation" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/AllThe3d"]
+[node name="SpotLight3D3" type="SpotLight3D" parent="SubViewportContainer/SubViewport/AllThe3d" unique_id=103801251]
+transform = Transform3D(-0.7942743, -0.03189074, -0.60672176, -0.26432034, -0.8810256, 0.3923371, -0.54704946, 0.47199216, 0.6913467, -2.7282846, 1.2117584, 196.78873)
+light_color = Color(0.9338715, 0.84573203, 0.7931986, 1)
+light_energy = 3.0
+light_specular = 0.1
+shadow_enabled = true
+shadow_bias = 0.3
+shadow_blur = 0.0
+spot_range = 4.9938517
+spot_angle = 29.030895
+spot_angle_attenuation = 0.05440947
+
+[node name="CameraBobAnimation" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/AllThe3d" unique_id=1000664586]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_j5fpy")
-}
+libraries/ = SubResource("AnimationLibrary_j5fpy")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="SubViewportContainer/SubViewport/AllThe3d"]
+[node name="CPUParticles3D" type="CPUParticles3D" parent="SubViewportContainer/SubViewport/AllThe3d" unique_id=1753625417]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17838, 0.959459, 194.297)
 amount = 500
 lifetime = 30.0
@@ -925,448 +1177,612 @@ emission_shape = 3
 emission_box_extents = Vector3(0.1, 1, 1)
 gravity = Vector3(0.5, 0, 0)
 
-[node name="AllThe2d" type="Control" parent="SubViewportContainer/SubViewport"]
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/AllThe3d" unique_id=830959534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4955153, 193.1607)
+light_color = Color(0.16519171, 0.6676688, 0.9690377, 1)
+light_energy = 0.2
+omni_range = 10.091
+
+[node name="AllThe2d" type="Control" parent="SubViewportContainer/SubViewport" unique_id=1737818690]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BuffIcons" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d"]
+[node name="AlisaHP" type="ProgressBar" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=1296458986]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 342.0
+offset_right = 52.0
+offset_bottom = 359.0
+theme = ExtResource("8_u1c7q")
+value = 100.0
+show_percentage = false
+
+[node name="HPText" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/AlisaHP" unique_id=523072535]
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 17.0
+label_settings = SubResource("LabelSettings_k2jn5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LinaHP" type="ProgressBar" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=1899377704]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 342.0
+offset_right = 479.0
+offset_bottom = 359.0
+theme = ExtResource("8_u1c7q")
+value = 100.0
+show_percentage = false
+
+[node name="HPText2" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LinaHP" unique_id=560689586]
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 17.0
+label_settings = SubResource("LabelSettings_k2jn5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuffIcons" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=1458770600]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BuffIconReset" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/AllThe2d/BuffIcons"]
-libraries = {
-&"": SubResource("AnimationLibrary_8bq7r")
-}
+[node name="BuffIconReset" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/AllThe2d/BuffIcons" unique_id=992017000]
+libraries/ = SubResource("AnimationLibrary_8bq7r")
 
-[node name="RightContorls" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d"]
+[node name="RightContorls" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=1459643653]
 anchors_preset = 0
-offset_left = 1157.0
-offset_top = 183.0
-offset_right = 1197.0
-offset_bottom = 223.0
+offset_right = 40.0
+offset_bottom = 39.99997
 
-[node name="LinaBuffIcons" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls"]
+[node name="LinaBuffIcons" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=1489270938]
 anchors_preset = 0
-offset_left = -62.0
-offset_top = -183.0
-offset_right = -22.0
-offset_bottom = -143.0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="IconBase1" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons"]
-visible = false
-layout_mode = 0
-offset_left = 9.0
-offset_top = 950.0
-offset_right = 61.0
-offset_bottom = 1003.0
-color = Color(0, 0, 0, 1)
+[node name="IconBase1" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons" unique_id=917997082]
+process_mode = 3
+position = Vector2(264, 320.7)
+emitting = false
+amount = 50
+texture = ExtResource("7_f6tx0")
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.84910035, 0.9040965, 0.9411325, 1)
+color_ramp = SubResource("Gradient_d8qkl")
 
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase1"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase1" unique_id=564793482]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(26, 27)
-scale = Vector2(3, 3)
+rotation = -0.14835298
 texture = ExtResource("5_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase1/Icon"]
-texture_filter = 1
-position = Vector2(2.05636e-06, -6.55651e-07)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("10_k2jn5")
+[node name="IconBase2" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons" unique_id=2025526932]
+process_mode = 3
+position = Vector2(294.095, 307.525)
+emitting = false
+amount = 50
+texture = ExtResource("7_f6tx0")
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.84910035, 0.9040965, 0.9411325, 1)
+color_ramp = SubResource("Gradient_d8qkl")
 
-[node name="IconBase2" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons"]
-visible = false
-layout_mode = 0
-offset_left = 78.0
-offset_top = 950.0
-offset_right = 130.0
-offset_bottom = 1003.0
-color = Color(0, 0, 0, 1)
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase2"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase2" unique_id=1153650712]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(26, 27)
-scale = Vector2(3, 3)
+rotation = -0.14835298
 texture = ExtResource("5_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase2/Icon"]
-texture_filter = 1
-position = Vector2(2.05636e-06, -6.55651e-07)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("10_k2jn5")
+[node name="IconBase3" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons" unique_id=834013315]
+process_mode = 3
+position = Vector2(319.53, 295.655)
+emitting = false
+amount = 50
+texture = ExtResource("7_f6tx0")
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.84910035, 0.9040965, 0.9411325, 1)
+color_ramp = SubResource("Gradient_d8qkl")
 
-[node name="IconBase3" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons"]
-visible = false
-layout_mode = 0
-offset_left = 148.0
-offset_top = 950.0
-offset_right = 200.0
-offset_bottom = 1003.0
-color = Color(0, 0, 0, 1)
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase3"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase3" unique_id=1023620702]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(26, 27)
-scale = Vector2(3, 3)
+rotation = -0.14835298
 texture = ExtResource("5_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase3/Icon"]
-texture_filter = 1
-position = Vector2(2.05636e-06, -6.55651e-07)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("10_k2jn5")
+[node name="IconBase4" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons" unique_id=1120924043]
+process_mode = 3
+position = Vector2(394.035, 279.32)
+emitting = false
+amount = 50
+texture = ExtResource("7_f6tx0")
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.84910035, 0.9040965, 0.9411325, 1)
+color_ramp = SubResource("Gradient_d8qkl")
 
-[node name="IconBase4" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons"]
-visible = false
-layout_mode = 0
-offset_left = 623.0
-offset_top = 950.0
-offset_right = 675.0
-offset_bottom = 1003.0
-color = Color(0, 0, 0, 1)
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase4"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase4" unique_id=1819512530]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(26, 27)
-scale = Vector2(3, 3)
+rotation = -0.14835298
 texture = ExtResource("5_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase4/Icon"]
-texture_filter = 1
-position = Vector2(2.05636e-06, -6.55651e-07)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("10_k2jn5")
+[node name="IconBase5" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons" unique_id=1772189416]
+process_mode = 3
+position = Vector2(424.56, 281.26)
+emitting = false
+amount = 50
+texture = ExtResource("7_f6tx0")
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.84910035, 0.9040965, 0.9411325, 1)
+color_ramp = SubResource("Gradient_d8qkl")
 
-[node name="IconBase5" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons"]
-visible = false
-layout_mode = 0
-offset_left = 694.0
-offset_top = 950.0
-offset_right = 746.0
-offset_bottom = 1003.0
-color = Color(0, 0, 0, 1)
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase5"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase5" unique_id=1866199933]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(26, 27)
-scale = Vector2(3, 3)
+rotation = -0.14835298
 texture = ExtResource("5_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase5/Icon"]
-texture_filter = 1
-position = Vector2(2.05636e-06, -6.55651e-07)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("10_k2jn5")
+[node name="IconBase6" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons" unique_id=1500826146]
+process_mode = 3
+position = Vector2(455.075, 281.15)
+emitting = false
+amount = 50
+texture = ExtResource("7_f6tx0")
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.84910035, 0.9040965, 0.9411325, 1)
+color_ramp = SubResource("Gradient_d8qkl")
 
-[node name="IconBase6" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons"]
-visible = false
-layout_mode = 0
-offset_left = 765.0
-offset_top = 950.0
-offset_right = 817.0
-offset_bottom = 1003.0
-color = Color(0, 0, 0, 1)
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase6"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase6" unique_id=729469888]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(26, 27)
-scale = Vector2(3, 3)
+rotation = -0.14835298
 texture = ExtResource("5_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/LinaBuffIcons/IconBase6/Icon"]
-texture_filter = 1
-position = Vector2(2.05636e-06, -6.55651e-07)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("10_k2jn5")
+[node name="ParticleUp" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=469764160]
+process_mode = 3
+self_modulate = Color(0.9340804, 0.9340805, 0.93408036, 1)
+position = Vector2(371.00003, 310)
+rotation = 0.14486232
+scale = Vector2(0.99999994, 1)
+skew = 1.027999
+amount = 300
+texture = ExtResource("7_f6tx0")
+emission_shape = 2
+emission_sphere_radius = 43.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_ix1sa")
 
-[node name="Up" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls"]
-texture_filter = 1
-position = Vector2(350, 730)
-scale = Vector2(2, 2)
-texture = ExtResource("6_j5fpy")
+[node name="ParticleLeft" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=1219962224]
+process_mode = 3
+self_modulate = Color(0.9340804, 0.9340805, 0.93408036, 1)
+position = Vector2(315.0001, 336)
+rotation = 0.14486231
+scale = Vector2(0.99999994, 1)
+skew = 1.027999
+amount = 300
+texture = ExtResource("7_f6tx0")
+emission_shape = 2
+emission_sphere_radius = 43.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_ix1sa")
 
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Up"]
-position = Vector2(-85, 0)
-texture = ExtResource("6_wljnh")
+[node name="ParticleRight" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=977274873]
+process_mode = 3
+self_modulate = Color(0.9340804, 0.9340805, 0.93408036, 1)
+position = Vector2(433.00003, 310)
+rotation = 0.1448623
+scale = Vector2(0.99999994, 1)
+skew = 1.027999
+amount = 300
+texture = ExtResource("7_f6tx0")
+emission_shape = 2
+emission_sphere_radius = 43.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_ix1sa")
 
-[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Up"]
-texture_filter = 1
-offset_left = -73.0
-offset_top = -12.5
-offset_right = 85.0
-offset_bottom = 13.5
-text = "Procrastinate"
+[node name="ParticleDown" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=690366285]
+process_mode = 3
+self_modulate = Color(0.9340804, 0.9340805, 0.93408036, 1)
+position = Vector2(378.00003, 338)
+rotation = 0.14486228
+scale = Vector2(0.99999994, 1)
+skew = 1.027999
+amount = 300
+texture = ExtResource("7_f6tx0")
+emission_shape = 2
+emission_sphere_radius = 43.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_ix1sa")
+
+[node name="IconUp" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=643144948]
+position = Vector2(372.00003, 303)
+rotation = -0.17453292
+
+[node name="IconDown" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=1111810585]
+position = Vector2(378.00006, 332.00003)
+rotation = -0.17453292
+
+[node name="IconRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=779232797]
+position = Vector2(435.00003, 305)
+rotation = -0.17453292
+
+[node name="IconLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=868533100]
+position = Vector2(311, 329.26764)
+rotation = -0.17453292
+
+[node name="UpName" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=1553441935]
+layout_mode = 0
+offset_left = 321.5431
+offset_top = 319.7255
+offset_right = 427.38864
+offset_bottom = 334.7255
+rotation = -0.17453292
+theme_override_fonts/font = ExtResource("10_d8qkl")
 label_settings = SubResource("LabelSettings_r5ivv")
+horizontal_alignment = 1
 
-[node name="Down" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls"]
-texture_filter = 1
-position = Vector2(350, 860)
-scale = Vector2(2, 2)
-texture = ExtResource("6_j5fpy")
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Down"]
-position = Vector2(-85, 0)
-texture = ExtResource("6_wljnh")
-
-[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Down"]
-offset_left = -73.0
-offset_top = -12.5
-offset_right = 85.0
-offset_bottom = 13.5
-text = "Procrastinate"
+[node name="RightName" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=1137364721]
+layout_mode = 0
+offset_left = 385.47342
+offset_top = 323.2088
+offset_right = 487.6895
+offset_bottom = 338.2088
+rotation = -0.17453292
 label_settings = SubResource("LabelSettings_r5ivv")
+horizontal_alignment = 1
 
-[node name="Left" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls"]
-texture_filter = 1
-position = Vector2(140, 795)
-scale = Vector2(2, 2)
-texture = ExtResource("6_j5fpy")
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Left"]
-position = Vector2(-85, 0)
-texture = ExtResource("6_wljnh")
-
-[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Left"]
-offset_left = -73.0
-offset_top = -12.5
-offset_right = 85.0
-offset_bottom = 13.5
-text = "Procrastinate"
+[node name="DownName" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=1524175731]
+layout_mode = 0
+offset_left = 327.00052
+offset_top = 350.35013
+offset_right = 433.00992
+offset_bottom = 365.35013
+rotation = -0.17453292
 label_settings = SubResource("LabelSettings_r5ivv")
+horizontal_alignment = 1
 
-[node name="Right" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls"]
-texture_filter = 1
-position = Vector2(560, 795)
-scale = Vector2(2, 2)
-texture = ExtResource("6_j5fpy")
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Right"]
-position = Vector2(-85, 0)
-texture = ExtResource("6_wljnh")
-
-[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls/Right"]
-offset_left = -73.0
-offset_top = -12.5
-offset_right = 85.0
-offset_bottom = 13.5
-text = "Procrastinate"
+[node name="LeftName" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/RightContorls" unique_id=1307010217]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 265.2852
+offset_top = 346.03854
+offset_right = 364.1337
+offset_bottom = 361.03854
+rotation = -0.17453292
 label_settings = SubResource("LabelSettings_r5ivv")
+horizontal_alignment = 1
 
-[node name="LeftContorls" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d"]
+[node name="LeftContorls" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=1811666033]
 anchors_preset = 0
-offset_left = 62.0
-offset_top = 183.0
-offset_right = 102.0
-offset_bottom = 223.0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="AlisaBuffIcons" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls"]
+[node name="AlisaBuffIcons" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=1453030560]
 anchors_preset = 0
-offset_left = -62.0
-offset_top = -183.0
-offset_right = -22.0
-offset_bottom = -143.0
+offset_left = -121.65
+offset_top = -108.37
+offset_right = -81.65
+offset_bottom = -86.469
+rotation = 0.34906584
 
-[node name="IconBase1" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons"]
-visible = false
-layout_mode = 0
-offset_left = 9.0
-offset_top = 950.0
-offset_right = 61.0
-offset_bottom = 1003.0
-color = Color(0, 0, 0, 1)
+[node name="IconBase1" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons" unique_id=2034958685]
+process_mode = 3
+position = Vector2(264, 320.7)
+emitting = false
+amount = 50
+texture = ExtResource("7_f6tx0")
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.84910035, 0.9040965, 0.9411325, 1)
+color_ramp = SubResource("Gradient_d8qkl")
 
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase1"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase1" unique_id=951467936]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(26, 27)
-scale = Vector2(3, 3)
+rotation = -0.14835298
 texture = ExtResource("5_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase1/Icon"]
-texture_filter = 1
-position = Vector2(2.05636e-06, -6.55651e-07)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("10_k2jn5")
+[node name="IconBase2" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons" unique_id=13323879]
+process_mode = 3
+position = Vector2(294.095, 304.94)
+emitting = false
+amount = 50
+texture = ExtResource("7_f6tx0")
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.84910035, 0.9040965, 0.9411325, 1)
+color_ramp = SubResource("Gradient_d8qkl")
 
-[node name="IconBase2" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons"]
-visible = false
-layout_mode = 0
-offset_left = 78.0
-offset_top = 950.0
-offset_right = 130.0
-offset_bottom = 1003.0
-color = Color(0, 0, 0, 1)
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase2"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase2" unique_id=1894179567]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(26, 27)
-scale = Vector2(3, 3)
+rotation = -0.14835298
 texture = ExtResource("5_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase2/Icon"]
-texture_filter = 1
-position = Vector2(2.05636e-06, -6.55651e-07)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("10_k2jn5")
+[node name="IconBase3" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons" unique_id=146179896]
+process_mode = 3
+position = Vector2(319.53, 291.43)
+emitting = false
+amount = 50
+texture = ExtResource("7_f6tx0")
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.84910035, 0.9040965, 0.9411325, 1)
+color_ramp = SubResource("Gradient_d8qkl")
 
-[node name="IconBase3" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons"]
-visible = false
-layout_mode = 0
-offset_left = 148.0
-offset_top = 950.0
-offset_right = 200.0
-offset_bottom = 1003.0
-color = Color(0, 0, 0, 1)
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase3"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase3" unique_id=367785249]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(26, 27)
-scale = Vector2(3, 3)
+rotation = -0.14835298
 texture = ExtResource("5_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase3/Icon"]
-texture_filter = 1
-position = Vector2(2.05636e-06, -6.55651e-07)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("10_k2jn5")
+[node name="IconBase4" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons" unique_id=1675576268]
+process_mode = 3
+position = Vector2(394.035, 279.32)
+emitting = false
+amount = 50
+texture = ExtResource("7_f6tx0")
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.84910035, 0.9040965, 0.9411325, 1)
+color_ramp = SubResource("Gradient_d8qkl")
 
-[node name="IconBase4" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons"]
-visible = false
-layout_mode = 0
-offset_left = 624.0
-offset_top = 950.0
-offset_right = 676.0
-offset_bottom = 1003.0
-color = Color(0, 0, 0, 1)
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase4"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase4" unique_id=1765375307]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(26, 27)
-scale = Vector2(3, 3)
+rotation = -0.14835298
 texture = ExtResource("5_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase4/Icon"]
-texture_filter = 1
-position = Vector2(2.05636e-06, -6.55651e-07)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("10_k2jn5")
+[node name="IconBase5" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons" unique_id=246975612]
+process_mode = 3
+position = Vector2(424.56, 281.26)
+emitting = false
+amount = 50
+texture = ExtResource("7_f6tx0")
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.84910035, 0.9040965, 0.9411325, 1)
+color_ramp = SubResource("Gradient_d8qkl")
 
-[node name="IconBase5" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons"]
-visible = false
-layout_mode = 0
-offset_left = 693.0
-offset_top = 950.0
-offset_right = 745.0
-offset_bottom = 1003.0
-color = Color(0, 0, 0, 1)
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase5"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase5" unique_id=1496379089]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(26, 27)
-scale = Vector2(3, 3)
+rotation = -0.14835298
 texture = ExtResource("5_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase5/Icon"]
-texture_filter = 1
-position = Vector2(2.05636e-06, -6.55651e-07)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("10_k2jn5")
+[node name="IconBase6" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons" unique_id=1060813126]
+process_mode = 3
+position = Vector2(455.075, 281.15)
+emitting = false
+amount = 50
+texture = ExtResource("7_f6tx0")
+emission_shape = 1
+emission_sphere_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.84910035, 0.9040965, 0.9411325, 1)
+color_ramp = SubResource("Gradient_d8qkl")
 
-[node name="IconBase6" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons"]
-visible = false
-layout_mode = 0
-offset_left = 764.0
-offset_top = 950.0
-offset_right = 816.0
-offset_bottom = 1003.0
-color = Color(0, 0, 0, 1)
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase6"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase6" unique_id=1404048705]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(26, 27)
-scale = Vector2(3, 3)
+rotation = -0.14835298
 texture = ExtResource("5_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/AlisaBuffIcons/IconBase6/Icon"]
-texture_filter = 1
-position = Vector2(2.05636e-06, -6.55651e-07)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("10_k2jn5")
+[node name="ParticleUp" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=1450933731]
+process_mode = 3
+self_modulate = Color(0.9340804, 0.9340805, 0.93408036, 1)
+position = Vector2(98.815254, 308.4156)
+rotation = 0.4677482
+scale = Vector2(0.99999994, 0.99999994)
+skew = 1.027999
+amount = 300
+texture = ExtResource("7_f6tx0")
+emission_shape = 2
+emission_sphere_radius = 43.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_ix1sa")
 
-[node name="Up" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls"]
-texture_filter = 1
-position = Vector2(350, 730)
-scale = Vector2(2, 2)
-texture = ExtResource("6_j5fpy")
+[node name="ParticleLeft" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=1255711994]
+process_mode = 3
+self_modulate = Color(0.9340804, 0.9340805, 0.93408036, 1)
+position = Vector2(37.459293, 315.30298)
+rotation = 0.4677482
+scale = Vector2(0.99999994, 0.99999994)
+skew = 1.027999
+amount = 300
+texture = ExtResource("7_f6tx0")
+emission_shape = 2
+emission_sphere_radius = 43.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_ix1sa")
 
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Up"]
-position = Vector2(-85, 0)
-texture = ExtResource("6_wljnh")
+[node name="ParticleRight" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=1878863290]
+process_mode = 3
+self_modulate = Color(0.9340804, 0.9340805, 0.93408036, 1)
+position = Vector2(157.61133, 328.0885)
+rotation = 0.4677482
+scale = Vector2(0.99999994, 0.99999994)
+skew = 1.027999
+amount = 300
+texture = ExtResource("7_f6tx0")
+emission_shape = 2
+emission_sphere_radius = 43.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_ix1sa")
 
-[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Up"]
-offset_left = -73.0
-offset_top = -12.5
-offset_right = 85.0
-offset_bottom = 13.5
-text = "Procrastinate"
+[node name="ParticleDown" type="CPUParticles2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=476499703]
+process_mode = 3
+self_modulate = Color(0.9340804, 0.9340805, 0.93408036, 1)
+position = Vector2(96.56901, 337.18976)
+rotation = 0.46774817
+scale = Vector2(0.99999994, 0.99999994)
+skew = 1.027999
+amount = 300
+texture = ExtResource("7_f6tx0")
+emission_shape = 2
+emission_sphere_radius = 43.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_ix1sa")
+
+[node name="IconUp" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=647098965]
+position = Vector2(101.98472, 302.0946)
+rotation = 0.14835295
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="IconDown" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=932721253]
+position = Vector2(98.47285, 331.49988)
+rotation = 0.14835295
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="IconRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=493895967]
+position = Vector2(161.09448, 323.98145)
+rotation = 0.14835295
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="IconLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=875051709]
+position = Vector2(35.802097, 307.64923)
+rotation = 0.14835295
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="UpName" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=880209559]
+layout_mode = 0
+offset_left = 64.35114
+offset_top = 304.2655
+offset_right = 143.35114
+offset_bottom = 315.2655
+rotation = 0.17453292
 label_settings = SubResource("LabelSettings_r5ivv")
+horizontal_alignment = 1
 
-[node name="Down" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls"]
-texture_filter = 1
-position = Vector2(350, 860)
-scale = Vector2(2, 2)
-texture = ExtResource("6_j5fpy")
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Down"]
-position = Vector2(-85, 0)
-texture = ExtResource("6_wljnh")
-
-[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Down"]
-offset_left = -73.0
-offset_top = -12.5
-offset_right = 85.0
-offset_bottom = 13.5
-text = "Procrastinate"
+[node name="RightName" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=341570356]
+layout_mode = 0
+offset_left = 120.929665
+offset_top = 327.41443
+offset_right = 199.92966
+offset_bottom = 338.41443
+rotation = 0.17453292
 label_settings = SubResource("LabelSettings_r5ivv")
+horizontal_alignment = 1
 
-[node name="Left" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls"]
-texture_filter = 1
-position = Vector2(140, 795)
-scale = Vector2(2, 2)
-texture = ExtResource("6_j5fpy")
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Left"]
-position = Vector2(-85, 0)
-texture = ExtResource("6_wljnh")
-
-[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Left"]
-offset_left = -73.0
-offset_top = -12.5
-offset_right = 85.0
-offset_bottom = 13.5
-text = "Procrastinate"
+[node name="DownName" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=1927959023]
+layout_mode = 0
+offset_left = 63.366917
+offset_top = 335.57092
+offset_right = 142.36691
+offset_bottom = 346.57092
+rotation = 0.17453292
 label_settings = SubResource("LabelSettings_r5ivv")
+horizontal_alignment = 1
 
-[node name="Right" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls"]
-texture_filter = 1
-position = Vector2(560, 795)
-scale = Vector2(2, 2)
-texture = ExtResource("6_j5fpy")
-
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Right"]
-position = Vector2(-85, 0)
-texture = ExtResource("6_wljnh")
-
-[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls/Right"]
-offset_left = -73.0
-offset_top = -12.5
-offset_right = 85.0
-offset_bottom = 13.5
-text = "Procrastinate"
+[node name="LeftName" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LeftContorls" unique_id=885020293]
+layout_mode = 0
+offset_left = 2.9101303
+offset_top = 311.40662
+offset_right = 81.91013
+offset_bottom = 322.40662
+rotation = 0.17453292
 label_settings = SubResource("LabelSettings_r5ivv")
+horizontal_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d"]
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=825785891]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 1016.0
@@ -1374,7 +1790,7 @@ offset_right = 206.0
 offset_bottom = 1070.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d"]
+[node name="ColorRect2" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=779121717]
 layout_mode = 0
 offset_left = 1714.0
 offset_top = 1016.0
@@ -1382,7 +1798,7 @@ offset_right = 1914.0
 offset_bottom = 1070.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d"]
+[node name="ColorRect4" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=108064262]
 layout_mode = 0
 offset_left = 1714.0
 offset_top = 1016.0
@@ -1390,243 +1806,458 @@ offset_right = 1914.0
 offset_bottom = 1070.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d"]
+[node name="ColorRect3" type="ColorRect" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=1840095770]
 layout_mode = 0
-offset_left = 719.0
-offset_top = 52.0
-offset_right = 1191.0
-offset_bottom = 84.0
+offset_left = 110.0
+offset_top = 9.0
+offset_right = 373.0
+offset_bottom = 27.0
 
-[node name="EnemyHP" type="ProgressBar" parent="SubViewportContainer/SubViewport/AllThe2d/ColorRect3"]
+[node name="EnemyHP" type="ProgressBar" parent="SubViewportContainer/SubViewport/AllThe2d/ColorRect3" unique_id=607380562]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 470.0
-offset_bottom = 30.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 262.0
+offset_bottom = 17.0
 theme = ExtResource("8_u1c7q")
 value = 100.0
 show_percentage = false
 
-[node name="AlisaHP" type="ProgressBar" parent="SubViewportContainer/SubViewport/AllThe2d"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 1019.0
-offset_right = 203.0
-offset_bottom = 1067.0
-theme = ExtResource("8_u1c7q")
-value = 100.0
-show_percentage = false
-
-[node name="HPText" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/AlisaHP"]
-layout_mode = 0
-offset_right = 194.0
-offset_bottom = 48.0
-label_settings = SubResource("LabelSettings_k2jn5")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LinaHP" type="ProgressBar" parent="SubViewportContainer/SubViewport/AllThe2d"]
-layout_mode = 0
-offset_left = 1717.0
-offset_top = 1019.0
-offset_right = 1911.0
-offset_bottom = 1067.0
-theme = ExtResource("8_u1c7q")
-value = 100.0
-show_percentage = false
-
-[node name="HPText2" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/LinaHP"]
-layout_mode = 0
-offset_right = 194.0
-offset_bottom = 48.0
-label_settings = SubResource("LabelSettings_k2jn5")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="EnemySkill" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d"]
+[node name="EnemySkill" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=1072205988]
 modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 position = Vector2(1400, 400)
-scale = Vector2(2, 2)
 texture = ExtResource("6_j5fpy")
 
-[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/EnemySkill"]
+[node name="Icon" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/EnemySkill" unique_id=265219543]
 position = Vector2(-85, 0)
 texture = ExtResource("6_wljnh")
 
-[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/EnemySkill"]
+[node name="Name" type="Label" parent="SubViewportContainer/SubViewport/AllThe2d/EnemySkill" unique_id=792955802]
 offset_left = -73.0
-offset_top = -12.5
-offset_right = 85.0
-offset_bottom = 13.5
+offset_top = -11.600006
+offset_right = 97.0
+offset_bottom = 12.399994
 text = "Procrastinate"
-label_settings = SubResource("LabelSettings_r5ivv")
+label_settings = SubResource("LabelSettings_d8qkl")
+vertical_alignment = 1
 
-[node name="EnemyAnimation" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/AllThe2d"]
-libraries = {
-&"": SubResource("AnimationLibrary_00f4r")
-}
+[node name="EnemyAnimation" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=565632408]
+libraries/ = SubResource("AnimationLibrary_00f4r")
 
-[node name="InterfaceAnimation" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/AllThe2d"]
-libraries = {
-&"": SubResource("AnimationLibrary_xxkvk")
-}
+[node name="InterfaceAnimation" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=42683974]
+libraries/ = SubResource("AnimationLibrary_xxkvk")
 
-[node name="QueueIcons" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d"]
+[node name="QueueIcons" type="Control" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=1348310887]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Icon1" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons"]
+[node name="Icon1" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons" unique_id=731437083]
 texture_filter = 1
-position = Vector2(39, 39)
-scale = Vector2(4, 4)
+position = Vector2(11, 11)
 texture = ExtResource("9_xxkvk")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon1"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon1" unique_id=1207142625]
 texture_filter = 1
 texture = ExtResource("10_k2jn5")
 
-[node name="Icon2" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons"]
+[node name="Icon2" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons" unique_id=219141927]
 texture_filter = 1
-position = Vector2(39, 111)
-scale = Vector2(4, 4)
+position = Vector2(11, 30)
 texture = ExtResource("9_xxkvk")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon2"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon2" unique_id=839726196]
 texture_filter = 1
 texture = ExtResource("10_k2jn5")
 
-[node name="Icon3" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons"]
+[node name="Icon3" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons" unique_id=1335810400]
 texture_filter = 1
-position = Vector2(39, 183)
-scale = Vector2(4, 4)
+position = Vector2(11, 49)
 texture = ExtResource("9_xxkvk")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon3"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon3" unique_id=1674484651]
 texture_filter = 1
 texture = ExtResource("10_k2jn5")
 
-[node name="Icon4" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons"]
+[node name="Icon4" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons" unique_id=102258420]
 texture_filter = 1
-position = Vector2(39, 255)
-scale = Vector2(4, 4)
+position = Vector2(11, 68)
 texture = ExtResource("9_xxkvk")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon4"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon4" unique_id=1828320629]
 texture_filter = 1
 texture = ExtResource("10_k2jn5")
 
-[node name="Icon5" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons"]
+[node name="Icon5" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons" unique_id=1059280688]
 texture_filter = 1
-position = Vector2(39, 327)
-scale = Vector2(4, 4)
+position = Vector2(11, 87)
 texture = ExtResource("9_xxkvk")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon5"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon5" unique_id=1117686385]
 texture_filter = 1
 texture = ExtResource("10_k2jn5")
 
-[node name="Icon6" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons"]
+[node name="Icon6" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons" unique_id=384147619]
 texture_filter = 1
-position = Vector2(39, 399)
-scale = Vector2(4, 4)
+position = Vector2(11, 106)
 texture = ExtResource("9_xxkvk")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon6"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon6" unique_id=1505499297]
 texture_filter = 1
 texture = ExtResource("10_k2jn5")
 
-[node name="Icon7" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons"]
+[node name="Icon7" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons" unique_id=1566725025]
 texture_filter = 1
-position = Vector2(39, 471)
-scale = Vector2(4, 4)
+position = Vector2(11, 125)
 texture = ExtResource("9_xxkvk")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon7"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon7" unique_id=304368684]
 texture_filter = 1
 texture = ExtResource("10_k2jn5")
 
-[node name="Icon8" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons"]
+[node name="Icon8" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons" unique_id=717771271]
 texture_filter = 1
-position = Vector2(39, 543)
-scale = Vector2(4, 4)
+position = Vector2(11, 144)
 texture = ExtResource("9_xxkvk")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon8"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon8" unique_id=288674791]
 texture_filter = 1
 texture = ExtResource("10_k2jn5")
 
-[node name="Icon9" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons"]
+[node name="Icon9" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons" unique_id=1627502806]
 texture_filter = 1
-position = Vector2(39, 615)
-scale = Vector2(4, 4)
+position = Vector2(11, 163)
 texture = ExtResource("9_xxkvk")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon9"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon9" unique_id=414231528]
 texture_filter = 1
 texture = ExtResource("10_k2jn5")
 
-[node name="Icon10" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons"]
+[node name="Icon10" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons" unique_id=1468250900]
 texture_filter = 1
-position = Vector2(39, 684)
-scale = Vector2(4, 4)
+position = Vector2(11, 182)
 texture = ExtResource("9_xxkvk")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon10"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon10" unique_id=229561147]
 texture_filter = 1
 texture = ExtResource("10_k2jn5")
 
-[node name="Icon11" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons"]
+[node name="Icon11" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons" unique_id=695756154]
 texture_filter = 1
-position = Vector2(-38, 684)
-scale = Vector2(4, 4)
+position = Vector2(-16, 182)
 texture = ExtResource("9_xxkvk")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon11"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons/Icon11" unique_id=1164285709]
 texture_filter = 1
 texture = ExtResource("10_k2jn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/AllThe2d/QueueIcons" unique_id=1670906715]
 modulate = Color(1, 0.811765, 0.486275, 1)
 texture_filter = 1
-position = Vector2(39, 39)
-scale = Vector2(4.5, 4.5)
+position = Vector2(11, 11)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("10_k2jn5")
 
-[node name="IconsReset" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/AllThe2d"]
+[node name="IconsReset" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/AllThe2d" unique_id=392219857]
 reset_on_save = false
-libraries = {
-&"": SubResource("AnimationLibrary_rqv36")
-}
+libraries/ = SubResource("AnimationLibrary_rqv36")
 
-[node name="Audio" type="Node2D" parent="."]
+[node name="Audio" type="Node2D" parent="." unique_id=1496257386]
 
-[node name="AttackSound" type="AudioStreamPlayer" parent="Audio"]
+[node name="AttackSound" type="AudioStreamPlayer" parent="Audio" unique_id=1935486422]
 stream = ExtResource("12_8bq7r")
 bus = &"SFX"
 
-[node name="Buff" type="AudioStreamPlayer" parent="Audio"]
+[node name="Buff" type="AudioStreamPlayer" parent="Audio" unique_id=80331557]
 stream = ExtResource("13_f6tx0")
 bus = &"SFX"
 
-[node name="Heal" type="AudioStreamPlayer" parent="Audio"]
+[node name="Heal" type="AudioStreamPlayer" parent="Audio" unique_id=811969737]
 stream = ExtResource("14_d8qkl")
 bus = &"SFX"
 
-[node name="SpellIsNot" type="AudioStreamPlayer" parent="Audio"]
+[node name="SpellIsNot" type="AudioStreamPlayer" parent="Audio" unique_id=1003749714]
 stream = ExtResource("15_6fh3b")
 volume_db = -5.0
 bus = &"SFX"
 
-[node name="FightOST" type="AudioStreamPlayer" parent="Audio"]
+[node name="FightOST" type="AudioStreamPlayer" parent="Audio" unique_id=861778789]
 stream = ExtResource("16_d8qkl")
 volume_db = -5.0
 bus = &"Music"
 
-[node name="Encounter" type="AudioStreamPlayer" parent="Audio"]
+[node name="Encounter" type="AudioStreamPlayer" parent="Audio" unique_id=1967393910]
 stream = ExtResource("17_6fh3b")
 bus = &"Music"
+
+[node name="Guide" type="Control" parent="." unique_id=1768098182]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Screen1" type="Control" parent="Guide" unique_id=199406894]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Guide/Screen1" unique_id=753881299]
+layout_mode = 0
+offset_left = 23.0
+offset_right = 480.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0.3372549)
+
+[node name="ColorRect2" type="ColorRect" parent="Guide/Screen1" unique_id=757003058]
+layout_mode = 0
+offset_top = 194.0
+offset_right = 23.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0.3372549)
+
+[node name="ColorRect3" type="ColorRect" parent="Guide/Screen1" unique_id=85360197]
+layout_mode = 0
+offset_top = 194.0
+offset_right = 26.0
+offset_bottom = 198.0
+
+[node name="ColorRect4" type="ColorRect" parent="Guide/Screen1" unique_id=1518692013]
+layout_mode = 0
+offset_left = 22.0
+offset_right = 26.0
+offset_bottom = 195.0
+
+[node name="Label" type="Label" parent="Guide/Screen1" unique_id=1984189414]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 155.0
+offset_right = 181.0
+offset_bottom = 206.0
+text = "This is queue. Here you can see whos turn it will be."
+label_settings = SubResource("LabelSettings_byylx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Confirm" parent="Guide/Screen1" unique_id=1493173702 instance=ExtResource("20_6fh3b")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(106, 215)
+keyboard_input = "z"
+xbox_input = "a"
+ps_input = "x"
+
+[node name="Screen2" type="Control" parent="Guide" unique_id=948672490]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Guide/Screen2" unique_id=67979976]
+layout_mode = 0
+offset_top = 184.0
+offset_right = 480.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0.3372549)
+
+[node name="ColorRect2" type="ColorRect" parent="Guide/Screen2" unique_id=1844939803]
+layout_mode = 0
+offset_left = 396.0
+offset_right = 480.0
+offset_bottom = 184.0
+color = Color(0, 0, 0, 0.3372549)
+
+[node name="ColorRect3" type="ColorRect" parent="Guide/Screen2" unique_id=226281985]
+layout_mode = 0
+offset_right = 84.0
+offset_bottom = 184.0
+color = Color(0, 0, 0, 0.3372549)
+
+[node name="ColorRect4" type="ColorRect" parent="Guide/Screen2" unique_id=2014239671]
+layout_mode = 0
+offset_left = 83.0
+offset_right = 86.0
+offset_bottom = 184.0
+
+[node name="ColorRect5" type="ColorRect" parent="Guide/Screen2" unique_id=1109887429]
+layout_mode = 0
+offset_left = 395.0
+offset_right = 398.0
+offset_bottom = 184.0
+
+[node name="ColorRect6" type="ColorRect" parent="Guide/Screen2" unique_id=1807499967]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 181.0
+offset_right = 398.0
+offset_bottom = 184.0
+
+[node name="Label" type="Label" parent="Guide/Screen2" unique_id=1313218921]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 190.0
+offset_right = 342.0
+offset_bottom = 241.0
+text = "This is enemy. You can see its hp and used skills."
+label_settings = SubResource("LabelSettings_byylx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Confirm" parent="Guide/Screen2" unique_id=1434994152 instance=ExtResource("20_6fh3b")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(242, 250.57)
+keyboard_input = "z"
+xbox_input = "a"
+ps_input = "x"
+
+[node name="Screen3" type="Control" parent="Guide" unique_id=1526984991]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Guide/Screen3" unique_id=1605119964]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 215.0
+color = Color(0, 0, 0, 0.3372549)
+
+[node name="ColorRect2" type="ColorRect" parent="Guide/Screen3" unique_id=755161212]
+layout_mode = 0
+offset_top = 214.0
+offset_right = 480.0
+offset_bottom = 218.0
+
+[node name="Label" type="Label" parent="Guide/Screen3" unique_id=1595815110]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 144.0
+offset_right = 338.0
+offset_bottom = 195.0
+text = "There will be your good friends. You can see their HP, buffs and skills."
+label_settings = SubResource("LabelSettings_byylx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Confirm" parent="Guide/Screen3" unique_id=1368630220 instance=ExtResource("20_6fh3b")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(240, 203)
+keyboard_input = "z"
+xbox_input = "a"
+ps_input = "x"
+
+[node name="Screen4" type="Control" parent="Guide" unique_id=554495376]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Guide/Screen4" unique_id=35055947]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0.3372549)
+
+[node name="Label" type="Label" parent="Guide/Screen4" unique_id=1458019182]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 175.0
+offset_right = 338.0
+offset_bottom = 226.0
+text = "You can only use 4 skills per character. To use skills just push these buttons."
+label_settings = SubResource("LabelSettings_byylx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ChangingKey" parent="Guide/Screen4" unique_id=1585019436 instance=ExtResource("20_6fh3b")]
+position = Vector2(361, 287)
+keyboard_input = "up"
+xbox_input = "y"
+ps_input = "triangle"
+
+[node name="ChangingKey2" parent="Guide/Screen4" unique_id=1372365105 instance=ExtResource("20_6fh3b")]
+position = Vector2(463, 302)
+keyboard_input = "right"
+xbox_input = "b"
+ps_input = "o"
+
+[node name="ChangingKey3" parent="Guide/Screen4" unique_id=1158539576 instance=ExtResource("20_6fh3b")]
+position = Vector2(268, 342)
+keyboard_input = "left"
+xbox_input = "x"
+ps_input = "box"
+
+[node name="ChangingKey4" parent="Guide/Screen4" unique_id=1050862537 instance=ExtResource("20_6fh3b")]
+position = Vector2(385, 348)
+keyboard_input = "down"
+xbox_input = "a"
+ps_input = "x"
+
+[node name="ChangingKey5" parent="Guide/Screen4" unique_id=317819772 instance=ExtResource("20_6fh3b")]
+position = Vector2(107, 290)
+keyboard_input = "w"
+xbox_input = "up"
+ps_input = "up"
+
+[node name="ChangingKey6" parent="Guide/Screen4" unique_id=1701457549 instance=ExtResource("20_6fh3b")]
+position = Vector2(208, 341)
+keyboard_input = "d"
+xbox_input = "right"
+ps_input = "right"
+
+[node name="ChangingKey7" parent="Guide/Screen4" unique_id=1207563264 instance=ExtResource("20_6fh3b")]
+position = Vector2(11, 306)
+keyboard_input = "a"
+xbox_input = "left"
+ps_input = "left"
+
+[node name="ChangingKey8" parent="Guide/Screen4" unique_id=44962618 instance=ExtResource("20_6fh3b")]
+position = Vector2(87, 350)
+keyboard_input = "s"
+xbox_input = "down"
+ps_input = "down"
+
+[node name="Confirm" parent="Guide/Screen4" unique_id=347141828 instance=ExtResource("20_6fh3b")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(240, 254.06)
+keyboard_input = "z"
+xbox_input = "a"
+ps_input = "x"
+
+[node name="Screen5" type="Control" parent="Guide" unique_id=1141259545]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Guide/Screen5" unique_id=243160280]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0.3372549)
+
+[node name="Label" type="Label" parent="Guide/Screen5" unique_id=1317704550]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 160.0
+offset_right = 340.0
+offset_bottom = 211.0
+text = "Have fun!"
+label_settings = SubResource("LabelSettings_byylx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Confirm" parent="Guide/Screen5" unique_id=1596609219 instance=ExtResource("20_6fh3b")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(242, 206)
+keyboard_input = "z"
+xbox_input = "a"
+ps_input = "x"
 
 [connection signal="alisa_input_pressed" from="." to="." method="_on_alisa_input_pressed"]
 [connection signal="lina_input_pressed" from="." to="." method="_on_lina_input_pressed"]

@@ -14,7 +14,7 @@ var keyboard_up = preload("res://resourses/sprites/interface/inputs/keyboard/up_
 var keyboard_down = preload("res://resourses/sprites/interface/inputs/keyboard/down_arrow_key.png")
 var keyboard_left = preload("res://resourses/sprites/interface/inputs/keyboard/left_arrow_key.png")
 var keyboard_right = preload("res://resourses/sprites/interface/inputs/keyboard/right_arrow_key.png")
-var keyboard_esc = preload("res://resourses/sprites/interface/inputs/keyboard/right_arrow_key.png")
+var keyboard_esc = preload("res://resourses/sprites/interface/inputs/keyboard/esc_key.png")
 var keyboard_shift = preload("res://resourses/sprites/interface/inputs/keyboard/shift_key.png")
 var keyboard_battle_left = preload("res://resourses/sprites/interface/keyboard_battle_input_left.png")
 var keyboard_battle_right = preload("res://resourses/sprites/interface/keyboard_battle_input_right.png")
@@ -35,12 +35,14 @@ var ps_o = preload("res://resourses/sprites/interface/inputs/ps_controller/ps_o_
 var ps_triangle = preload("res://resourses/sprites/interface/inputs/ps_controller/ps_triangle_button.png")
 var ps_x = preload("res://resourses/sprites/interface/inputs/ps_controller/ps_x_button.png")
 var ps_battle_right = preload("res://resourses/sprites/interface/ps_battle_input_right.png")
+var ps_pause = preload("res://resourses/sprites/interface/inputs/ps_controller/pause.png")
 
 var xbox_a = preload("res://resourses/sprites/interface/inputs/xbox_conroller/xbox_a_button.png")
 var xbox_b = preload("res://resourses/sprites/interface/inputs/xbox_conroller/xbox_b_button.png")
 var xbox_x = preload("res://resourses/sprites/interface/inputs/xbox_conroller/xbox_x_button.png")
 var xbox_y = preload("res://resourses/sprites/interface/inputs/xbox_conroller/xbox_y_button.png")
 var xbox_battle_right = preload("res://resourses/sprites/interface/xbox_battle_input_right.png")
+var xbox_pause = preload("res://resourses/sprites/interface/inputs/xbox_conroller/pause.png")
 
 @onready var key_sprite = $KeySprite
 
@@ -51,6 +53,8 @@ func _ready():
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	set_input_sprite()
 
+func _process(delta: float) -> void:
+	pass
 	
 func _on_joy_connection_changed(_device_id, _connected):
 	get_device()
@@ -101,6 +105,7 @@ func set_input_sprite():
 			'x': key_sprite.texture = xbox_x
 			'y': key_sprite.texture = xbox_y
 			'battle_right': key_sprite.texture = xbox_battle_right
+			'pause': key_sprite.texture = xbox_pause
 			
 	elif model == "ps":
 		match xbox_input:
@@ -119,3 +124,4 @@ func set_input_sprite():
 			'triangle': key_sprite.texture = ps_triangle
 			'x': key_sprite.texture = ps_x
 			'battle_right': key_sprite.texture = ps_battle_right
+			'pause': key_sprite.texture = ps_pause

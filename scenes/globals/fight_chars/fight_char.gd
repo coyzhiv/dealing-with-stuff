@@ -14,5 +14,7 @@ class_name FightChar
 @export var base_spd:int
 @export var natural_spd:int
 
+@export var reward_points:int
+
 @export var item: Items
-@export var skills: SkillInv
+@export var skills: Array[Skills]

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b8kkwkyw2evgi"]
+
+[ext_resource type="Texture2D" uid="uid://ca8s8nsgsfq7g" path="res://resourses/models/tutorial/cutscenes/dark_park_3.png" id="1_5bi24"]
+
+[resource]
+resource_name = "material_3"
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+cull_mode = 2
+depth_draw_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_5bi24")
+texture_filter = 0
+texture_repeat = false

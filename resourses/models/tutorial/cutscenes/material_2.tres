@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bfh6ccdxv3re0"]
+
+[ext_resource type="Texture2D" uid="uid://ck8560debw8ce" path="res://resourses/models/tutorial/cutscenes/dark_park_2.png" id="1_t7njj"]
+
+[resource]
+resource_name = "material_2"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_t7njj")
+texture_filter = 0
+texture_repeat = false

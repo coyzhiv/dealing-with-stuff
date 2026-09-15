@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bgfevxyd6250l"]
+
+[ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="1_kawgb"]
+[ext_resource type="PackedScene" uid="uid://b3yjy350ax210" path="res://resourses/models/tutorial/new_kitchen.gltf" id="2_5e0nv"]
+
+[sub_resource type="Environment" id="Environment_5e0nv"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.026033, 0.245928, 0.397646, 1)
+ambient_light_energy = 0.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kawgb"]
+size = Vector3(1.2608032, 0.47235107, 0.21791077)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5e0nv"]
+size = Vector3(0.12167969, 0.43444824, 0.65093994)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q08cd"]
+size = Vector3(0.7416382, 0.29174805, 0.14416504)
+
+[node name="Node3D" type="Node3D" unique_id=2092671532]
+
+[node name="Player" parent="." unique_id=991614113 instance=ExtResource("1_kawgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041439734, 0.139159, 0.13637477)
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1999072694]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.8, 0.79)
+environment = SubResource("Environment_5e0nv")
+projection = 1
+size = 1.8
+
+[node name="blockbench_export" parent="." unique_id=562963709 instance=ExtResource("2_5e0nv")]
+transform = Transform3D(-4.4585615e-08, 0, 1.02, 0, 1.02, 0, -1.02, 0, -4.4585615e-08, 0.15572274, 0, -0.01511097)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1513043612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9453606, 0.25944293, -0.051639125)
+light_color = Color(0.9947576, 0.73515534, 0.51283705, 1)
+light_energy = 0.3
+shadow_enabled = true
+shadow_opacity = 0.58
+omni_range = 8.565
+omni_attenuation = 0.62
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=3576738]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.18173516, 0.567773, 0.17283885)
+light_energy = 0.05
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 0.01
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=571237605]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=102140804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40842903, 0.30130005, -0.37828827)
+shape = SubResource("BoxShape3D_kawgb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=505474735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9771485, 0.28277588, -0.08218384)
+shape = SubResource("BoxShape3D_5e0nv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=2069642030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27693552, 0.28277588, -0.34356558)
+shape = SubResource("BoxShape3D_5e0nv")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=2021334356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27082664, 0.2993493, 0.3615259)
+shape = SubResource("BoxShape3D_kawgb")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=1828097854]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53562766, 0.19497919, 0.103845)
+shape = SubResource("BoxShape3D_q08cd")

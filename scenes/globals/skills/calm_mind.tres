@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Skills" format=3 uid="uid://kdw37bnru4ce"]
+
+[ext_resource type="Texture2D" uid="uid://d4bje4bcghc3a" path="res://resourses/sprites/interface/icons/heal.png" id="1_1eci6"]
+[ext_resource type="Script" uid="uid://b3ac4cep4lk6n" path="res://scenes/globals/skills.gd" id="2_whphh"]
+
+[resource]
+script = ExtResource("2_whphh")
+title = "Calm Mind"
+rus_title = "Успокоить"
+description = "She can relax a bit. Restores HP."
+rus_description = "Она может немного расслабиться. Восстанавливает здоровье."
+icon = ExtResource("1_1eci6")
+effect = "heal"
+value = 8
+target = "other"
+metadata/_custom_type_script = "uid://b3ac4cep4lk6n"

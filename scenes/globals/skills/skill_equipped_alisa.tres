@@ -8,4 +8,5 @@
 [resource]
 script = ExtResource("4_v5axm")
 items = Array[ExtResource("1_bbmau")]([ExtResource("3_as7yp"), ExtResource("3_bbmau")])
+default_items = Array[ExtResource("1_bbmau")]([ExtResource("3_as7yp"), ExtResource("3_bbmau")])
 metadata/_custom_type_script = "uid://dclj03trtr3ny"

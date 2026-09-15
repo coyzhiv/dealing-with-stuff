@@ -1,24 +1,32 @@
-[gd_scene load_steps=14 format=3 uid="uid://dfukpmbhdyeh0"]
+[gd_scene format=3 uid="uid://dfukpmbhdyeh0"]
 
 [ext_resource type="PackedScene" uid="uid://bf8lip7yqhxow" path="res://scenes/levels/parent_level.tscn" id="1_2o1gc"]
 [ext_resource type="Script" uid="uid://dcmtev8r8ekha" path="res://scenes/levels/apartament/apartament_room.gd" id="2_xl33j"]
-[ext_resource type="PackedScene" uid="uid://bmmqawv12knfw" path="res://resourses/models/tutorial/ApartamentRoom.gltf" id="3_5pjk6"]
 [ext_resource type="PackedScene" uid="uid://kplaxinx0cvp" path="res://scenes/areas/interaction_area.tscn" id="3_w6gkq"]
 [ext_resource type="PackedScene" uid="uid://bphllt3vmprul" path="res://scenes/characters/lina_player.tscn" id="4_2o1gc"]
 [ext_resource type="PackedScene" uid="uid://colskfe7l1c2v" path="res://scenes/areas/change_scene_area.tscn" id="4_uich4"]
 [ext_resource type="PackedScene" uid="uid://ctvbdq5ye7u4" path="res://scenes/characters/alisa_npc.tscn" id="5_3e5wv"]
 [ext_resource type="PackedScene" uid="uid://curgtrce5ljrd" path="res://scenes/characters/alisa_follow.tscn" id="6_ol2cc"]
+[ext_resource type="PackedScene" uid="uid://1nt3y1bgt2nx" path="res://resourses/models/tutorial/new_apartament_room.gltf" id="8_ol2cc"]
+[ext_resource type="Texture2D" uid="uid://bdjhxv3yf72ab" path="res://resourses/sprites/cutscenes/transitions/z1.png" id="9_yymd8"]
+[ext_resource type="Texture2D" uid="uid://rw077cbfia7m" path="res://resourses/sprites/cutscenes/transitions/z2.png" id="10_xqvfp"]
+[ext_resource type="Texture2D" uid="uid://df0dsnqwhqeqm" path="res://resourses/sprites/cutscenes/transitions/z3.png" id="11_fmd85"]
+[ext_resource type="FontFile" uid="uid://c4ohbbx885w7l" path="res://resourses/fonts/BoldPixels.ttf" id="12_fmd85"]
+[ext_resource type="PackedScene" uid="uid://gp071xtynewa" path="res://scenes/inputs/changing_key.tscn" id="13_7dmox"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3e5wv"]
-size = Vector3(0.122792, 0.142944, 0.0933914)
+size = Vector3(0.1354967, 0.16729718, 0.15594864)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uich4"]
 size = Vector3(0.303906, 0.181714, 0.257031)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bj0r7"]
+size = Vector3(0.13342285, 0.1538086, 0.13746643)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ipybi"]
 size = Vector3(0.1, 0.1, 0.1)
 
-[sub_resource type="Environment" id="Environment_3e5wv"]
+[sub_resource type="Environment" id="Environment_ol2cc"]
 background_mode = 1
 ambient_light_source = 2
 ambient_light_color = Color(0.026033, 0.245928, 0.397646, 1)
@@ -27,13 +35,614 @@ ambient_light_energy = 0.7
 [sub_resource type="BoxShape3D" id="BoxShape3D_ol2cc"]
 size = Vector3(0.374878, 0.241699, 0.181396)
 
-[node name="ApartamentRoom" instance=ExtResource("1_2o1gc")]
+[sub_resource type="Animation" id="Animation_7dmox"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z1:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(210, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Z1:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(376, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Z2:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(248, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Z2:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(383, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Z3:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(290, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Z3:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(385, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Z1:modulate:r")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Z1:modulate:g")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Z1:modulate:b")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Z1:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Z2:modulate:r")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Z2:modulate:g")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Z2:modulate:b")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Z2:modulate:a")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Z3:modulate:r")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Z3:modulate:g")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Z3:modulate:b")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Z3:modulate:a")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/18/type = "bezier"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Z1:rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/19/type = "bezier"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Z2:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/20/type = "bezier"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Z3:rotation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_61rsm"]
+resource_name = "sleeping"
+length = 1.7
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z1:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(230, -0.25, 0, 0.23256797, 49.716827, 208, -0.29997462, -44.57228, 0, 0),
+"times": PackedFloat32Array(0, 0.9)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Z1:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(376, -0.25, 0, 0.25, 0, 226, -0.36509365, 77.597626, 0, 0),
+"times": PackedFloat32Array(0, 0.9)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Z2:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(230, -0.25, 0, 0.23119026, 43.48706, 249, -0.1236738, -56.5, 0, 0),
+"times": PackedFloat32Array(0.42000002, 1.24)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Z2:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(383, -0.25, 0, 0.25, 0, 247, -0.27716863, 54.521027, 0, 0),
+"times": PackedFloat32Array(0.42000002, 1.24)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Z3:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(230, -0.25, 0, 0.23818433, -25.040451, 278, -0.102258205, 28.712524, 0, 0),
+"times": PackedFloat32Array(0.81999993, 1.7)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Z3:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(385, -0.25, 0, 0.25, 0, 227, -0.3022666, 70.36786, 0, 0),
+"times": PackedFloat32Array(0.81999993, 1.7)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Z1:modulate:r")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.125, 0, 0, 0, 1, -0.024999997, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.64, 0.9)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Z1:modulate:g")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.125, 0, 0, 0, 1, -0.024999997, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.64, 0.9)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Z1:modulate:b")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.125, 0, 0, 0, 1, -0.024999997, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.64, 0.9)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Z1:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.125, 0, 0, 0, 0, -0.024999997, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.64, 0.9)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Z2:modulate:r")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.15166667, 0, 0, 0, 1, -0.053333335, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.91, 1.23)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Z2:modulate:g")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.15166667, 0, 0, 0, 1, -0.053333335, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.91, 1.23)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Z2:modulate:b")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.15166667, 0, 0, 0, 1, -0.053333335, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.91, 1.23)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Z2:modulate:a")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.15166667, 0, 0, 0, 0, -0.053333335, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.91, 1.23)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Z3:modulate:r")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.19333333, 0, 0, 0, 1, -0.061666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.3199999, 1.6899999)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Z3:modulate:g")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.19333333, 0, 0, 0, 1, -0.061666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.3199999, 1.6899999)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Z3:modulate:b")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.19333333, 0, 0, 0, 1, -0.061666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.3199999, 1.6899999)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Z3:modulate:a")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.19333333, 0, 0, 0, 0, -0.061666667, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 1.3199999, 1.6899999)
+}
+tracks/18/type = "bezier"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Z1:rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.25, -0.33333334, -0.029088821, 0, 0),
+"times": PackedFloat32Array(0, 0.8953021)
+}
+tracks/19/type = "bezier"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Z2:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.2617994, -0.20504741, 0.043633234, 0, 0),
+"times": PackedFloat32Array(0.4837413, 1.2302845)
+}
+tracks/20/type = "bezier"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Z3:rotation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.2617994, -0.14690542, -0.043633234, 0, 0),
+"times": PackedFloat32Array(0.8116622, 1.6930947)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gj01l"]
+_data = {
+&"RESET": SubResource("Animation_7dmox"),
+&"sleeping": SubResource("Animation_61rsm")
+}
+
+[sub_resource type="Animation" id="Animation_fmd85"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(128, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(251, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pause:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(137, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pause:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(263, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PauseRU:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(137, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PauseRU:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(263, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_gj01l"]
+resource_name = "guide_anim"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.35512438, 0.12699898, 0, -0.42926437, -0.14084025, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(128, -0.25, 0, 0.25, 0, 128, -0.16333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.98)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(251, -0.25, 0, 0.35627738, 8.579926, 251, -0.43578345, -6.4167786, 0, 0),
+"times": PackedFloat32Array(0, 0.98)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u6pxw"]
+_data = {
+&"RESET": SubResource("Animation_fmd85"),
+&"guide_anim": SubResource("Animation_gj01l")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_61rsm"]
+font = ExtResource("12_fmd85")
+
+[node name="ApartamentRoom" unique_id=1505341927 instance=ExtResource("1_2o1gc")]
 process_mode = 1
 script = ExtResource("2_xl33j")
 location = "apartament"
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Light" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13534, 0.14435, 0.506977)
+[node name="SpotLight3D" type="SpotLight3D" parent="Light" index="0" unique_id=613974775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35776693, 0.14435, 0.30774558)
 light_color = Color(3.94672e-06, 0.785262, 0.786266, 1)
 light_energy = 0.515
 light_size = 0.131
@@ -41,86 +650,305 @@ shadow_enabled = true
 spot_range = 1.408
 spot_angle = 57.0
 
-[node name="TV" parent="InteractionAreas" index="0" instance=ExtResource("3_w6gkq")]
+[node name="TV" parent="InteractionAreas" index="0" unique_id=771796443 instance=ExtResource("3_w6gkq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109281, 0.00420293, 0.644168)
 collision_mask = 4
-prompt = "tv_interact"
+prompt = "res://JSON Scripts/Dialogues/Apartament/tv_interact.json"
+prompt_ru = "res://JSON Scripts/Dialogues/Apartament/tv_interact_ru.json"
 used_memory_id = "tv_used"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/TV" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0224709, 0.12262, -0.106583)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/TV" index="0" unique_id=1494688626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28888822, 0.12262, -0.27531177)
 shape = SubResource("BoxShape3D_3e5wv")
 
-[node name="Fridge" parent="InteractionAreas" index="1" instance=ExtResource("3_w6gkq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.473738, 0.00420293, -0.145049)
-prompt = "fridge_interact"
+[node name="Fridge" parent="InteractionAreas" index="1" unique_id=1273840572 instance=ExtResource("3_w6gkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17319846, 0.00420293, -0.6038579)
+prompt = "res://JSON Scripts/Dialogues/Apartament/fridge_interact.json"
+prompt_ru = "res://JSON Scripts/Dialogues/Apartament/fridge_interact_ru.json"
 used_memory_id = "fridge_used"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/Fridge" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452063, 0.12262, -0.104824)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/Fridge" index="0" unique_id=659853546]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06793356, 0.12262, 0.015593052)
 shape = SubResource("BoxShape3D_3e5wv")
 
-[node name="StartingDialogue" parent="InteractionAreas" index="2" instance=ExtResource("3_w6gkq")]
+[node name="StartingDialogue" parent="InteractionAreas" index="2" unique_id=117981531 instance=ExtResource("3_w6gkq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.108742, 0.00420293, -0.14359)
 collision_mask = 6
-prompt = "starting_dialogue"
+prompt = "res://JSON Scripts/Dialogues/Apartament/starting_dialogue.json"
+prompt_ru = "res://JSON Scripts/Dialogues/Apartament/starting_dialogue_ru.json"
 used_memory_id = "starting_dialogue_used"
 body_entering = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/StartingDialogue" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0452063, 0.12262, -0.104824)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/StartingDialogue" index="0" unique_id=483738064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21011397, 0.19085309, -0.3921636)
 shape = SubResource("BoxShape3D_3e5wv")
 
-[node name="TestFight" parent="InteractionAreas" index="3" instance=ExtResource("3_w6gkq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504271, 0.00420293, 0.671308)
+[node name="TestFight" parent="InteractionAreas" index="3" unique_id=957793491 instance=ExtResource("3_w6gkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0074582, 0.00420293, 0.36872464)
 prompt = "test_fight"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/TestFight" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/TestFight" index="0" unique_id=113312522]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154263, 0.163477, -0.195994)
 shape = SubResource("BoxShape3D_uich4")
 
-[node name="Corridor" parent="ChangingAreas" index="0" instance=ExtResource("4_uich4")]
+[node name="Sit" parent="InteractionAreas" index="4" unique_id=557174574 instance=ExtResource("3_w6gkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31544477, 0.18440892, -0.55450064)
+sitting_place = true
+sit_direction = "down"
+stand_position = Vector3(-0.315, 0.12, -0.423)
+stand_direction = "down"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionAreas/Sit" index="0" unique_id=1978189174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0065307617, -0.022705093, -0.026420593)
+shape = SubResource("BoxShape3D_bj0r7")
+
+[node name="Corridor" parent="ChangingAreas" index="0" unique_id=1899715706 instance=ExtResource("4_uich4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100204, 0, 0.706432)
 file = "res://scenes/levels/apartament/corridor.tscn"
-target_position = Vector3(0.445, 0.335, -0.001)
+target_position = Vector3(0.5674011, 0.34283695, 0.06202138)
 direction = "down"
 location = "apartament"
 sound_id = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Corridor" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0179258, 0.134435, 0.0449162)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangingAreas/Corridor" index="0" unique_id=192431271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14655027, 0.134435, -0.005571544)
 shape = SubResource("BoxShape3D_ipybi")
 
-[node name="AlisaNPC" parent="." index="4" instance=ExtResource("5_3e5wv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.114732, 0.127951, -0.237824)
+[node name="AlisaNPC" parent="." index="4" unique_id=1351345509 instance=ExtResource("5_3e5wv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12927914, 0.18883136, -0.55307335)
 should_dissapear = true
 
-[node name="Follow" parent="." index="5" instance=ExtResource("6_ol2cc")]
+[node name="Follow" parent="." index="5" unique_id=1409203338 instance=ExtResource("6_ol2cc")]
+process_mode = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139, 0)
 
-[node name="CollisionShape3D" parent="Follow" index="1"]
+[node name="CollisionShape3D" parent="Follow" index="1" unique_id=293680734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00356158, 0.0224847, -0.0141742)
 
 [node name="InteractionArea" parent="Follow" index="4"]
 easy_interact = true
-easy_text = "I say penis you say penis."
+easy_text = "This room is my favourite place on earth."
+easy_text_ru = "Эта моя самая любимая комната во всём мире."
 
-[node name="Player" parent="." index="6" instance=ExtResource("4_2o1gc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114283, 0.139159, -0.243702)
+[node name="Player" parent="." index="6" unique_id=2077595128 instance=ExtResource("4_2o1gc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3120104, 0.18596834, -0.55765754)
 
-[node name="Camera3D" type="Camera3D" parent="Player" index="5"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.834835, 0.704218)
-environment = SubResource("Environment_3e5wv")
+[node name="Camera3D" type="Camera3D" parent="Player" index="6" unique_id=203266742]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.8, 0.8)
+environment = SubResource("Environment_ol2cc")
+projection = 1
+size = 1.8
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16217, 0.107178, 0.697943)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" index="0" unique_id=1174731894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32767415, 0.107178, 0.5760182)
 shape = SubResource("BoxShape3D_ol2cc")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.399808, 0.107178, 0.697943)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" index="1" unique_id=1395092646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23430383, 0.107178, 0.5760182)
 shape = SubResource("BoxShape3D_ol2cc")
 
-[node name="blockbench_export" parent="." index="8" instance=ExtResource("3_5pjk6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.1149, 0, 0.10767)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWalls" index="2" unique_id=1916116943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34309575, 0.107178, 0.4590202)
+shape = SubResource("BoxShape3D_ol2cc")
+
+[node name="blockbench_export" parent="." index="8" unique_id=12314037 instance=ExtResource("8_ol2cc")]
+transform = Transform3D(-4.4585615e-08, 0, 1.02, 0, 1.02, 0, -1.02, 0, -4.4585615e-08, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="blockbench_export" index="7" unique_id=259265317]
+transform = Transform3D(-0.37517983, 0, -0.90576434, 0, 0.98039216, 0, 0.90576434, 0, -0.37517983, -0.34221327, 0.18713276, -0.34297505)
+light_color = Color(3.94672e-06, 0.785262, 0.786266, 1)
+light_energy = 0.515
+shadow_enabled = true
+spot_range = 1.408
+spot_attenuation = 1.13
+spot_angle = 60.42
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="9" unique_id=569108205]
+libraries/ = SubResource("AnimationLibrary_gj01l")
+
+[node name="Z1" type="Sprite2D" parent="." index="10" unique_id=1587577437]
+position = Vector2(210, 376)
+texture = ExtResource("9_yymd8")
+
+[node name="Z2" type="Sprite2D" parent="." index="11" unique_id=530202269]
+position = Vector2(248, 383)
+texture = ExtResource("10_xqvfp")
+
+[node name="Z3" type="Sprite2D" parent="." index="12" unique_id=1675613617]
+position = Vector2(290, 385)
+texture = ExtResource("11_fmd85")
+
+[node name="GuideAnim" type="AnimationPlayer" parent="." index="13" unique_id=1886422578]
+root_node = NodePath("../Control")
+libraries/ = SubResource("AnimationLibrary_u6pxw")
+
+[node name="GuideAnim2" type="AnimationPlayer" parent="." index="14" unique_id=1887845367]
+root_node = NodePath("../Control")
+libraries/ = SubResource("AnimationLibrary_u6pxw")
+
+[node name="Control" type="Control" parent="." index="15" unique_id=31271299]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 251.0
+offset_right = 342.0
+offset_bottom = 267.00034
+pivot_offset = Vector2(106, 8)
+
+[node name="StandUp" type="Control" parent="Control" index="0" unique_id=2108950428]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StandUp" type="Label" parent="Control/StandUp" index="0" unique_id=1373799058]
+layout_mode = 0
+offset_right = 214.0
+offset_bottom = 17.0
+text = "Press     to stand up"
+label_settings = SubResource("LabelSettings_61rsm")
+horizontal_alignment = 1
+
+[node name="StandUpKey" parent="Control/StandUp" index="1" unique_id=10271633 instance=ExtResource("13_7dmox")]
+position = Vector2(88, 8)
+keyboard_input = "x"
+xbox_input = "b"
+ps_input = "o"
+
+[node name="Interact" type="Control" parent="Control" index="1" unique_id=660496403]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Interact" type="Label" parent="Control/Interact" index="0" unique_id=474594416]
+layout_mode = 0
+offset_right = 214.0
+offset_bottom = 17.0
+text = "Press     to interact"
+label_settings = SubResource("LabelSettings_61rsm")
+horizontal_alignment = 1
+
+[node name="InteractKey" parent="Control/Interact" index="1" unique_id=690881590 instance=ExtResource("13_7dmox")]
+position = Vector2(88, 8)
+keyboard_input = "z"
+xbox_input = "a"
+ps_input = "x"
+
+[node name="Walk" type="Control" parent="Control" index="2" unique_id=1954584355]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Walk" type="Label" parent="Control/Walk" index="0" unique_id=1138299143]
+layout_mode = 0
+offset_right = 214.0
+offset_bottom = 17.0
+text = "Use           to walk."
+label_settings = SubResource("LabelSettings_61rsm")
+horizontal_alignment = 1
+
+[node name="WalkKey" parent="Control/Walk" index="1" unique_id=1441239680 instance=ExtResource("13_7dmox")]
+position = Vector2(78, 8)
+keyboard_input = "left"
+xbox_input = "left"
+ps_input = "left"
+
+[node name="WalkKey2" parent="Control/Walk" index="2" unique_id=1980618666 instance=ExtResource("13_7dmox")]
+position = Vector2(104, 8)
+keyboard_input = "right"
+xbox_input = "right"
+ps_input = "right"
+
+[node name="WalkKey3" parent="Control/Walk" index="3" unique_id=1557227302 instance=ExtResource("13_7dmox")]
+position = Vector2(91, -5)
+keyboard_input = "up"
+xbox_input = "up"
+ps_input = "up"
+
+[node name="WalkKey4" parent="Control/Walk" index="4" unique_id=436730832 instance=ExtResource("13_7dmox")]
+position = Vector2(91, 21)
+keyboard_input = "down"
+xbox_input = "down"
+ps_input = "down"
+
+[node name="StandUpRU" type="Control" parent="Control" index="3" unique_id=145961760]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StandUp" type="Label" parent="Control/StandUpRU" index="0" unique_id=922590525]
+layout_mode = 0
+offset_right = 214.0
+offset_bottom = 17.0
+text = "Нажми     чтобы встать"
+label_settings = SubResource("LabelSettings_61rsm")
+horizontal_alignment = 1
+
+[node name="StandUpKey" parent="Control/StandUpRU" index="1" unique_id=242296718 instance=ExtResource("13_7dmox")]
+position = Vector2(85, 8)
+keyboard_input = "x"
+xbox_input = "b"
+ps_input = "o"
+
+[node name="InteractRU" type="Control" parent="Control" index="4" unique_id=828104846]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Interact" type="Label" parent="Control/InteractRU" index="0" unique_id=1298146216]
+layout_mode = 0
+offset_right = 214.0
+offset_bottom = 17.0
+text = "Нажми     чтобы взаимодействовать"
+label_settings = SubResource("LabelSettings_61rsm")
+horizontal_alignment = 1
+
+[node name="InteractKey" parent="Control/InteractRU" index="1" unique_id=2011346239 instance=ExtResource("13_7dmox")]
+position = Vector2(51, 8)
+keyboard_input = "z"
+xbox_input = "a"
+ps_input = "x"
+
+[node name="WalkRU" type="Control" parent="Control" index="5" unique_id=303682877]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Walk" type="Label" parent="Control/WalkRU" index="0" unique_id=1330414583]
+layout_mode = 0
+offset_right = 214.0
+offset_bottom = 17.0
+text = "Нажми           чтобы ходить."
+label_settings = SubResource("LabelSettings_61rsm")
+horizontal_alignment = 1
+
+[node name="WalkKey" parent="Control/WalkRU" index="1" unique_id=557753149 instance=ExtResource("13_7dmox")]
+position = Vector2(69, 8)
+keyboard_input = "left"
+xbox_input = "left"
+ps_input = "left"
+
+[node name="WalkKey2" parent="Control/WalkRU" index="2" unique_id=406393064 instance=ExtResource("13_7dmox")]
+position = Vector2(95, 8)
+keyboard_input = "right"
+xbox_input = "right"
+ps_input = "right"
+
+[node name="WalkKey3" parent="Control/WalkRU" index="3" unique_id=1522065019 instance=ExtResource("13_7dmox")]
+position = Vector2(82, -5)
+keyboard_input = "up"
+xbox_input = "up"
+ps_input = "up"
+
+[node name="WalkKey4" parent="Control/WalkRU" index="4" unique_id=943658245 instance=ExtResource("13_7dmox")]
+position = Vector2(82, 21)
+keyboard_input = "down"
+xbox_input = "down"
+ps_input = "down"
 
 [editable path="Follow"]

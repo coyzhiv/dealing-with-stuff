@@ -1,21 +1,25 @@
-[gd_scene load_steps=36 format=3 uid="uid://btptyyruogres"]
+[gd_scene format=3 uid="uid://btptyyruogres"]
 
 [ext_resource type="PackedScene" uid="uid://fljjk6mrlsfl" path="res://resourses/models/menu/Pause menu.gltf" id="1_h6fyu"]
 [ext_resource type="Script" uid="uid://d2sese3vkecfb" path="res://scenes/menus/new_pause_menu.gd" id="1_txeoe"]
+[ext_resource type="Texture2D" uid="uid://jmpjuvhm6g63" path="res://resourses/sprites/menus/new_lina_anim/new_lina_anim.png" id="3_6keol"]
 [ext_resource type="Texture2D" uid="uid://ch68wjesjqhch" path="res://resourses/sprites/menus/lina_menu.png" id="3_ry6ei"]
-[ext_resource type="Texture2D" uid="uid://bi6idxoeoe4ob" path="res://resourses/sprites/menus/alisa_anim/alisa_anim1.png" id="4_g1wr1"]
-[ext_resource type="FontFile" uid="uid://d13bi6hpu1ajl" path="res://resourses/fonts/ByteBounce.ttf" id="4_kl60u"]
 [ext_resource type="Texture2D" uid="uid://bgdxu4v1qeukt" path="res://resourses/sprites/menus/alisa_menu.png" id="4_ry6ei"]
-[ext_resource type="Texture2D" uid="uid://cvyrxn87esrfw" path="res://resourses/sprites/menus/alisa_anim/alisa_anim2.png" id="5_db4jk"]
+[ext_resource type="Texture2D" uid="uid://d3mcfmcjpsber" path="res://resourses/sprites/menus/new_alisa_anim/new_alisa_anim.png" id="4_v44et"]
+[ext_resource type="Texture2D" uid="uid://nusvfdif6sm0" path="res://resourses/sprites/menus/new_lina_anim/new_lina_anim2.png" id="4_y8j0r"]
+[ext_resource type="Texture2D" uid="uid://72qjbkfr630e" path="res://resourses/sprites/menus/new_lina_anim/new_lina_anim3.png" id="5_7khig"]
+[ext_resource type="Texture2D" uid="uid://krirb3o6kveg" path="res://resourses/sprites/menus/new_alisa_anim/new_alisa_anim2.png" id="5_jy8l5"]
 [ext_resource type="Theme" uid="uid://7l6k4yhkihp4" path="res://scenes/menus/main_theme.tres" id="5_v2o4j"]
-[ext_resource type="Texture2D" uid="uid://hmmyjg4dg1gj" path="res://resourses/sprites/menus/alisa_anim/alisa_anim3.png" id="6_jy8l5"]
-[ext_resource type="Texture2D" uid="uid://wncd2nvtrm7d" path="res://resourses/sprites/menus/alisa_anim/alisa_anim4.png" id="7_tsmeh"]
+[ext_resource type="Texture2D" uid="uid://ccwrw7khohhmt" path="res://resourses/sprites/menus/new_lina_anim/new_lina_anim4.png" id="6_q1cvi"]
+[ext_resource type="Texture2D" uid="uid://bnhhrmycbm86v" path="res://resourses/sprites/menus/new_alisa_anim/new_alisa_anim3.png" id="6_tsmeh"]
+[ext_resource type="Texture2D" uid="uid://d2mtaimkr8e7s" path="res://resourses/sprites/menus/new_alisa_anim/new_alisa_anim4.png" id="7_nwd0h"]
 [ext_resource type="Texture2D" uid="uid://c1fx8o41k430h" path="res://resourses/sprites/interface/fog1.png" id="7_v2o4j"]
 [ext_resource type="Animation" uid="uid://i07c4iww1vdr" path="res://scenes/other_things/fog_down.res" id="8_5s0gx"]
-[ext_resource type="Texture2D" uid="uid://beg56srjl4hl4" path="res://resourses/sprites/menus/alisa_anim/alisa_anim5.png" id="8_nwd0h"]
-[ext_resource type="Texture2D" uid="uid://c2jmgrgsn0ohi" path="res://resourses/sprites/menus/alisa_anim/alisa_anim6.png" id="9_6keol"]
+[ext_resource type="Texture2D" uid="uid://cy5ngkmtjqcpl" path="res://resourses/sprites/menus/new_alisa_anim/new_alisa_anim5.png" id="8_nwd0h"]
+[ext_resource type="Texture2D" uid="uid://dpyt3ce2v3pbi" path="res://resourses/sprites/menus/new_alisa_anim/new_alisa_anim6.png" id="9_6keol"]
 [ext_resource type="Animation" uid="uid://c4pyd728wut75" path="res://scenes/other_things/fog_left.res" id="9_ry6ei"]
-[ext_resource type="Texture2D" uid="uid://dfcs15n8y0h8" path="res://resourses/sprites/menus/alisa_anim/alisa_anim7.png" id="10_v44et"]
+[ext_resource type="FontFile" uid="uid://c4ohbbx885w7l" path="res://resourses/fonts/BoldPixels.ttf" id="12_6keol"]
+[ext_resource type="PackedScene" uid="uid://gp071xtynewa" path="res://scenes/inputs/changing_key.tscn" id="17_7khig"]
 [ext_resource type="AudioStream" uid="uid://bcgjsqdej6mkn" path="res://resourses/audio/effects/стук стена.ogg" id="17_nwd0h"]
 [ext_resource type="AudioStream" uid="uid://cd2sthi5gyx8" path="res://resourses/audio/effects/карандаш стена.ogg" id="18_6keol"]
 [ext_resource type="AudioStream" uid="uid://bvs3jxktxovxq" path="res://resourses/audio/effects/фвп.ogg" id="18_db4jk"]
@@ -26,32 +30,48 @@
 background_mode = 1
 background_color = Color(0.336608, 0.336608, 0.336608, 1)
 fog_enabled = true
-fog_light_energy = 2.0
-fog_density = 0.03
+fog_density = 0.0684
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v44et"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6keol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y8j0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7khig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q1cvi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6kcid"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_g1wr1")
+"texture": ExtResource("4_v44et")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_db4jk")
+"texture": ExtResource("5_jy8l5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_jy8l5")
+"texture": ExtResource("6_tsmeh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_tsmeh")
+"texture": ExtResource("7_nwd0h")
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_nwd0h")
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_6keol")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_v44et")
 }],
 "loop": true,
 "name": &"default",
@@ -103,7 +123,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1127, 45)]
+"values": [Vector2(0, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -305,6 +325,73 @@ tracks/20/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/21/type = "bezier"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:x")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/22/type = "bezier"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:y")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/23/type = "bezier"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:z")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/24/type = "bezier"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Settings:position:x")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/25/type = "bezier"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Settings:position:y")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1080, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("SubViewportContainer/SubViewport/LinaAnim:frame")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_7gjr6"]
 resource_name = "go to alisa"
@@ -316,8 +403,8 @@ tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(682.17, -0.25, 0, 0.366667, -0.0283813, 680.42, -0.533333, 0.0656128, 0.25, 0),
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(682.17, -0.25, 0, 0.33333334, -0.01928711, 680.56476, -0.3333333, 0.059448242, 0, 0),
 "times": PackedFloat32Array(0, 0.7)
 }
 tracks/1/type = "bezier"
@@ -327,8 +414,8 @@ tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1.23562, -0.25, 0, 0.25, 0, 1.20724, -0.25, 0, 0.25, 0),
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1.23562, -0.25, 0, 0.33333334, -0.0006248951, 1.20724, -0.29999998, 0.00048303604, 0, 0),
 "times": PackedFloat32Array(0, 0.7)
 }
 tracks/2/type = "bezier"
@@ -339,7 +426,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(2.89874, -0.25, 0, 0.366667, -0.0191584, 1.355, -0.533333, 0.0471947, 0.25, 0),
+"points": PackedFloat32Array(2.89874, -0.25, 0, 0.33333334, -0.029695272, 1.550314, -0.3333333, 0.02294612, 0, 0),
 "times": PackedFloat32Array(0, 0.7)
 }
 tracks/3/type = "value"
@@ -352,7 +439,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.0859104),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1127, 45), Vector2(1155, 45)]
+"values": [Vector2(0, 0), Vector2(0, 0)]
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -383,10 +470,10 @@ tracks/6/path = NodePath("SubViewportContainer/SubViewport/AlisaAnim:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.133333, 0.333333, 0.366667, 0.633333, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.034418166, 0.16666663, 0.30000007, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6]
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="Animation" id="Animation_g1wr1"]
@@ -400,7 +487,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(682.17, -0.25, 0, 0.366667, -0.0283813, 680.42, -0.533333, 0.0656128, 0.25, 0),
+"points": PackedFloat32Array(682.17, -0.25, 0, 0.33333334, -0.01928711, 680.56476, -0.3333333, 0.059448242, 0, 0),
 "times": PackedFloat32Array(0, 0.7)
 }
 tracks/1/type = "bezier"
@@ -411,7 +498,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1.23562, -0.25, 0, 0.25, 0, 1.20724, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1.23562, -0.25, 0, 0.33333334, -0.0006248951, 1.20724, -0.29999998, 0.00048303604, 0, 0),
 "times": PackedFloat32Array(0, 0.7)
 }
 tracks/2/type = "bezier"
@@ -422,7 +509,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(2.89874, -0.25, 0, 0.366667, -0.0191584, 1.355, -0.533333, 0.0471947, 0.25, 0),
+"points": PackedFloat32Array(2.89874, -0.25, 0, 0.33333334, -0.029695272, 1.550314, -0.3333333, 0.02294612, 0, 0),
 "times": PackedFloat32Array(0, 0.7)
 }
 tracks/3/type = "value"
@@ -466,10 +553,10 @@ tracks/6/path = NodePath("SubViewportContainer/SubViewport/AlisaAnim:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.2, 0.266667, 0.6, 0.666667, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.20108485, 0.3333333, 0.46666676, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 5, 4, 5, 6]
+"values": [0, 5, 4, 3]
 }
 
 [sub_resource type="Animation" id="Animation_5s0gx"]
@@ -482,8 +569,8 @@ tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(682.17, -0.25, 0, 0.366667, 0.000488281, 683.927, -0.533333, -0.0378418, 0.25, 0),
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(682.17, -0.25, 0, 0.3, 0.011352539, 683.787, -0.3333333, -0.0032348633, 0, 0),
 "times": PackedFloat32Array(0, 0.7)
 }
 tracks/1/type = "bezier"
@@ -493,8 +580,8 @@ tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1.236, -0.25, 0, 0.25, 0, 1.20724, -0.25, 0, 0.25, 0),
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1.236, -0.25, 0, 0.3, -0.00020325184, 1.207, -0.3333333, 0.00020313263, 0, 0),
 "times": PackedFloat32Array(0, 0.7)
 }
 tracks/2/type = "bezier"
@@ -504,8 +591,8 @@ tracks/2/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:z")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(2.899, -0.25, 0, 0.366667, -0.000472069, 1.35459, -0.533333, 0.0483563, 0.25, 0),
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(2.899, -0.25, 0, 0.33333334, -0.022955894, 1.55, -0.3333333, 0.02970767, 0, 0),
 "times": PackedFloat32Array(0, 0.7)
 }
 tracks/3/type = "value"
@@ -518,7 +605,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1127, 45), Vector2(534, 45)]
+"values": [Vector2(0, 0), Vector2(-140, 0)]
 }
 tracks/4/type = "bezier"
 tracks/4/imported = false
@@ -542,6 +629,18 @@ tracks/5/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.7)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SubViewportContainer/SubViewport/LinaAnim:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.09981517, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
 
 [sub_resource type="Animation" id="Animation_kl60u"]
 resource_name = "go to settings"
@@ -564,7 +663,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1.236, -0.25, 0, 0.8, 0.179968, 13.876, -0.666667, -0.179967, 0.25, 0),
+"points": PackedFloat32Array(1.236, -0.25, 0, 0.8, 0.179968, 12, -0.666667, -0.179967, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/2/type = "bezier"
@@ -577,6 +676,28 @@ tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(2.899, -0.25, 0, 0.25, 0, 2.899, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Settings:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.7, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Settings:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-360, -0.25, 0, 0.06666666, 227.27257, 0, -0.16666669, 11.298268, 0.23333335, 11.298268),
+"times": PackedFloat32Array(0.7, 1)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p83hi"]
@@ -591,11 +712,196 @@ _data = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7gjr6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kabok"]
-font = ExtResource("4_kl60u")
-font_size = 92
+font = ExtResource("12_6keol")
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8j0r"]
+font = ExtResource("12_6keol")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rcrm"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vb8tb"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mxem"]
+bg_color = Color(0.80372334, 0.99703926, 0.89233416, 1)
+
+[sub_resource type="Theme" id="Theme_7khig"]
+default_font = ExtResource("12_6keol")
+default_font_size = 16
+ItemList/colors/font_color = Color(1, 1, 1, 1)
+ItemList/constants/h_separation = 5
+ItemList/constants/v_separation = 7
+ItemList/font_sizes/font_size = 16
+ItemList/styles/focus = SubResource("StyleBoxFlat_6rcrm")
+ProgressBar/constants/outline_size = 10
+ProgressBar/font_sizes/font_size = 64
+ProgressBar/styles/background = SubResource("StyleBoxFlat_vb8tb")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_1mxem")
+
+[sub_resource type="LabelSettings" id="LabelSettings_nwd0h"]
+font = ExtResource("12_6keol")
+
+[sub_resource type="Animation" id="Animation_v44et"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fog/Fog3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1092, 388.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fog/Fog8:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1063, 143)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fog/Fog5:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1017, 234)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fog/Fog4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(871, 395)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fog/Fog1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1316, 244.00006)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fog/Fog9:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(850.00024, 80)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Fog/Fog6:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(807.00024, 245)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Fog/Fog2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1372, 442)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Fog/Fog7:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1247, 58)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Fog/Fog11:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1498, 104.00001)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Fog/Fog12:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1560, 413)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Fog/Fog10:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1627, 221)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kabok"]
 _data = {
+&"RESET": SubResource("Animation_v44et"),
 &"fog_down": ExtResource("8_5s0gx"),
 &"fog_left": ExtResource("9_ry6ei")
 }
@@ -633,6 +939,28 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SaveMenu:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SaveMenu:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1080, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -674,17 +1002,116 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.633333, 0.64, 0.7, 1.3, 1.9, 2.43333, 2.5, 3)
 }
 
+[sub_resource type="Animation" id="Animation_6keol"]
+resource_name = "camera_bob_saves"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-1.5708, -0.25, 0, 0.2, -0.000541336, -1.56556, -0.166667, -0.00359358, 0.166667, 0.00243052, -1.56556, -0.0999999, 0.00182811, 0.233333, -0.00570202, -1.57603, -0.233333, 0.00326393, 0.2, -0.00258448, -1.57603, -0.166667, -0.00306139, 0.2, 0.00594967, -1.5708, -0.2, 0.0012157, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7, 1.3, 1.9, 2.5, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.2, 0.000910263, -0.00523599, -0.3, 0.000666207, 0.2, 0.000105538, 0.00523599, -0.233333, -0.0064411, 0.133333, 0.00551788, 0.00523599, -0.133333, 0.00563967, 0.233333, -0.00713369, -0.00523599, -0.233333, -0.000268241, 0.266667, 0.000105538, 0, -0.233333, -0.000211075, 0.233333, 0.00408739),
+"times": PackedFloat32Array(0, 0.7, 1.3, 1.9, 2.5, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.633333, 0.64, 0.7, 1.3, 1.9, 2.43333, 2.5, 3)
+}
+
+[sub_resource type="Animation" id="Animation_nwd0h"]
+resource_name = "go to saves"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.3, 0.198426, -1.5708, -0.366667, -0.282639, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SaveMenu:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SaveMenu:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(360, -0.25, 0, 0.03333333, -237.25766, 0, -0.099999994, 37.16293, 0.25, 0),
+"times": PackedFloat32Array(0.3, 0.5)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_laoys"]
 _data = {
 &"RESET": SubResource("Animation_kabok"),
-&"camera_bob": SubResource("Animation_p83hi")
+&"camera_bob": SubResource("Animation_p83hi"),
+&"camera_bob_saves": SubResource("Animation_6keol"),
+&"go to saves": SubResource("Animation_nwd0h")
 }
 
-[node name="NewPauseMenu" type="CanvasLayer"]
+[node name="NewPauseMenu" type="CanvasLayer" unique_id=1767074321]
 process_mode = 3
 script = ExtResource("1_txeoe")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=764193099]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -692,34 +1119,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1477649015]
 handle_input_locally = false
-size = Vector2i(1920, 1080)
+size = Vector2i(480, 360)
 render_target_update_mode = 0
 
-[node name="blockbench_export" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_h6fyu")]
+[node name="blockbench_export" parent="SubViewportContainer/SubViewport" unique_id=303554324 instance=ExtResource("1_h6fyu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 682.23, 0.062, -1.118)
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=2002110206]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 682.17, 1.236, 2.899)
 environment = SubResource("Environment_kl60u")
-fov = 70.0
+fov = 90.1
+size = 0.165
 
-[node name="Lina" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
+[node name="LinaAnim" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport" unique_id=1913193491]
+transform = Transform3D(-0.41999996, 0, -3.6717566e-08, 0, 0.41999996, 0, 3.6717562e-08, 0, -0.42, 683.7423, 0.73470044, 0.8674019)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_v44et")
+
+[node name="Lina" type="Sprite3D" parent="SubViewportContainer/SubViewport" unique_id=1141375633]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 684.498, 0.802809, 0.854278)
+visible = false
 shaded = true
 alpha_cut = 2
 texture_filter = 1
 texture = ExtResource("3_ry6ei")
 
-[node name="AlisaAnim" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.0399756, 0.00139598, 0, -0.00139598, 0.0399756, 0, 0, 0, 0.04, 679.885, 0.794731, 0.854)
+[node name="AlisaAnim" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport" unique_id=896084691]
+transform = Transform3D(0.41974413, 0.0146578, 0, -0.0146578, 0.41974413, 0, 0, 0, 0.42, 680.6069, 0.7638519, 0.88122475)
 shaded = true
 alpha_cut = 2
-texture_filter = 1
+texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_6kcid")
 
-[node name="Alisa" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
+[node name="Alisa" type="Sprite3D" parent="SubViewportContainer/SubViewport" unique_id=2109843742]
 transform = Transform3D(0.0399756, 0.00139598, 0, -0.00139598, 0.0399756, 0, 0, 0, 0.04, 679.885, 0.794731, 0.854)
 visible = false
 shaded = true
@@ -728,7 +1164,7 @@ alpha_antialiasing_edge = 1.0
 texture_filter = 0
 texture = ExtResource("4_ry6ei")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport"]
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport" unique_id=1276888616]
 transform = Transform3D(0.965926, 0.210446, -0.150665, 0, 0.582123, 0.813101, 0.258819, -0.785395, 0.562288, 679.176, 4.83793, 3.55609)
 light_energy = 5.0
 shadow_enabled = true
@@ -737,7 +1173,7 @@ shadow_blur = 0.4
 spot_range = 21.3915
 spot_angle = 16.6356
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport" unique_id=136289156]
 transform = Transform3D(0.965926, -0.210446, 0.150665, 0, 0.582123, 0.813101, -0.258819, -0.785395, 0.562288, 685.243, 4.83793, 3.55609)
 light_energy = 5.0
 shadow_enabled = true
@@ -746,19 +1182,17 @@ shadow_blur = 0.4
 spot_range = 21.3915
 spot_angle = 16.6356
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=2124528543]
 transform = Transform3D(1, 0, 0, 0, 0.756995, 0.653421, 0, -0.653421, 0.756995, 682.83, 8.91045, 8.28385)
 visible = false
 light_energy = 0.3
 light_specular = 0.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_p83hi"),
-&"fog": SubResource("AnimationLibrary_7gjr6")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=558431925]
+libraries/ = SubResource("AnimationLibrary_p83hi")
+libraries/fog = SubResource("AnimationLibrary_7gjr6")
 
-[node name="CharacterMenu" type="Control" parent="."]
+[node name="CharacterMenu" type="Control" parent="." unique_id=1093259476]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -767,75 +1201,92 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="AlisaMenu" type="Control" parent="CharacterMenu"]
-layout_mode = 3
+[node name="AlisaMenu" type="Control" parent="CharacterMenu" unique_id=1479503863]
 anchors_preset = 0
 offset_left = 1500.0
-offset_right = 1540.0
+offset_right = 1539.9998
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="CharacterMenu/AlisaMenu"]
+[node name="ColorRect" type="ColorRect" parent="CharacterMenu/AlisaMenu" unique_id=959818516]
 modulate = Color(1, 1, 1, 0.411765)
 layout_mode = 0
-offset_left = 615.0
-offset_top = 12.0
-offset_right = 2009.0
-offset_bottom = 1066.0
+offset_left = 152.0
+offset_top = 11.0
+offset_right = 482.0
+offset_bottom = 350.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="CharacterMenu/AlisaMenu"]
+[node name="ColorRect4" type="ColorRect" parent="CharacterMenu/AlisaMenu" unique_id=157737534]
 modulate = Color(1, 1, 1, 0.411765)
 layout_mode = 0
-offset_left = 615.0
-offset_top = 618.0
-offset_right = 2009.0
-offset_bottom = 1006.0
+offset_left = 169.0
+offset_top = 316.0
+offset_right = 454.0
+offset_bottom = 340.0
 color = Color(0, 0, 0, 1)
 
-[node name="HP" type="Label" parent="CharacterMenu/AlisaMenu"]
+[node name="ColorRect3" type="ColorRect" parent="CharacterMenu/AlisaMenu" unique_id=1485177122]
+modulate = Color(1, 1, 1, 0.411765)
 layout_mode = 0
-offset_left = 645.0
-offset_top = 44.0
-offset_right = 901.0
-offset_bottom = 147.0
+offset_left = 169.0
+offset_top = 289.0
+offset_right = 454.0
+offset_bottom = 313.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterMenu/AlisaMenu" unique_id=1346768518]
+modulate = Color(1, 1, 1, 0.411765)
+layout_mode = 0
+offset_left = 169.0
+offset_top = 193.0
+offset_right = 454.0
+offset_bottom = 285.0
+color = Color(0, 0, 0, 1)
+
+[node name="HP" type="Label" parent="CharacterMenu/AlisaMenu" unique_id=505398304]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 20.0
+offset_right = 235.0
+offset_bottom = 36.0
 text = "HP:"
 label_settings = SubResource("LabelSettings_kabok")
 
-[node name="ATK" type="Label" parent="CharacterMenu/AlisaMenu"]
+[node name="ATK" type="Label" parent="CharacterMenu/AlisaMenu" unique_id=1411656757]
 layout_mode = 0
-offset_left = 953.0
-offset_top = 44.0
-offset_right = 1209.0
-offset_bottom = 147.0
+offset_left = 240.0
+offset_top = 20.0
+offset_right = 310.0
+offset_bottom = 36.0
 text = "ATK:"
 label_settings = SubResource("LabelSettings_kabok")
 
-[node name="DEF" type="Label" parent="CharacterMenu/AlisaMenu"]
+[node name="DEF" type="Label" parent="CharacterMenu/AlisaMenu" unique_id=1214708721]
 layout_mode = 0
-offset_left = 1285.0
-offset_top = 44.0
-offset_right = 1541.0
-offset_bottom = 147.0
+offset_left = 316.0
+offset_top = 20.0
+offset_right = 386.0
+offset_bottom = 36.0
 text = "DEF:"
 label_settings = SubResource("LabelSettings_kabok")
 
-[node name="SPD" type="Label" parent="CharacterMenu/AlisaMenu"]
+[node name="SPD" type="Label" parent="CharacterMenu/AlisaMenu" unique_id=71158599]
 layout_mode = 0
-offset_left = 1614.0
-offset_top = 44.0
-offset_right = 1870.0
-offset_bottom = 147.0
+offset_left = 395.0
+offset_top = 20.0
+offset_right = 465.0
+offset_bottom = 37.0
 text = "SPD:"
 label_settings = SubResource("LabelSettings_kabok")
 
-[node name="SkillSelect" type="ItemList" parent="CharacterMenu/AlisaMenu"]
+[node name="SkillSelect" type="ItemList" parent="CharacterMenu/AlisaMenu" unique_id=458683730]
 process_mode = 4
 layout_mode = 0
-offset_left = 1285.0
-offset_top = 157.0
-offset_right = 1890.0
-offset_bottom = 596.0
+offset_left = 319.0
+offset_top = 45.0
+offset_right = 452.0
+offset_bottom = 183.0
 tooltip_text = "Skills"
 focus_neighbor_left = NodePath("../ItemSelect")
 focus_neighbor_top = NodePath(".")
@@ -845,17 +1296,18 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 mouse_filter = 2
 theme = ExtResource("5_v2o4j")
-select_mode = 1
+select_mode = 2
 allow_reselect = true
-icon_scale = 2.0
+allow_search = false
+item_count = 1
 
-[node name="ItemSelect" type="ItemList" parent="CharacterMenu/AlisaMenu"]
+[node name="ItemSelect" type="ItemList" parent="CharacterMenu/AlisaMenu" unique_id=1293632147]
 process_mode = 4
 layout_mode = 0
-offset_left = 634.0
-offset_top = 157.0
-offset_right = 1234.0
-offset_bottom = 595.0
+offset_left = 166.0
+offset_top = 45.0
+offset_right = 307.0
+offset_bottom = 184.0
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath("../SkillSelect")
@@ -864,79 +1316,79 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 mouse_filter = 2
 theme = ExtResource("5_v2o4j")
-select_mode = 1
+select_mode = 2
 allow_reselect = true
-icon_scale = 2.0
+allow_search = false
 
-[node name="LinaMenu" type="Control" parent="CharacterMenu"]
+[node name="LinaMenu" type="Control" parent="CharacterMenu" unique_id=2062106021]
 layout_mode = 1
 anchor_bottom = 0.037
 offset_left = -2000.0
 offset_right = -1960.0
-offset_bottom = 0.0400009
+offset_bottom = 0.040000916
 mouse_filter = 2
 
-[node name="ColorRect2" type="ColorRect" parent="CharacterMenu/LinaMenu"]
+[node name="ColorRect" type="ColorRect" parent="CharacterMenu/LinaMenu" unique_id=936491048]
 modulate = Color(1, 1, 1, 0.411765)
 layout_mode = 0
-offset_left = 496.0
+offset_left = 583.0
 offset_top = 12.0
-offset_right = 1892.0
-offset_bottom = 1066.0
+offset_right = 927.0
+offset_bottom = 351.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="CharacterMenu/LinaMenu"]
+[node name="ColorRect2" type="ColorRect" parent="CharacterMenu/LinaMenu" unique_id=467570484]
 modulate = Color(1, 1, 1, 0.411765)
 layout_mode = 0
-offset_left = 496.0
-offset_top = 630.0
-offset_right = 1892.0
-offset_bottom = 1007.0
+offset_left = 628.0
+offset_top = 193.0
+offset_right = 915.0
+offset_bottom = 285.0
 color = Color(0, 0, 0, 1)
 
-[node name="HP" type="Label" parent="CharacterMenu/LinaMenu"]
+[node name="HP" type="Label" parent="CharacterMenu/LinaMenu" unique_id=1887586182]
 layout_mode = 0
-offset_left = 624.0
-offset_top = 44.0
-offset_right = 880.0
-offset_bottom = 147.0
+offset_left = 610.0
+offset_top = 20.0
+offset_right = 680.0
+offset_bottom = 36.0
 text = "HP:"
 label_settings = SubResource("LabelSettings_kabok")
 
-[node name="ATK" type="Label" parent="CharacterMenu/LinaMenu"]
+[node name="ATK" type="Label" parent="CharacterMenu/LinaMenu" unique_id=389281125]
 layout_mode = 0
-offset_left = 932.0
-offset_top = 44.0
-offset_right = 1188.0
-offset_bottom = 147.0
+offset_left = 696.0
+offset_top = 20.0
+offset_right = 766.0
+offset_bottom = 36.0
 text = "ATK:"
 label_settings = SubResource("LabelSettings_kabok")
 
-[node name="DEF" type="Label" parent="CharacterMenu/LinaMenu"]
+[node name="DEF" type="Label" parent="CharacterMenu/LinaMenu" unique_id=19164254]
 layout_mode = 0
-offset_left = 1264.0
-offset_top = 44.0
-offset_right = 1520.0
-offset_bottom = 147.0
+offset_left = 767.0
+offset_top = 20.0
+offset_right = 837.0
+offset_bottom = 36.0
 text = "DEF:"
 label_settings = SubResource("LabelSettings_kabok")
 
-[node name="SPD" type="Label" parent="CharacterMenu/LinaMenu"]
+[node name="SPD" type="Label" parent="CharacterMenu/LinaMenu" unique_id=1166816739]
 layout_mode = 0
-offset_left = 1593.0
-offset_top = 44.0
-offset_right = 1849.0
-offset_bottom = 147.0
+offset_left = 840.0
+offset_top = 20.0
+offset_right = 910.0
+offset_bottom = 37.0
 text = "SPD:"
 label_settings = SubResource("LabelSettings_kabok")
 
-[node name="SkillSelect" type="ItemList" parent="CharacterMenu/LinaMenu"]
+[node name="SkillSelect" type="ItemList" parent="CharacterMenu/LinaMenu" unique_id=653985280]
 process_mode = 4
 layout_mode = 0
-offset_left = 1264.0
-offset_top = 157.0
-offset_right = 1863.0
-offset_bottom = 596.0
+offset_left = 781.0
+offset_top = 44.0
+offset_right = 914.0
+offset_bottom = 181.0
 tooltip_text = "Skills"
 focus_neighbor_left = NodePath("../ItemSelect")
 focus_neighbor_top = NodePath(".")
@@ -946,17 +1398,18 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 mouse_filter = 2
 theme = ExtResource("5_v2o4j")
-select_mode = 1
+select_mode = 2
 allow_reselect = true
-icon_scale = 2.0
+allow_search = false
+item_count = 1
 
-[node name="ItemSelect" type="ItemList" parent="CharacterMenu/LinaMenu"]
+[node name="ItemSelect" type="ItemList" parent="CharacterMenu/LinaMenu" unique_id=111918921]
 process_mode = 4
 layout_mode = 0
-offset_left = 613.0
-offset_top = 157.0
-offset_right = 1217.0
-offset_bottom = 595.0
+offset_left = 628.0
+offset_top = 44.0
+offset_right = 769.0
+offset_bottom = 183.0
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath("../SkillSelect")
@@ -965,53 +1418,135 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 mouse_filter = 2
 theme = ExtResource("5_v2o4j")
-select_mode = 1
+select_mode = 2
 allow_reselect = true
-icon_scale = 2.0
+allow_search = false
 
-[node name="Info" type="Control" parent="CharacterMenu"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1127.0
-offset_top = 45.0
-offset_right = 1167.0
-offset_bottom = 85.0
-
-[node name="Description" type="Label" parent="CharacterMenu/Info"]
+[node name="ColorRect3" type="ColorRect" parent="CharacterMenu/LinaMenu" unique_id=904117249]
+modulate = Color(1, 1, 1, 0.411765)
 layout_mode = 0
-offset_left = -512.0
-offset_top = 710.0
-offset_right = 761.0
-offset_bottom = 980.0
+offset_left = 629.0
+offset_top = 289.0
+offset_right = 916.0
+offset_bottom = 313.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="CharacterMenu/LinaMenu" unique_id=1246488962]
+modulate = Color(1, 1, 1, 0.411765)
+layout_mode = 0
+offset_left = 629.0
+offset_top = 316.0
+offset_right = 916.0
+offset_bottom = 340.0
+color = Color(0, 0, 0, 1)
+
+[node name="Info" type="Control" parent="CharacterMenu" unique_id=1815988090]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.000008
+
+[node name="Description" type="Label" parent="CharacterMenu/Info" unique_id=70962569]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 223.0
+offset_right = 444.0
+offset_bottom = 277.0
 label_settings = SubResource("LabelSettings_kabok")
 autowrap_mode = 2
 clip_text = true
 
-[node name="Title" type="Label" parent="CharacterMenu/Info"]
+[node name="Title" type="Label" parent="CharacterMenu/Info" unique_id=212988284]
 layout_mode = 0
-offset_left = -316.0
-offset_top = 596.0
-offset_right = 756.0
-offset_bottom = 699.0
+offset_left = 203.0
+offset_top = 203.0
+offset_right = 344.0
+offset_bottom = 219.0
 label_settings = SubResource("LabelSettings_kabok")
 vertical_alignment = 1
 
-[node name="Icon" type="Sprite2D" parent="CharacterMenu/Info"]
+[node name="Icon" type="Sprite2D" parent="CharacterMenu/Info" unique_id=244425930]
 texture_filter = 1
-position = Vector2(-450, 650)
-scale = Vector2(6, 6)
+position = Vector2(187, 210)
 
-[node name="Settings" type="Control" parent="."]
+[node name="InsightLabel" type="Label" parent="CharacterMenu/Info" unique_id=994729555]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 291.0
+offset_right = 299.0
+offset_bottom = 311.0
+label_settings = SubResource("LabelSettings_y8j0r")
+vertical_alignment = 1
+
+[node name="PowerLabel" type="Label" parent="CharacterMenu/Info" unique_id=1606661228]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 291.0
+offset_right = 430.0
+offset_bottom = 311.0
+label_settings = SubResource("LabelSettings_y8j0r")
+vertical_alignment = 1
+
+[node name="UpgradeCost" type="Label" parent="CharacterMenu/Info" unique_id=699401755]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 318.0
+offset_right = 351.0
+offset_bottom = 338.0
+label_settings = SubResource("LabelSettings_y8j0r")
+vertical_alignment = 1
+
+[node name="UpgradeLabel" type="Label" parent="CharacterMenu/Info" unique_id=1913740048]
 visible = false
+layout_mode = 0
+offset_left = 177.0
+offset_top = 318.0
+offset_right = 260.0
+offset_bottom = 338.0
+text = "Upgrade! RP:"
+label_settings = SubResource("LabelSettings_y8j0r")
+vertical_alignment = 1
+
+[node name="ChangingKey" parent="CharacterMenu/Info" unique_id=598291583 instance=ExtResource("17_7khig")]
+visible = false
+position = Vector2(434, 328)
+keyboard_input = "shift"
+xbox_input = "rt"
+ps_input = "rt"
+
+[node name="ProgressBar" type="ProgressBar" parent="CharacterMenu/Info" unique_id=1306940803]
+visible = false
+layout_mode = 0
+offset_left = 352.0
+offset_top = 319.0
+offset_right = 408.0
+offset_bottom = 337.0
+theme = SubResource("Theme_7khig")
+value = 100.0
+show_percentage = false
+
+[node name="Settings" type="Control" parent="." unique_id=1422747113]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -34.0
-offset_top = 10.0
-offset_right = 1886.0
-offset_bottom = 1090.0
+offset_top = -1080.0
+offset_right = 480.0
+offset_bottom = -760.0
 
-[node name="MusicSlider" type="HSlider" parent="Settings"]
+[node name="ColorRect" type="ColorRect" parent="Settings" unique_id=662451534]
+modulate = Color(1, 1, 1, 0.411765)
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MusicSlider" type="HSlider" parent="Settings" unique_id=1088398214]
 process_mode = 4
 texture_filter = 2
 layout_mode = 1
@@ -1020,17 +1555,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -253.0
-offset_top = -204.0
-offset_right = 32.0
-offset_bottom = -104.0
+offset_left = -75.0
+offset_top = -83.0
+offset_right = 75.0
+offset_bottom = -53.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.13439
 theme = ExtResource("5_v2o4j")
-value = 100.0
+max_value = 1.0
+step = 0.01
+value = 1.0
 
-[node name="SFXSlider" type="HSlider" parent="Settings"]
+[node name="SFXSlider" type="HSlider" parent="Settings" unique_id=187847147]
 process_mode = 4
 texture_filter = 2
 layout_mode = 1
@@ -1039,111 +1575,199 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 45.0
-offset_top = -46.0
-offset_right = 330.0
-offset_bottom = 54.0
+offset_left = -78.0
+offset_top = -20.0
+offset_right = 72.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.267035
 theme = ExtResource("5_v2o4j")
-value = 100.0
+max_value = 1.0
+step = 0.01
+value = 1.0
 
-[node name="Fog" type="Control" parent="."]
+[node name="Label" type="Label" parent="Settings" unique_id=794881682]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -36.0
+offset_right = 44.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SFX"
+label_settings = SubResource("LabelSettings_nwd0h")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Settings" unique_id=2050054537]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -104.0
+offset_right = 68.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_nwd0h")
+horizontal_alignment = 1
+
+[node name="SaveMenu" type="Control" parent="." unique_id=1940252729]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 1080.0
+offset_right = 480.0
+offset_bottom = 1439.9998
+
+[node name="ColorRect" type="ColorRect" parent="SaveMenu" unique_id=271623491]
+modulate = Color(1, 1, 1, 0.411765)
+clip_contents = true
+custom_minimum_size = Vector2(400, 280)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SaveButton" type="Button" parent="SaveMenu" unique_id=1020547298]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 85.0
+offset_right = 326.0
+offset_bottom = 154.0
+theme = ExtResource("5_v2o4j")
+text = "SAVE"
+
+[node name="LoadButton" type="Button" parent="SaveMenu" unique_id=877952171]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 186.0
+offset_right = 329.0
+offset_bottom = 274.0
+theme = ExtResource("5_v2o4j")
+text = "LOAD"
+
+[node name="Fog" type="Control" parent="." unique_id=119397753]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Fog6" type="Sprite2D" parent="Fog"]
+[node name="Fog6" type="Sprite2D" parent="Fog" unique_id=256114758]
 modulate = Color(0.881937, 0.881937, 0.881937, 1)
-position = Vector2(3525, 97)
+position = Vector2(807.00024, 245)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_v2o4j")
 
-[node name="Fog10" type="Sprite2D" parent="Fog"]
+[node name="Fog10" type="Sprite2D" parent="Fog" unique_id=1316281064]
 modulate = Color(0.881937, 0.881937, 0.881937, 1)
-position = Vector2(5062, 860)
+position = Vector2(1627, 221)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_v2o4j")
 
-[node name="Fog1" type="Sprite2D" parent="Fog"]
+[node name="Fog1" type="Sprite2D" parent="Fog" unique_id=405003474]
 modulate = Color(0.899258, 0.899258, 0.899258, 1)
-position = Vector2(4148, 843)
+position = Vector2(1316, 244.00006)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_v2o4j")
 
-[node name="Fog9" type="Sprite2D" parent="Fog"]
+[node name="Fog9" type="Sprite2D" parent="Fog" unique_id=2015166054]
 modulate = Color(0.899258, 0.899258, 0.899258, 1)
-position = Vector2(3447, 275)
+position = Vector2(850.00024, 80)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_v2o4j")
 
-[node name="Fog2" type="Sprite2D" parent="Fog"]
+[node name="Fog2" type="Sprite2D" parent="Fog" unique_id=286130047]
 modulate = Color(0.955963, 0.955963, 0.955963, 1)
-position = Vector2(4265, 92)
+position = Vector2(1372, 442)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_v2o4j")
 
-[node name="Fog7" type="Sprite2D" parent="Fog"]
+[node name="Fog7" type="Sprite2D" parent="Fog" unique_id=749936285]
 modulate = Color(0.955963, 0.955963, 0.955963, 1)
-position = Vector2(3881, 604)
+position = Vector2(1247, 58)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_v2o4j")
 
-[node name="Fog3" type="Sprite2D" parent="Fog"]
+[node name="Fog3" type="Sprite2D" parent="Fog" unique_id=2053922847]
 modulate = Color(0.881937, 0.881937, 0.881937, 1)
-position = Vector2(3648, 859)
+position = Vector2(1092, 388.00003)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_v2o4j")
 
-[node name="Fog4" type="Sprite2D" parent="Fog"]
-position = Vector2(2909, 893)
+[node name="Fog4" type="Sprite2D" parent="Fog" unique_id=2083659786]
+position = Vector2(871, 395)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_v2o4j")
 
-[node name="Fog12" type="Sprite2D" parent="Fog"]
-position = Vector2(5829, 857)
+[node name="Fog12" type="Sprite2D" parent="Fog" unique_id=529263057]
+position = Vector2(1560, 413)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_v2o4j")
 
-[node name="Fog8" type="Sprite2D" parent="Fog"]
+[node name="Fog8" type="Sprite2D" parent="Fog" unique_id=289744022]
 modulate = Color(0.881937, 0.881937, 0.881937, 1)
-position = Vector2(2953, 520)
+position = Vector2(1063, 143)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_v2o4j")
 
-[node name="Fog5" type="Sprite2D" parent="Fog"]
-position = Vector2(2739, 126)
+[node name="Fog5" type="Sprite2D" parent="Fog" unique_id=1902656120]
+position = Vector2(1017, 234)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_v2o4j")
 
-[node name="Fog11" type="Sprite2D" parent="Fog"]
-position = Vector2(5778, 126)
+[node name="Fog11" type="Sprite2D" parent="Fog" unique_id=1642939355]
+position = Vector2(1498, 104.00001)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_v2o4j")
 
-[node name="FogAnimation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_kabok")
-}
+[node name="FogAnimation" type="AnimationPlayer" parent="." unique_id=1626472341]
+libraries/ = SubResource("AnimationLibrary_kabok")
 
-[node name="CameraBobAnimtion" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_laoys")
-}
+[node name="CameraBobAnimtion" type="AnimationPlayer" parent="." unique_id=895328368]
+libraries/ = SubResource("AnimationLibrary_laoys")
 
-[node name="Audio" type="Control" parent="."]
+[node name="Audio" type="Control" parent="." unique_id=1579581921]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="СтукСтена" type="AudioStreamPlayer" parent="Audio"]
+[node name="СтукСтена" type="AudioStreamPlayer" parent="Audio" unique_id=718824051]
 stream = ExtResource("17_nwd0h")
 volume_db = -5.0
+bus = &"SFX"
 
-[node name="КарандашСтена" type="AudioStreamPlayer" parent="Audio"]
+[node name="КарандашСтена" type="AudioStreamPlayer" parent="Audio" unique_id=1854122129]
 stream = ExtResource("18_6keol")
 volume_db = -10.0
+bus = &"SFX"
 
-[node name="SpellIsNot" type="AudioStreamPlayer" parent="Audio"]
+[node name="SpellIsNot" type="AudioStreamPlayer" parent="Audio" unique_id=1174629931]
 stream = ExtResource("19_v44et")
 volume_db = -10.0
+bus = &"SFX"
 
-[node name="MenuChangeWhoosh" type="AudioStreamPlayer" parent="Audio"]
+[node name="MenuChangeWhoosh" type="AudioStreamPlayer" parent="Audio" unique_id=1054229075]
 stream = ExtResource("18_jy8l5")
 bus = &"SFX"
 
-[node name="Background" type="AudioStreamPlayer" parent="Audio"]
+[node name="Background" type="AudioStreamPlayer" parent="Audio" unique_id=1527604618]
 stream = ExtResource("18_db4jk")
 bus = &"Music"
 
@@ -1161,3 +1785,5 @@ bus = &"Music"
 [connection signal="gui_input" from="CharacterMenu/LinaMenu/ItemSelect" to="." method="_on_item_select_gui_input2"]
 [connection signal="value_changed" from="Settings/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="Settings/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="SaveMenu/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="SaveMenu/LoadButton" to="." method="_on_load_button_pressed"]
