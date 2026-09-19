@@ -144,7 +144,7 @@ As the sole developer, I worked across the entire project:
 
 ## 🎮 Play the Game
 
-**[Download / Play the Build](BUILD_LINK)**
+**[Download / Play the Build](https://github.com/coyzhiv/dealing-with-stuff/releases/tag/demo)**
 
 ---
 
