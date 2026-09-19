@@ -129,15 +129,10 @@ As the sole developer, I worked across the entire project:
 
 ## 📸 Screenshots
 
-<p align="center">
-  <img src="SCREENSHOT_1" width="48%">
-  <img src="SCREENSHOT_2" width="48%">
-</p>
-
-<p align="center">
-  <img src="SCREENSHOT_3" width="48%">
-  <img src="SCREENSHOT_4" width="48%">
-</p>
+![DWSGIF](DWSGIF.gif)
+![DWSGIF1](DWSGIF1.gif)
+![DWSGIF2](DWSGIF2.gif)
+![DWSGIF3](DWSGIF3.gif)
 
 ---
 
