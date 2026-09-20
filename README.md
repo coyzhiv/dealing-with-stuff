@@ -1,6 +1,13 @@
-# 🎮 Dealing With Stuff
 
+# 🎮 Dealing With Stuff
+   
 ### A short story-driven JRPG focused on fast tactical combat, exploration and character progression.
+
+
+  <a href="GAMEPLAY_LINK">▶ WATCH GAMEPLAY</a>
+  <a href="BUILD_LINK">🎮 PLAY BUILD</a>
+
+  <img src="DWSGIF1.gif" alt="animated" />
 
 ---
 
@@ -131,7 +138,6 @@ As the sole developer, I worked across the entire project:
 
 ![DWSGIF](DWSGIF.gif)
 ![DWSGIF1](DWSGIF1.gif)
-![DWSGIF2](DWSGIF2.gif)
 ![DWSGIF3](DWSGIF3.gif)
 
 ---
